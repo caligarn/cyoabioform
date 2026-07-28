@@ -1,0 +1,7 @@
+# Built artifact -- regenerate with tools/build_standalone.py
+dist/
+
+.DS_Store
+Thumbs.db
+node_modules/
+__pycache__/
