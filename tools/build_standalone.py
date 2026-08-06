@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Fold each page into one portable HTML file.
+"""Fold the hub into one portable HTML file.
 
 The hub gets handed to contributors who are not always going to open a link --
 some want a file they can keep, open on a plane, or forward. This inlines the
-stylesheet, the script, and every image so the files in `dist/` work with no
-network. Keep the two next to each other: the hub's Play the sample link is a
-relative one, so it resolves only when `sample.html` is its sibling.
+stylesheet, the script, and every image so `dist/cyoa-hub.html` works with no
+network.
+
+The sample is deliberately not bundled. It draws on the scene library in
+assets/img/scene, and inlining those frames as base64 produced a 29 MB file --
+past the point where a single HTML document is a convenient thing to send
+someone. Its Play the sample link stays live, the same carve-out the Drive
+embed already has.
 """
 import base64
 import mimetypes
@@ -17,7 +22,6 @@ OUT = ROOT / "dist"
 
 PAGES = {
     "index.html": "cyoa-hub.html",
-    "sample.html": "sample.html",
 }
 
 
@@ -54,7 +58,5 @@ def inline(page):
 OUT.mkdir(exist_ok=True)
 for page, name in PAGES.items():
     html = inline(page)
-    # The hub links to the sample by its dist filename, not its source one.
-    html = html.replace('href="sample.html"', f'href="{PAGES["sample.html"]}"')
     (OUT / name).write_text(html, encoding="utf-8")
     print(f"wrote dist/{name} ({len(html) / 1024:.0f} KB)")

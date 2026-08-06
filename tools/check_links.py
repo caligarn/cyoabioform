@@ -34,7 +34,10 @@ on_disk = {
 }
 orphans = sorted(on_disk - referenced_imgs)
 
+scene = sorted((ROOT / "assets/img/scene").glob("*.jpeg"))
+used = len({r for r in refs if "/scene/" in r})
 print(f"checked {len(refs)} asset references across {len(PAGES)} pages")
+print(f"  scene library: {used} of {len(scene)} frames in play (the rest are held for later)")
 for o in orphans:
     print(f"  note: unreferenced file {o}")
 if missing:
