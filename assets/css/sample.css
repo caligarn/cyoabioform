@@ -11,7 +11,7 @@ body{margin:0;min-height:100svh;background:var(--bg);color:var(--ink);
   font-family:var(--sans);-webkit-font-smoothing:antialiased;
   display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;padding:34px 0}
 
-.player{width:min(1180px,100vw,calc(62svh * 16 / 9));border:1px solid var(--line);background:#000}
+.player{width:min(1120px,100vw,calc(46svh * 16 / 9));border:1px solid var(--line);background:#000}
 
 .beat{display:none}
 .beat.on{display:block}
@@ -28,8 +28,9 @@ body{margin:0;min-height:100svh;background:var(--bg);color:var(--ink);
 @keyframes scrub{from{width:0}to{width:100%}}
 
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
-  border-top:1px solid var(--line);opacity:0;transition:opacity .5s ease}
-.choices.up{opacity:1}
+  border-top:1px solid var(--line)}
+.choices,.brief{opacity:0;transition:opacity .5s ease}
+.beat.up .choices,.beat.up .brief{opacity:1}
 .choices.one{grid-template-columns:1fr}
 .choices[data-label]:before{content:attr(data-label);grid-column:1/-1;background:#000;
   font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;
@@ -37,10 +38,19 @@ body{margin:0;min-height:100svh;background:var(--bg);color:var(--ink);
 @media(max-width:700px){.choices{grid-template-columns:1fr}}
 
 .choice{display:block;width:100%;text-align:left;background:#000;border:0;cursor:pointer;
-  font-family:var(--mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink);padding:24px 26px;transition:background .18s,color .18s,padding-left .18s}
-.choice:hover,.choice:focus-visible{background:#0e1719;color:#fff;padding-left:34px;outline:0}
+  font-family:var(--sans);color:var(--ink);padding:20px 26px 22px;
+  transition:background .18s,padding-left .18s}
+.choice b{display:block;font-family:var(--mono);font-size:14.5px;font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.choice small{display:block;font-size:13.4px;line-height:1.5;color:var(--muted)}
+.choice:hover,.choice:focus-visible{background:#0e1719;padding-left:34px;outline:0}
+.choice:hover b,.choice:focus-visible b{color:#fff}
+.choice:hover small,.choice:focus-visible small{color:#a9c0c4}
 .choice:focus-visible{box-shadow:inset 3px 0 0 var(--acc)}
+
+/* What is happening in the run you just watched. */
+.brief{margin:0;padding:18px 26px 22px;border-top:1px solid var(--line);background:#040708;
+  font-size:14px;line-height:1.62;color:#8fa7ac;max-width:92ch}
 
 /* A blown choice and an ending are still just prompts — only the colour changes. */
 .beat[data-kind=fail] .choices[data-label]:before{color:var(--rust)}
@@ -57,10 +67,12 @@ body{margin:0;min-height:100svh;background:var(--bg);color:var(--ink);
 @media(max-width:700px){
   body{justify-content:flex-start;padding:52px 0 24px}
   .player{width:100vw;border-left:0;border-right:0}
-  .choice{font-size:13.5px;padding:20px}
+  .choice{padding:18px 20px}
+  .choice b{font-size:13px}
+  .brief{padding:16px 20px 20px;font-size:13.4px}
 }
 @media(prefers-reduced-motion:reduce){
   .stage img{transition:none}
   .beat.on .scrub i{animation:none;width:100%}
-  .choices{opacity:1;transition:none}
+  .choices,.brief{opacity:1;transition:none}
 }
