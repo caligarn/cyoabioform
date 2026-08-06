@@ -1,0 +1,66 @@
+/* The sample stands on its own: no hub chrome, no sidebar, nothing to read.
+   A frame, a prompt, and the choices. Everything else is deliberately absent. */
+:root{
+  --bg:#05080a; --ink:#ececeb; --muted:#7d959a; --line:#1b2729;
+  --acc:#e879b0; --amber:#f0a63c; --rust:#e0703c;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:"Helvetica Neue",Helvetica,Arial,"Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);-webkit-font-smoothing:antialiased;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;padding:34px 0}
+
+.player{width:min(1180px,100vw,calc(62svh * 16 / 9));border:1px solid var(--line);background:#000}
+
+.beat{display:none}
+.beat.on{display:block}
+
+.stage{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .9s ease;filter:saturate(1.05) brightness(.9)}
+.stage img.on{opacity:1}
+.stage:after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 45%,transparent 45%,rgba(0,0,0,.72) 100%)}
+.scrub{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.10);z-index:2}
+.scrub i{display:block;height:2px;width:0;background:var(--acc);opacity:.85}
+.beat.on .scrub i{animation:scrub var(--run,6s) linear infinite}
+@keyframes scrub{from{width:0}to{width:100%}}
+
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border-top:1px solid var(--line);opacity:0;transition:opacity .5s ease}
+.choices.up{opacity:1}
+.choices.one{grid-template-columns:1fr}
+.choices[data-label]:before{content:attr(data-label);grid-column:1/-1;background:#000;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--muted);padding:13px 26px 3px}
+@media(max-width:700px){.choices{grid-template-columns:1fr}}
+
+.choice{display:block;width:100%;text-align:left;background:#000;border:0;cursor:pointer;
+  font-family:var(--mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink);padding:24px 26px;transition:background .18s,color .18s,padding-left .18s}
+.choice:hover,.choice:focus-visible{background:#0e1719;color:#fff;padding-left:34px;outline:0}
+.choice:focus-visible{box-shadow:inset 3px 0 0 var(--acc)}
+
+/* A blown choice and an ending are still just prompts — only the colour changes. */
+.beat[data-kind=fail] .choices[data-label]:before{color:var(--rust)}
+.beat[data-kind=fail] .scrub i{background:var(--rust)}
+.beat[data-kind=end] .choices[data-label]:before{color:var(--amber)}
+.beat[data-kind=end] .scrub i{background:var(--amber)}
+
+.hub,.foot{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase}
+.hub{position:fixed;top:16px;left:18px;z-index:5;color:#43565c;text-decoration:none;
+  border-bottom:1px solid transparent;transition:color .2s}
+.hub:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.foot{color:#2f4045;margin:0}
+
+@media(max-width:700px){
+  body{justify-content:flex-start;padding:52px 0 24px}
+  .player{width:100vw;border-left:0;border-right:0}
+  .choice{font-size:13.5px;padding:20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .stage img{transition:none}
+  .beat.on .scrub i{animation:none;width:100%}
+  .choices{opacity:1;transition:none}
+}

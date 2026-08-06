@@ -335,3 +335,19 @@ h3.sub{font-size:13px;font-family:var(--mono);letter-spacing:.16em;text-transfor
   font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;color:rgba(0,0,0,.55)}
 .pbar div.lt span{color:rgba(255,255,255,.62)}
 .pbarkey{font-family:var(--mono);font-size:11px;color:var(--muted);word-break:break-all}
+
+/* ---- sample teaser ---- */
+/* The sample itself lives on its own page; this is only the way in. */
+#play{--acc:var(--pink)}
+.teaser{display:block;position:relative;margin:0 -40px;overflow:hidden;border:0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#05080a}
+@media(max-width:860px){.teaser{margin:0 -20px}}
+.teaser img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover;
+  filter:saturate(1.05) brightness(.62);transition:filter .3s,transform .3s}
+.teaser:hover img{filter:saturate(1.1) brightness(.8);transform:scale(1.02)}
+.teaser .go{position:absolute;inset:auto 0 0 0;padding:24px 26px;
+  background:linear-gradient(0deg,rgba(5,8,10,.94),transparent);
+  font-family:var(--mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.teaser .go:after{content:" →";color:var(--pink)}
+.samfoot{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:#4d6169;margin:12px 0 0}
