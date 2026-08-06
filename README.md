@@ -5,8 +5,9 @@ generated one shot at a time by a distributed group. Nine decision points,
 eight endings, roughly 214 shots.
 
 The page is the contributor's whole starting point: the premise, the locked
-look, the reference wall, the branch map, all 45 claimable scene chunks, the
-pilot shot list, the prompt rubric, and the budget model.
+look, a playable sample of the opening, the reference wall, the branch map, all
+45 claimable scene chunks, the pilot shot list, the prompt rubric, and the
+budget model.
 
 ## Running it
 
@@ -24,16 +25,17 @@ python3 -m http.server 8000
 ```
 index.html              the page itself — all copy and markup
 assets/css/site.css     all styling (dark theme, custom properties at the top)
-assets/js/site.js       scene-board filter, budget calculator, scroll-spy nav
+assets/js/site.js       sample player, scene-board filter, budget calculator, scroll-spy nav
 assets/img/             15 reference frames (WebP) + favicon
 tools/check_links.py    fails if index.html points at a missing asset
 tools/build_standalone.py  folds everything back into one portable HTML file
 ```
 
 The page was originally authored as one 942 KB file with every image inlined as
-base64. Those images are now real files: the HTML dropped to ~175 KB, the 27
-image references deduplicated down to 15 actual files, and browser caching and
-`loading="lazy"` do something useful now instead of nothing.
+base64. Those images are now real files: the HTML dropped to ~175 KB (~190 KB
+now, with the sample player), every image reference resolves to one of 15 actual
+files, and browser caching and `loading="lazy"` do something useful now instead
+of nothing.
 
 ## Editing
 
@@ -46,10 +48,26 @@ are wired to attributes rather than to code, so keep them intact:
 - **Sidebar links** pair `href="#section-id"` with `data-nav="section-id"`.
   Both must match the `<section id>` or the scroll-spy highlight skips it.
 - **Copy buttons** carry their payload in `data-copy`.
+- **Sample player beats** (section 05) are hidden `<div class="beat">` panels
+  inside `#sampler`. Each needs `data-beat` (its id), `data-title` (shown in the
+  player header), `data-n` (how deep it sits, for the progress bar and the
+  "beat N of M" counter) and `data-kind`, which is `beat`, `cosmetic` or
+  `decision` and drives the colour: violet for cosmetic branches, amber for real
+  decisions, matching the branch-map legend. Choice buttons point at the next
+  beat with `data-go` and, if the pick should show up in the run trail, carry a
+  short `data-pick` label. `data-total` on `#sampler` is the denominator of the
+  counter — update it if you add a beat that lengthens the longest path.
 
 Adding an image: drop the file in `assets/img/`, reference it as
 `assets/img/name.webp`, and give it a real `alt`. Run `python3
 tools/check_links.py` before pushing.
+
+Swapping real footage into the sample: every beat's `<div class="stage">` holds
+one placeholder still. Replace that `<img>` with a `<video controls playsinline
+poster="assets/img/...">` and drop the `Reference frame` badge — the player
+pauses any video in a beat you click away from, so nothing keeps playing
+off-screen. A local video file gets inlined into the standalone bundle, so link
+anything large rather than committing it.
 
 ## The portable single-file version
 
@@ -58,13 +76,16 @@ offline, or forward. `tools/build_standalone.py` inlines the CSS, the JS, and
 every image back into one document:
 
 ```sh
-python3 tools/build_standalone.py   # -> dist/cyoa-hub.html (~920 KB)
+python3 tools/build_standalone.py   # -> dist/cyoa-hub.html (~1.3 MB)
 ```
 
 That file works from `file://` with no network and no sibling files. Verified:
-all 21 images render, the scene filter and budget calculator both work. The one
-thing it cannot carry offline is the Google Drive embed of the performed script
-in **The recording** — that stays a live link by nature.
+every image renders, and the sample player, the scene filter and the budget
+calculator all work. Each reference inlines its own copy of the image, so the
+sample player's 17 stills are most of the difference between the page's 190 KB
+and the bundle's 1.3 MB. The one thing the bundle cannot carry offline is the
+Google Drive embed of the performed script in **The recording** — that stays a
+live link by nature.
 
 `dist/` is gitignored and rebuilt in CI, so the current bundle is always
 downloadable from the deployed site at `/dist/cyoa-hub.html`.
