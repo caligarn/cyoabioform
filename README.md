@@ -10,7 +10,8 @@ shot list, the prompt rubric, and the budget model.
 
 `sample.html` is the other half and stands on its own: the film as the viewer
 would meet it. Every branch in the script is wired up, so a run through it is a
-real run through the graph the branch map draws.
+real run through the graph the branch map draws — and it plays the actual
+frames, in shot order, so the branch you pick changes what you see.
 
 ## Running it
 
@@ -33,6 +34,8 @@ assets/css/sample.css   sample styling — deliberately its own file, shares not
 assets/js/site.js       scene-board filter, budget calculator, scroll-spy nav
 assets/js/sample.js     the sample player
 assets/img/             15 reference frames (WebP) + favicon
+assets/img/scene/       149 frames generated from the script — the sample's library
+assets/img/scene/full/  the full-resolution originals of a handful of those
 tools/check_links.py    fails if a page points at a missing asset or sibling page
 tools/build_standalone.py  folds each page into one portable HTML file
 ```
@@ -42,9 +45,9 @@ not a section of the hub with the furniture removed, it is the experience, and
 keeping its CSS separate stops hub styling from leaking into it.
 
 The hub was originally authored as one 942 KB file with every image inlined as
-base64. Those images are now real files: the HTML dropped to ~175 KB, every
-image reference across both pages resolves to one of 15 actual files, and
-browser caching and `loading="lazy"` do something useful now instead of nothing.
+base64. Those images are now real files, which is what makes browser caching and
+`loading="lazy"` do something useful, and what lets the sample draw on a 30 MB
+frame library without either page paying for it up front.
 
 ## Editing
 
@@ -58,11 +61,15 @@ are wired to attributes rather than to code, so keep them intact:
   Both must match the `<section id>` or the scroll-spy highlight skips it.
 - **Copy buttons** carry their payload in `data-copy`.
 - **Sample beats** live in `sample.html` as `<div class="beat">` panels, one per
-  run of footage. Each holds a `.stage` with the stills for that run — the
-  player cross-fades them on a loop, so a beat with five stills plays five
-  "shots" — and a `.choices` block whose optional `data-label` is the on-screen
-  prompt title (`Quick Choice A`, `Decision I.1`, an ending's name). Choices
-  point at the next beat with `data-go`. Three targets are not literal beat ids:
+  run of footage. Each holds a `.stage` with that run's frames **in shot
+  order** — the player cross-fades them on a loop, so a beat with five frames
+  plays five shots — and a `.choices` block whose optional `data-label` is the
+  on-screen prompt title (`Quick Choice A`, `Decision I.1`, an ending's name).
+  Frames come from `assets/img/scene/`; 84 of the 149 are in play and the rest
+  are held for beats that do not exist yet. Only the first beat's frames load
+  up front — the player warms the frames of every beat you could reach next, so
+  the cut stays instant without pulling 30 MB at once. Choices point at the
+  next beat with `data-go`. Three targets are not literal beat ids:
 
   | target | meaning |
   | --- | --- |
@@ -80,33 +87,30 @@ Adding an image: drop the file in `assets/img/`, reference it as
 `assets/img/name.webp`, and give it a real `alt`. Run `python3
 tools/check_links.py` before pushing.
 
-Swapping real footage into the sample: a beat's `.stage` holds the placeholder
-stills for that run of footage. Replace them with one `<video autoplay muted
-playsinline loop>` and delete the `.scrub` bar, which exists only to make a
-slideshow read as playback. A local video file gets inlined into the standalone
-bundle, so link anything large rather than committing it.
+Swapping motion into the sample: a beat's `.stage` holds that run's frames.
+Replace them with one `<video autoplay muted playsinline loop>` and delete the
+`.scrub` bar, which exists only to make a sequence of frames read as playback.
 
 ## The portable single-file version
 
 Some contributors want a file rather than a link — something to keep, open
 offline, or forward. `tools/build_standalone.py` inlines the CSS, the JS, and
-every image, once per page:
+every image into one document:
 
 ```sh
-python3 tools/build_standalone.py   # -> dist/cyoa-hub.html, dist/sample.html
+python3 tools/build_standalone.py   # -> dist/cyoa-hub.html (~1.2 MB)
 ```
 
-Both work from `file://` with no network. Verified: every image renders, the
-sample plays every branch, and the scene filter and budget calculator both work.
-Keep the two files together — the hub's **Play the sample** link is relative, so
-it resolves only when `sample.html` is its sibling. Each reference inlines its
-own copy of the image, which is why the sample bundle is the bigger of the two.
-The one thing neither bundle can carry offline is the Google Drive embed of the
-performed script in **The recording** — that stays a live link by nature.
+It works from `file://` with no network. Verified: every image renders, and the
+scene filter and budget calculator both work.
 
-`dist/` is gitignored and rebuilt in CI, so the current bundles are always
-downloadable from the deployed site at `/dist/cyoa-hub.html` and
-`/dist/sample.html`.
+The sample is deliberately not bundled. Inlining its 84 frames as base64 made a
+29 MB file, past the point where a single HTML document is a convenient thing to
+send someone, so **Play the sample** stays a live link in the portable file —
+the same carve-out the Google Drive embed of the performed script already has.
+
+`dist/` is gitignored and rebuilt in CI, so the current bundle is always
+downloadable from the deployed site at `/dist/cyoa-hub.html`.
 
 ## Deploying
 

@@ -18,10 +18,10 @@ body{margin:0;min-height:100svh;background:var(--bg);color:var(--ink);
 
 .stage{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
 .stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  opacity:0;transition:opacity .9s ease;filter:saturate(1.05) brightness(.9)}
+  opacity:0;transition:opacity .9s ease}
 .stage img.on{opacity:1}
 .stage:after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(120% 90% at 50% 45%,transparent 45%,rgba(0,0,0,.72) 100%)}
+  background:radial-gradient(125% 95% at 50% 45%,transparent 55%,rgba(0,0,0,.5) 100%)}
 .scrub{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.10);z-index:2}
 .scrub i{display:block;height:2px;width:0;background:var(--acc);opacity:.85}
 .beat.on .scrub i{animation:scrub var(--run,6s) linear infinite}

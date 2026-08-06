@@ -7,6 +7,10 @@
    Three targets are not literal beat ids:
      $back    return to the prompt you just answered — the fail states use this
      $<name>  read the target out of state, set earlier by data-set="name=beat"
+
+   The frame library is ~30 MB, so a beat's frames only load when it plays.
+   Whenever a beat starts, the frames of every beat you could reach from it are
+   warmed in the background, which is what keeps the cut instant on click.
 */
 var player = document.getElementById('player');
 if(player){
@@ -26,6 +30,7 @@ if(player){
     var imgs = [].slice.call(b.querySelectorAll('.stage img'));
     imgs.forEach(function(im, i){ im.classList.toggle('on', i === 0); });
     b.querySelector('.stage').style.setProperty('--run', (imgs.length * HOLD) + 'ms');
+    warmNext(b);
     if(calm){ b.classList.add('up'); return; }
     b.classList.remove('up');
     prompt = setTimeout(function(){ b.classList.add('up'); }, Math.min(PROMPT, imgs.length * HOLD));
@@ -36,6 +41,23 @@ if(player){
       at = (at + 1) % imgs.length;
       imgs[at].classList.add('on');
     }, HOLD);
+  }
+
+  /* pull the frames of everywhere this beat can go into cache, quietly */
+  var warmed = {};
+  function warm(id){
+    var b = beats[id];
+    if(!b || warmed[id]) return;
+    warmed[id] = true;
+    [].slice.call(b.querySelectorAll('.stage img')).forEach(function(im){
+      var pre = new Image();
+      pre.src = im.getAttribute('src');
+    });
+  }
+  function warmNext(b){
+    [].slice.call(b.querySelectorAll('[data-go]')).forEach(function(go){
+      warm(resolve(go.getAttribute('data-go')));
+    });
   }
 
   function resolve(target){
