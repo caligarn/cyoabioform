@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CYOA: The Bioform · Play the sample</title>
+<meta name="description" content="Play the branching opening of CYOA: The Bioform. Every branch of the script, from Press Start to all eight endings.">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CYOA: The Bioform · Play the sample">
+<meta property="og:description" content="A branching science-fiction film. The story plays, it stops, it asks you something.">
+<meta property="og:image" content="assets/img/solaris-the-ribbed-corridor.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/sample.css"></head><body>
+<a class="hub" href="index.html">Contributor hub</a>
+<main class="player" id="player">
+<div class="beat on" data-beat="start">
+<div class="stage">
+<img class="on" src="assets/img/gravity-reentry.webp" alt="Everything gone amber">
+<img src="assets/img/the-matrix-ribbed-hull-interior.webp" alt="The arch of the hull">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices one">
+<button class="choice" data-go="waste">Press start</button>
+</div>
+</div>
+
+<div class="beat" data-beat="waste">
+<div class="stage">
+<img class="on" src="assets/img/the-matrix-ribbed-hull-interior.webp" alt="The arch of the hull">
+<img src="assets/img/gravity-someone-lives-here.webp" alt="Taped paper and cable runs">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Quick Choice A">
+<button class="choice" data-go="mop">Mop the hygiene pods</button>
+<button class="choice" data-go="burn">Burn the trash</button>
+</div>
+</div>
+
+<div class="beat" data-beat="mop">
+<div class="stage">
+<img class="on" src="assets/img/gravity-window-onto-the-drop.webp" alt="A porthole onto the drop">
+<img src="assets/img/the-matrix-at-the-station.webp" alt="A headset under panel light">
+<img src="assets/img/gravity-curled-in-the-capsule.webp" alt="A body drifting in zero g">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Quick Choice B">
+<button class="choice" data-go="pilot">Stim-spray</button>
+<button class="choice" data-go="pilot">Opi-Yum</button>
+</div>
+</div>
+
+<div class="beat" data-beat="burn">
+<div class="stage">
+<img class="on" src="assets/img/gravity-reentry.webp" alt="Everything gone amber">
+<img src="assets/img/the-matrix-at-the-station.webp" alt="A headset under panel light">
+<img src="assets/img/gravity-curled-in-the-capsule.webp" alt="A body drifting in zero g">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Quick Choice B">
+<button class="choice" data-go="pilot">Stim-spray</button>
+<button class="choice" data-go="pilot">Opi-Yum</button>
+</div>
+</div>
+
+<div class="beat" data-beat="pilot">
+<div class="stage">
+<img class="on" src="assets/img/gravity-alone-in-the-dark.webp" alt="Almost nothing lit">
+<img src="assets/img/the-matrix-bank-of-screens.webp" alt="A bank of screens">
+<img src="assets/img/solaris-the-ribbed-corridor.webp" alt="A long instrument corridor">
+<img src="assets/img/gravity-face-in-the-visor.webp" alt="A face behind a visor">
+<img src="assets/img/solaris-hari-looks-back.webp" alt="A face in available light">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision I.1">
+<button class="choice" data-go="protect" data-set="act4=religion">Observe</button>
+<button class="choice" data-go="probe" data-set="act4=power">Probe</button>
+</div>
+</div>
+
+<div class="beat" data-beat="probe">
+<div class="stage">
+<img class="on" src="assets/img/gravity-console-light-on-a-suit.webp" alt="Console light on a suit">
+<img src="assets/img/gravity-face-in-the-visor.webp" alt="A face behind a visor">
+<img src="assets/img/the-matrix-bank-of-screens.webp" alt="A bank of screens">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision II.2">
+<button class="choice" data-go="reason">Reason with it</button>
+<button class="choice" data-go="fail_destroy">Destroy it</button>
+</div>
+</div>
+
+<div class="beat" data-beat="fail_destroy" data-kind="fail">
+<div class="stage">
+<img class="on" src="assets/img/gravity-alone-in-the-dark.webp" alt="Almost nothing lit">
+<img src="assets/img/the-matrix-the-mess-table.webp" alt="The crew around a steel table">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices one" data-label="Fail state">
+<button class="choice" data-go="$back">Try again</button>
+</div>
+</div>
+
+<div class="beat" data-beat="reason">
+<div class="stage">
+<img class="on" src="assets/img/solaris-the-ribbed-corridor.webp" alt="A long instrument corridor">
+<img src="assets/img/gravity-window-onto-the-drop.webp" alt="A porthole onto the drop">
+<img src="assets/img/the-matrix-the-mess-table.webp" alt="The crew around a steel table">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision III.1">
+<button class="choice" data-go="keep">Keep it</button>
+<button class="choice" data-go="fail_return">Return it</button>
+</div>
+</div>
+
+<div class="beat" data-beat="protect">
+<div class="stage">
+<img class="on" src="assets/img/solaris-hari-looks-back.webp" alt="A face in available light">
+<img src="assets/img/gravity-console-light-on-a-suit.webp" alt="Console light on a suit">
+<img src="assets/img/the-matrix-bank-of-screens.webp" alt="A bank of screens">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision II.1">
+<button class="choice" data-go="treat">Experimental treatment</button>
+<button class="choice" data-go="cryo">Cryo</button>
+</div>
+</div>
+
+<div class="beat" data-beat="treat">
+<div class="stage">
+<img class="on" src="assets/img/gravity-console-light-on-a-suit.webp" alt="Console light on a suit">
+<img src="assets/img/the-matrix-the-mess-table.webp" alt="The crew around a steel table">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision III.1">
+<button class="choice" data-go="keep">Keep it</button>
+<button class="choice" data-go="fail_return">Return it</button>
+</div>
+</div>
+
+<div class="beat" data-beat="cryo">
+<div class="stage">
+<img class="on" src="assets/img/gravity-curled-in-the-capsule.webp" alt="A body drifting in zero g">
+<img src="assets/img/the-matrix-the-mess-table.webp" alt="The crew around a steel table">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision III.1">
+<button class="choice" data-go="keep">Keep it</button>
+<button class="choice" data-go="fail_return">Return it</button>
+</div>
+</div>
+
+<div class="beat" data-beat="fail_return" data-kind="fail">
+<div class="stage">
+<img class="on" src="assets/img/gravity-alone-in-the-dark.webp" alt="Almost nothing lit">
+<img src="assets/img/gravity-curled-in-the-capsule.webp" alt="A body drifting in zero g">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices one" data-label="Fail state">
+<button class="choice" data-go="$back">Try again</button>
+</div>
+</div>
+
+<div class="beat" data-beat="keep">
+<div class="stage">
+<img class="on" src="assets/img/gravity-window-onto-the-drop.webp" alt="A porthole onto the drop">
+<img src="assets/img/solaris-the-ribbed-corridor.webp" alt="A long instrument corridor">
+<img src="assets/img/the-matrix-bank-of-screens.webp" alt="A bank of screens">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision III.3">
+<button class="choice" data-go="cut_$act4">Cut the oxygen</button>
+<button class="choice" data-go="talk_$act4">Talk him down</button>
+</div>
+</div>
+
+<div class="beat" data-beat="cut_power">
+<div class="stage">
+<img class="on" src="assets/img/gravity-alone-in-the-dark.webp" alt="Almost nothing lit">
+<img src="assets/img/the-matrix-ribbed-hull-interior.webp" alt="The arch of the hull">
+<img src="assets/img/the-matrix-the-mess-table.webp" alt="The crew around a steel table">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision IV.1">
+<button class="choice" data-go="priya">Fight back</button>
+<button class="choice" data-go="convince">Convince Oracle</button>
+</div>
+</div>
+
+<div class="beat" data-beat="cut_religion">
+<div class="stage">
+<img class="on" src="assets/img/gravity-alone-in-the-dark.webp" alt="Almost nothing lit">
+<img src="assets/img/the-matrix-ribbed-hull-interior.webp" alt="The arch of the hull">
+<img src="assets/img/solaris-hari-looks-back.webp" alt="A face in available light">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision IV.2">
+<button class="choice" data-go="kaz">Fight back</button>
+<button class="choice" data-go="cult">Join the cult</button>
+<button class="choice" data-go="free">Appeal to humanity</button>
+</div>
+</div>
+
+<div class="beat" data-beat="talk_power">
+<div class="stage">
+<img class="on" src="assets/img/solaris-the-ribbed-corridor.webp" alt="A long instrument corridor">
+<img src="assets/img/the-matrix-ribbed-hull-interior.webp" alt="The arch of the hull">
+<img src="assets/img/the-matrix-the-mess-table.webp" alt="The crew around a steel table">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision IV.1">
+<button class="choice" data-go="priya">Fight back</button>
+<button class="choice" data-go="convince">Convince Oracle</button>
+</div>
+</div>
+
+<div class="beat" data-beat="talk_religion">
+<div class="stage">
+<img class="on" src="assets/img/solaris-the-ribbed-corridor.webp" alt="A long instrument corridor">
+<img src="assets/img/the-matrix-ribbed-hull-interior.webp" alt="The arch of the hull">
+<img src="assets/img/solaris-hari-looks-back.webp" alt="A face in available light">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Decision IV.2">
+<button class="choice" data-go="kaz">Fight back</button>
+<button class="choice" data-go="cult">Join the cult</button>
+<button class="choice" data-go="free">Appeal to humanity</button>
+</div>
+</div>
+
+<div class="beat" data-beat="convince">
+<div class="stage">
+<img class="on" src="assets/img/the-matrix-bank-of-screens.webp" alt="A bank of screens">
+<img src="assets/img/gravity-window-onto-the-drop.webp" alt="A porthole onto the drop">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Final protocol">
+<button class="choice" data-go="end_a">Release the Godseed</button>
+<button class="choice" data-go="end_b">Preserve it in stasis</button>
+</div>
+</div>
+
+<div class="beat" data-beat="cult">
+<div class="stage">
+<img class="on" src="assets/img/solaris-hari-looks-back.webp" alt="A face in available light">
+<img src="assets/img/gravity-window-onto-the-drop.webp" alt="A porthole onto the drop">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Final protocol">
+<button class="choice" data-go="end_a">Release the Godseed</button>
+<button class="choice" data-go="end_b">Preserve it in stasis</button>
+</div>
+</div>
+
+<div class="beat" data-beat="priya">
+<div class="stage">
+<img class="on" src="assets/img/the-matrix-at-the-station.webp" alt="A headset under panel light">
+<img src="assets/img/gravity-console-light-on-a-suit.webp" alt="Console light on a suit">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Priya’s last call">
+<button class="choice" data-go="end_p1">Destroy it</button>
+<button class="choice" data-go="end_p2">Escape</button>
+</div>
+</div>
+
+<div class="beat" data-beat="kaz">
+<div class="stage">
+<img class="on" src="assets/img/gravity-face-in-the-visor.webp" alt="A face behind a visor">
+<img src="assets/img/gravity-console-light-on-a-suit.webp" alt="Console light on a suit">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices" data-label="Kaz’s last call">
+<button class="choice" data-go="end_k1">Destroy the AI</button>
+<button class="choice" data-go="end_k2">Merge with it</button>
+</div>
+</div>
+
+<div class="beat" data-beat="free" data-kind="end">
+<div class="stage">
+<img class="on" src="assets/img/gravity-window-onto-the-drop.webp" alt="A porthole onto the drop">
+<img src="assets/img/gravity-reentry.webp" alt="Everything gone amber">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices one" data-label="Ending V.1 · Free the Bioform">
+<button class="choice" data-go="start">Play it again</button>
+</div>
+</div>
+
+<div class="beat" data-beat="end_a" data-kind="end">
+<div class="stage">
+<img class="on" src="assets/img/gravity-reentry.webp" alt="Everything gone amber">
+<img src="assets/img/gravity-window-onto-the-drop.webp" alt="A porthole onto the drop">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices one" data-label="Ending VI.0-A · Release the Godseed">
+<button class="choice" data-go="start">Play it again</button>
+</div>
+</div>
+
+<div class="beat" data-beat="end_b" data-kind="end">
+<div class="stage">
+<img class="on" src="assets/img/gravity-alone-in-the-dark.webp" alt="Almost nothing lit">
+<img src="assets/img/solaris-the-ribbed-corridor.webp" alt="A long instrument corridor">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices one" data-label="Ending VI.0-B · Preserve the Godseed">
+<button class="choice" data-go="start">Play it again</button>
+</div>
+</div>
+
+<div class="beat" data-beat="end_p1" data-kind="end">
+<div class="stage">
+<img class="on" src="assets/img/gravity-console-light-on-a-suit.webp" alt="Console light on a suit">
+<img src="assets/img/the-matrix-bank-of-screens.webp" alt="A bank of screens">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices one" data-label="Ending VI.1-A · Destroy, as Priya">
+<button class="choice" data-go="start">Play it again</button>
+</div>
+</div>
+
+<div class="beat" data-beat="end_p2" data-kind="end">
+<div class="stage">
+<img class="on" src="assets/img/gravity-curled-in-the-capsule.webp" alt="A body drifting in zero g">
+<img src="assets/img/gravity-window-onto-the-drop.webp" alt="A porthole onto the drop">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices one" data-label="Ending VI.1-D · Escape, as Priya">
+<button class="choice" data-go="start">Play it again</button>
+</div>
+</div>
+
+<div class="beat" data-beat="end_k1" data-kind="end">
+<div class="stage">
+<img class="on" src="assets/img/the-matrix-bank-of-screens.webp" alt="A bank of screens">
+<img src="assets/img/gravity-face-in-the-visor.webp" alt="A face behind a visor">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices one" data-label="Ending VI.1-B · Destroy the AI, as Kaz">
+<button class="choice" data-go="start">Play it again</button>
+</div>
+</div>
+
+<div class="beat" data-beat="end_k2" data-kind="end">
+<div class="stage">
+<img class="on" src="assets/img/solaris-hari-looks-back.webp" alt="A face in available light">
+<img src="assets/img/gravity-alone-in-the-dark.webp" alt="Almost nothing lit">
+<div class="scrub"><i></i></div>
+</div>
+<div class="choices one" data-label="Ending VI.1-C · Merge, as Kaz">
+<button class="choice" data-go="start">Play it again</button>
+</div>
+</div>
+
+</main>
+<p class="foot">Placeholder stills · footage not generated yet</p>
+<script src="assets/js/sample.js" defer></script>
+</body></html>

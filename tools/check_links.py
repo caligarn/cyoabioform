@@ -1,20 +1,27 @@
 #!/usr/bin/env python3
-"""Fail if index.html points at a local asset that isn't in the repo.
+"""Fail if a page points at a local asset that isn't in the repo.
 
-The hub is hand-edited, so a renamed or deleted image is the most likely way
-to break it. This catches that before it ships.
+The pages are hand-edited, so a renamed or deleted image is the most likely way
+to break them. This catches that before it ships.
 """
 import pathlib
 import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-html = (ROOT / "index.html").read_text(encoding="utf-8")
+PAGES = ("index.html", "sample.html")
 
 refs = set()
-for attr in ("src", "href"):
-    refs |= set(re.findall(rf'{attr}="(assets/[^"]+)"', html))
-refs |= set(re.findall(r"url\((assets/[^)]+)\)", html))
+for page in PAGES:
+    html = (ROOT / page).read_text(encoding="utf-8")
+    for attr in ("src", "href"):
+        refs |= set(re.findall(rf'{attr}="(assets/[^"]+)"', html))
+    refs |= set(re.findall(r"url\((assets/[^)]+)\)", html))
+    # A page linking to a sibling page has to find it.
+    for link in re.findall(r'href="([\w.-]+\.html)"', html):
+        if not (ROOT / link).is_file():
+            print(f"\nMISSING: {page} links to {link}", file=sys.stderr)
+            sys.exit(1)
 
 missing = sorted(r for r in refs if not (ROOT / r).is_file())
 
@@ -27,7 +34,7 @@ on_disk = {
 }
 orphans = sorted(on_disk - referenced_imgs)
 
-print(f"checked {len(refs)} asset references")
+print(f"checked {len(refs)} asset references across {len(PAGES)} pages")
 for o in orphans:
     print(f"  note: unreferenced file {o}")
 if missing:

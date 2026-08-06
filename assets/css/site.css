@@ -336,47 +336,18 @@ h3.sub{font-size:13px;font-family:var(--mono);letter-spacing:.16em;text-transfor
 .pbar div.lt span{color:rgba(255,255,255,.62)}
 .pbarkey{font-family:var(--mono);font-size:11px;color:var(--muted);word-break:break-all}
 
-/* ---- sample player ---- */
-/* Deliberately bare: a frame and the choices, nothing else. Whatever text is
-   on screen should be text the viewer of the film would actually be shown. */
+/* ---- sample teaser ---- */
+/* The sample itself lives on its own page; this is only the way in. */
 #play{--acc:var(--pink)}
-.sampler{margin:0 -40px;background:#05080a;border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);scroll-margin-top:64px}
-@media(max-width:860px){.sampler{margin:0 -20px}}
-.beat{display:none}
-.beat.on{display:block}
-
-.stage{position:relative;aspect-ratio:16/9;background:#05080a;overflow:hidden}
-.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  opacity:0;transition:opacity .9s ease;filter:saturate(1.05) brightness(.9)}
-.stage img.on{opacity:1}
-.stage:after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(120% 90% at 50% 45%,transparent 45%,rgba(5,8,10,.7) 100%)}
-.scrub{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.10);z-index:2}
-.scrub i{display:block;height:2px;width:0;background:var(--acc);opacity:.85}
-.beat.on .scrub i{animation:scrub var(--run,6s) linear infinite}
-@keyframes scrub{from{width:0}to{width:100%}}
-
-.choices{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
-  border-top:1px solid var(--line);opacity:0;transition:opacity .5s ease}
-.choices.up{opacity:1}
-.choices.one{grid-template-columns:1fr}
-.choices[data-label]:before{content:attr(data-label);grid-column:1/-1;background:#05080a;
-  font-family:var(--mono);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--muted);padding:13px 26px 3px}
-@media(max-width:700px){.choices{grid-template-columns:1fr}}
-
-.choice{display:block;width:100%;text-align:left;background:#05080a;border:0;cursor:pointer;
-  font-family:var(--mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink);padding:26px;transition:background .18s,color .18s,padding-left .18s}
-a.choice{border-bottom:0}
-.choice:hover,.choice:focus-visible{background:#101a1d;color:#fff;padding-left:34px;outline:0}
-.choice:focus-visible{box-shadow:inset 3px 0 0 var(--acc)}
-
+.teaser{display:block;position:relative;margin:0 -40px;overflow:hidden;border:0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#05080a}
+@media(max-width:860px){.teaser{margin:0 -20px}}
+.teaser img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover;
+  filter:saturate(1.05) brightness(.62);transition:filter .3s,transform .3s}
+.teaser:hover img{filter:saturate(1.1) brightness(.8);transform:scale(1.02)}
+.teaser .go{position:absolute;inset:auto 0 0 0;padding:24px 26px;
+  background:linear-gradient(0deg,rgba(5,8,10,.94),transparent);
+  font-family:var(--mono);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.teaser .go:after{content:" →";color:var(--pink)}
 .samfoot{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
   color:#4d6169;margin:12px 0 0}
-@media(prefers-reduced-motion:reduce){
-  .stage img{transition:none}
-  .beat.on .scrub i{animation:none;width:100%}
-  .choices{opacity:1;transition:none}
-}
