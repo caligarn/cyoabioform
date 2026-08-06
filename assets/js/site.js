@@ -85,67 +85,42 @@ window.addEventListener('resize', navSync);
 navSync();
 
 /* sample player */
+/* Each beat is a run of footage that loops until you answer it, the way the
+   film keeps playing underneath a prompt. Stills stand in for the footage. */
 var sam = document.getElementById('sampler');
 if(sam){
-  var beats = {};
+  var HOLD = 2200;                 /* ms per still */
+  var PROMPT = 2400;               /* ms before the choices fade up */
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var beats = {}, cycle = null, prompt = null;
   [].slice.call(sam.querySelectorAll('.beat')).forEach(function(b){
     beats[b.getAttribute('data-beat')] = b;
   });
-  var total = parseInt(sam.getAttribute('data-total'),10) || 1;
-  var stack = [], picks = [];
-  var samStep = document.getElementById('sam-step');
-  var samTitle = document.getElementById('sam-title');
-  var samFill = document.getElementById('sam-fill');
-  var samTrail = document.getElementById('sam-trail');
-  var samBack = document.getElementById('sam-back');
 
-  function samTrailDraw(){
-    if(!picks.length){ samTrail.innerHTML = '<span class="none">No choices made yet</span>'; return; }
-    samTrail.innerHTML = '';
-    picks.forEach(function(p){
-      var s = document.createElement('span'); s.textContent = p; samTrail.appendChild(s);
-    });
-  }
-  function samShow(id, move){
-    var b = beats[id];
-    if(!b) return;
+  function samPlay(id){
+    clearInterval(cycle); clearTimeout(prompt);
     Object.keys(beats).forEach(function(k){ beats[k].classList.toggle('on', k === id); });
-    /* whatever was playing in the beat we just left should stop playing */
-    [].slice.call(sam.querySelectorAll('video,audio')).forEach(function(v){
-      if(!b.contains(v)) v.pause();
-    });
-    var n = parseInt(b.getAttribute('data-n'),10) || 1;
-    samStep.textContent = 'Beat ' + n + ' of ' + total;
-    samTitle.textContent = b.getAttribute('data-title') || '';
-    samFill.style.width = Math.round(n / total * 100) + '%';
-    samBack.disabled = !stack.length;
-    samTrailDraw();
-    if(move){
-      var top = sam.getBoundingClientRect().top;
-      if(top < 0 || top > window.innerHeight * 0.55) sam.scrollIntoView({block:'start'});
-    }
+    var b = beats[id];
+    var imgs = [].slice.call(b.querySelectorAll('.stage img'));
+    var choices = b.querySelector('.choices');
+    imgs.forEach(function(im, i){ im.classList.toggle('on', i === 0); });
+    b.querySelector('.stage').style.setProperty('--run', (imgs.length * HOLD) + 'ms');
+    if(calm){ choices.classList.add('up'); return; }
+    choices.classList.remove('up');
+    prompt = setTimeout(function(){ choices.classList.add('up'); }, Math.min(PROMPT, imgs.length * HOLD));
+    if(imgs.length < 2) return;
+    var at = 0;
+    cycle = setInterval(function(){
+      imgs[at].classList.remove('on');
+      at = (at + 1) % imgs.length;
+      imgs[at].classList.add('on');
+    }, HOLD);
   }
+
   sam.addEventListener('click', function(e){
     var go = e.target.closest('[data-go]');
-    if(go){
-      var cur = sam.querySelector('.beat.on');
-      stack.push({beat: cur.getAttribute('data-beat'), depth: picks.length});
-      var pick = go.getAttribute('data-pick');
-      if(pick) picks.push(pick);
-      samShow(go.getAttribute('data-go'), true);
-      return;
-    }
-    if(e.target.closest('[data-restart]')){
-      stack = []; picks = [];
-      samShow('start', true);
-      return;
-    }
-    if(e.target.closest('#sam-back')){
-      var prev = stack.pop();
-      if(!prev) return;
-      picks.length = prev.depth;
-      samShow(prev.beat, true);
-    }
+    if(go){ samPlay(go.getAttribute('data-go')); return; }
+    if(e.target.closest('[data-restart]')) samPlay('start');
   });
-  samShow('start', false);
+  samPlay('start');
 }
