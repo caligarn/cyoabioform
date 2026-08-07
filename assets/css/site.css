@@ -179,6 +179,9 @@ tfoot td{border-bottom:0;border-top:1px solid var(--line2);color:var(--ink);font
 .out .row span:not(:first-child){font-family:var(--mono);text-align:right}
 .out .row .mid{color:var(--acc);font-weight:600}
 .out .row.big span:first-child{color:var(--ink)}
+/* the cross-check rows read as a verdict, not a price */
+.out .row.sub{font-size:12.5px;color:var(--muted)}
+.out .row.sub .mid{color:var(--amber);font-weight:400;font-size:11px}
 
 /* map */
 .mapbox{border:1px solid var(--line);background:var(--panel);padding:16px;overflow-x:auto;text-align:center}

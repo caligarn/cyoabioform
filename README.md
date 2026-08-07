@@ -2,11 +2,20 @@
 
 The single-page hub for *CYOA: The Bioform*, a branching science-fiction film
 generated one shot at a time by a distributed group. Nine decision points,
-eight endings, roughly 214 shots.
+eight endings, about 188 setups cutting to roughly 361 shots.
 
 The hub is the contributor's whole starting point: the premise, the locked look,
 the reference wall, the branch map, all 45 claimable scene chunks, the pilot
 shot list, the prompt rubric, and the budget model.
+
+Counts come in three units and they are not interchangeable. A **setup** is one
+camera position with its own start frame — the claimable unit. A **roll** is one
+generation attempt from a setup — the cost unit, and what the budget calculator
+multiplies. A **cut shot** is one appearance of a setup in the edit — the runtime
+unit. Coverage reuses setups, which is why the finished film has roughly twice as
+many cut shots as setups without costing twice as much. Section 13 derives all
+three and states its error bar; every number is provisional until chunks come back
+finished.
 
 `sample.html` is the other half and stands on its own: the film as the viewer
 would meet it. Every branch in the script is wired up, so a run through it is a
@@ -56,7 +65,9 @@ are wired to attributes rather than to code, so keep them intact:
 
 - **Scene board rows** need `data-act` (which act chip shows the row) and
   `data-hay` (the lowercase text the search box matches against). A row missing
-  `data-hay` silently stops being searchable.
+  `data-hay` silently stops being searchable. The two numeric columns are Setups
+  and Cut shots, in that order; `tools/coverage.py` regenerates both from the
+  chunk descriptions and prints the totals the prose quotes.
 - **Sidebar links** pair `href="#section-id"` with `data-nav="section-id"`.
   Both must match the `<section id>` or the scroll-spy highlight skips it.
 - **Copy buttons** carry their payload in `data-copy`.

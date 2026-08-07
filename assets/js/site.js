@@ -54,12 +54,26 @@ function calc(){
     return '<div class="row'+(big?' big':'')+'"><span>'+label+'</span><span>'+money(lo)+'</span>'
       +'<span>'+money(hi)+'</span><span class="mid">'+money(mid)+'</span></div>';
   }
+  /* Cross-check against the figure this model replaced: what one finished cut shot
+     works out to, given the board's provisional 32 pilot / 361 full-film cut shots.
+     If it lands outside $80-450, either the roll price or that range is wrong. */
+  function check(label, rolls, cuts){
+    if(!cuts) return '';
+    var lo = rolls*v.low*buf/cuts, hi = rolls*v.high*buf/cuts;
+    var off = hi < 80 || lo > 450;
+    return '<div class="row sub"><span>' + label + '</span><span>' + money(lo) + '</span>'
+      + '<span>' + money(hi) + '</span><span class="mid">'
+      + (off ? 'outside $80–450' : 'within $80–450') + '</span></div>';
+  }
   document.getElementById('calcout').innerHTML =
     '<div class="row h"><span>Scope</span><span>Low</span><span>High</span><span>Mid</span></div>'
     + row('Pilot · base', v.pilot, 1)
     + row('Pilot · with buffer', v.pilot, buf, true)
     + row('Full film · base', v.full, 1)
-    + row('Full film · with buffer', v.full, buf, true);
+    + row('Full film · with buffer', v.full, buf, true)
+    + '<div class="row h"><span>Cross-check</span><span>Low</span><span>High</span><span>vs July 23</span></div>'
+    + check('Per finished cut shot · pilot', v.pilot, 32)
+    + check('Per finished cut shot · film', v.full, 361);
 }
 ids.forEach(function(i){ el(i).addEventListener('input', calc); });
 calc();
