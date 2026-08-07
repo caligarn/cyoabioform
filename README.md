@@ -17,6 +17,13 @@ many cut shots as setups without costing twice as much. Section 13 derives all
 three and states its error bar; every number is provisional until chunks come back
 finished.
 
+The film is budgeted at **$5,000 in hard costs** — generation plus small running
+costs, marketing excluded. Divided by the provisional 695 rolls that is $6.26 a
+roll, which is also the break-even: below it the film fits, above it something
+gives. Published rates put a roll at $0.80 to $3.20, so the target holds with
+roughly 2x headroom. Section 17 is built around the target rather than around a
+rate, and its calculator ends with a fits/does-not-fit verdict.
+
 `sample.html` is the other half and stands on its own: the film as the viewer
 would meet it. Every branch in the script is wired up, so a run through it is a
 real run through the graph the branch map draws — and it plays the actual
