@@ -351,3 +351,32 @@ h3.sub{font-size:13px;font-family:var(--mono);letter-spacing:.16em;text-transfor
 .teaser .go:after{content:" →";color:var(--pink)}
 .samfoot{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
   color:#4d6169;margin:12px 0 0}
+
+/* ---- ways to join ---- */
+#join{--acc:var(--green)}
+.card.lane{display:flex;flex-direction:column}
+.card.lane .cmeta{flex:1}
+a.lanemail{align-self:flex-start;font-family:var(--mono);font-size:10px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--acc);border:1px solid color-mix(in srgb,var(--acc) 42%,transparent);
+  padding:7px 12px;transition:background .15s,border-color .15s}
+a.lanemail:after{content:" →"}
+a.lanemail:hover{background:color-mix(in srgb,var(--acc) 14%,transparent);border-color:var(--acc)}
+
+.joinbox{margin-top:22px;border:1px solid var(--line2);border-left:3px solid var(--acc);
+  background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 10%,transparent),rgba(24,35,36,.45) 58%)}
+.jb-h{padding:18px 22px 0}
+.jb-body{padding:12px 22px 22px}
+.jb-form{display:grid;gap:6px;max-width:620px}
+.jb-form label{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-top:8px}
+.jb-form label span{text-transform:none;letter-spacing:0;font-size:11px;opacity:.7}
+.jb-form select,.jb-form textarea{background:#121a1a;border:1px solid var(--line2);color:var(--ink);
+  padding:9px 11px;font-family:var(--sans);font-size:14px;width:100%}
+.jb-form select{font-family:var(--mono);font-size:13px}
+.jb-form textarea{resize:vertical;line-height:1.55}
+.jb-form :focus{outline:none;border-color:var(--acc)}
+a.jb-send{justify-self:start;margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;padding:12px 20px;background:var(--acc);border:1px solid var(--acc);
+  color:#0c1a0e;font-weight:600}
+a.jb-send:hover{background:#a6dda7;border-color:#a6dda7;color:#0c1a0e}
+.jb-plain{margin:16px 0 0;font-size:13px;color:var(--muted)}

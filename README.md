@@ -60,6 +60,14 @@ are wired to attributes rather than to code, so keep them intact:
 - **Sidebar links** pair `href="#section-id"` with `data-nav="section-id"`.
   Both must match the `<section id>` or the scroll-spy highlight skips it.
 - **Copy buttons** carry their payload in `data-copy`.
+- **Lane cards** in section 03 carry `data-lane` and `data-task`. The compose
+  box builds its picker from them, so adding a lane card is all it takes to add
+  a lane — but the card's own `mailto:` is hardcoded in the markup on purpose,
+  so every lane is still reachable with JavaScript off.
+- **Cross-references in prose** wrap their number in `<span data-sec="budget">17</span>`.
+  `check_links.py` verifies the printed number still matches that section's own
+  eyebrow and fails if it does not — renumbering silently broke these three
+  times before the check existed. Write new ones the same way.
 - **Sample beats** live in `sample.html` as `<div class="beat">` panels, one per
   run of footage. Each holds a `.stage` with that run's frames **in shot
   order** — the player cross-fades them on a loop, so a beat with five frames
