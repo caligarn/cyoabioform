@@ -17,9 +17,10 @@ many cut shots as setups without costing twice as much. Section 13 derives all
 three and states its error bar; every number is provisional until chunks come back
 finished.
 
-The film is budgeted at **$5,000 in hard costs** — generation plus small running
-costs, marketing excluded. Divided by the provisional 695 rolls that is $6.26 a
-roll, which is also the break-even: below it the film fits, above it something
+The film is budgeted at **$5,000 of generation** — the gen-AI spend and nothing
+else. Hosting, key art, the trailer, festivals, press and any launch push sit
+outside it, costed separately in section 18 at roughly another $10,000. Divided
+by the provisional 695 rolls that $5,000 is $6.26 a roll, which is also the break-even: below it the film fits, above it something
 gives. Published rates put a roll at $0.80 to $3.20, so the target holds with
 roughly 2x headroom. Section 17 is built around the target rather than around a
 rate, and its calculator ends with a fits/does-not-fit verdict.
