@@ -42,7 +42,7 @@ document.querySelectorAll('.chip[data-act]').forEach(function(c){
 applyFilter();
 
 /* budget */
-var ids = ['low','high','pilot','full','buf'];
+var ids = ['low','high','pilot','full','buf','target'];
 function el(i){ return document.getElementById('c_'+i); }
 function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
 function calc(){
@@ -54,12 +54,38 @@ function calc(){
     return '<div class="row'+(big?' big':'')+'"><span>'+label+'</span><span>'+money(lo)+'</span>'
       +'<span>'+money(hi)+'</span><span class="mid">'+money(mid)+'</span></div>';
   }
+  /* What one finished cut shot works out to, given the board's provisional
+     32 pilot / 361 full-film cut shots. The July 23 call put this at $80-450. */
+  function check(label, rolls, cuts){
+    if(!cuts) return '';
+    var lo = rolls*v.low*buf/cuts, hi = rolls*v.high*buf/cuts;
+    var off = hi < 80 || lo > 450;
+    return '<div class="row sub"><span>' + label + '</span><span>' + money(lo) + '</span>'
+      + '<span>' + money(hi) + '</span><span class="mid">'
+      + (off ? 'outside $80–450' : 'within $80–450') + '</span></div>';
+  }
+  /* The verdict: does the film fit the hard-cost target? Judged on the high end,
+     because a budget that only holds at the cheapest possible model is not a budget. */
+  function verdict(){
+    if(!v.target) return '';
+    var hi = v.full*v.high*buf, lo = v.full*v.low*buf;
+    var word, room;
+    if(hi <= v.target){ word = 'fits'; room = (v.target/hi).toFixed(1) + '× headroom'; }
+    else if(lo <= v.target){ word = 'fits at the low end'; room = 'over by ' + money(hi-v.target) + ' at the high'; }
+    else { word = 'does not fit'; room = 'over by ' + money(lo-v.target) + ' even at the low'; }
+    return '<div class="row big"><span>Against the ' + money(v.target) + ' target</span>'
+      + '<span></span><span>' + room + '</span><span class="mid">' + word + '</span></div>';
+  }
   document.getElementById('calcout').innerHTML =
     '<div class="row h"><span>Scope</span><span>Low</span><span>High</span><span>Mid</span></div>'
     + row('Pilot · base', v.pilot, 1)
     + row('Pilot · with buffer', v.pilot, buf, true)
     + row('Full film · base', v.full, 1)
-    + row('Full film · with buffer', v.full, buf, true);
+    + row('Full film · with buffer', v.full, buf, true)
+    + '<div class="row h"><span>Cross-check</span><span>Low</span><span>High</span><span>vs July 23</span></div>'
+    + check('Per finished cut shot · pilot', v.pilot, 32)
+    + check('Per finished cut shot · film', v.full, 361)
+    + verdict();
 }
 ids.forEach(function(i){ el(i).addEventListener('input', calc); });
 calc();
