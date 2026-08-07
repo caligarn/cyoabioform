@@ -83,3 +83,31 @@ window.addEventListener('scroll', function(){
 }, {passive:true});
 window.addEventListener('resize', navSync);
 navSync();
+
+/* ways to join: build the lane picker from the cards, and keep the mailto in sync */
+var jbLane = document.getElementById('jb-lane');
+if(jbLane){
+  var jbNote = document.getElementById('jb-note');
+  var jbSend = document.getElementById('jb-send');
+  var lanes = [].slice.call(document.querySelectorAll('#join .card.lane')).map(function(c){
+    return {lane: c.getAttribute('data-lane'), task: c.getAttribute('data-task')};
+  });
+  lanes.forEach(function(l){
+    var o = document.createElement('option');
+    o.value = l.lane; o.textContent = l.lane;
+    jbLane.appendChild(o);
+  });
+  function jbSync(){
+    var picked = lanes.filter(function(l){ return l.lane === jbLane.value; })[0];
+    var lane = picked ? picked.lane : 'not sure yet';
+    var task = picked ? picked.task : 'whatever is most useful';
+    var body = 'Hi Minh,\n\nI’d like to take a lane on CYOA: The Bioform.\n\n'
+      + 'Lane: ' + lane + '\nFirst task I’d take: ' + task + '\n\n'
+      + (jbNote.value.trim() ? jbNote.value.trim() + '\n' : 'Who I am:\nSomething I’ve made:\nTools I already pay for:\n');
+    jbSend.href = 'mailto:minh@fantastic.day?subject=' + encodeURIComponent('CYOA: The Bioform — ' + lane)
+      + '&body=' + encodeURIComponent(body);
+  }
+  jbLane.addEventListener('change', jbSync);
+  jbNote.addEventListener('input', jbSync);
+  jbSync();
+}
