@@ -83,10 +83,13 @@ are wired to attributes rather than to code, so keep them intact:
   box builds its picker from them, so adding a lane card is all it takes to add
   a lane — but the card's own `mailto:` is hardcoded in the markup on purpose,
   so every lane is still reachable with JavaScript off.
-- **Cross-references in prose** wrap their number in `<span data-sec="budget">17</span>`.
+- **Cross-references in prose** wrap their number in `<span data-sec="budget">18</span>`.
   `check_links.py` verifies the printed number still matches that section's own
   eyebrow and fails if it does not — renumbering silently broke these three
-  times before the check existed. Write new ones the same way.
+  times before the check existed, and caught the Experiments insert cleanly.
+  Write new ones the same way. Inserting a section renumbers every later one, so
+  expect the check to fail once and rewrite the printed numbers from each
+  section's own eyebrow.
 - **Sample beats** live in `sample.html` as `<div class="beat">` panels, one per
   run of footage. Each holds a `.stage` with that run's frames **in shot
   order** — the player cross-fades them on a loop, so a beat with five frames
