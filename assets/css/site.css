@@ -383,3 +383,21 @@ a.jb-send{justify-self:start;margin-top:14px;font-family:var(--mono);font-size:1
   color:#0c1a0e;font-weight:600}
 a.jb-send:hover{background:#a6dda7;border-color:#a6dda7;color:#0c1a0e}
 .jb-plain{margin:16px 0 0;font-size:13px;color:var(--muted)}
+
+/* Character sheet strips (section 10). One row per character: the passes that
+   exist, none of them locked. Scrolls sideways rather than shrinking to nothing. */
+.sheetstrip{border:1px solid var(--line);background:var(--panel2);padding:12px 14px;margin:0 0 12px}
+.sslabel{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--amber);margin-bottom:9px}
+.passes{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px}
+.pass{margin:0;flex:0 0 236px}
+.pass img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;
+  border:1px solid var(--line);background:#000;transition:border-color .18s}
+.pass a:hover img,.pass a:focus-visible img{border-color:var(--acc)}
+.pass figcaption{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);margin-top:6px}
+@media(max-width:700px){.pass{flex:0 0 78%}}
+.pass.missing img{display:none}
+.pass.missing a:after{content:"not reachable";display:flex;align-items:center;justify-content:center;
+  aspect-ratio:16/9;border:1px dashed var(--line2);background:#0d1414;color:#5f757d;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase}

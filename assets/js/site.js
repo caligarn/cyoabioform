@@ -137,3 +137,18 @@ if(jbLane){
   jbNote.addEventListener('input', jbSync);
   jbSync();
 }
+
+/* Sheet-strip passes are still served from the generation CDN rather than from
+   assets/img/exp/, so a load can fail (expired object, blocked network). Degrade
+   to a labelled placeholder instead of a broken-image icon. */
+function passFailed(img){
+  var fig = img.closest('.pass');
+  if(fig) fig.classList.add('missing');
+}
+[].slice.call(document.querySelectorAll('.pass img')).forEach(function(img){
+  img.addEventListener('error', function(){ passFailed(img); });
+  /* This file is deferred, so an image can finish failing before the listener is
+     attached and never fire one. complete with no intrinsic width means it already
+     errored -- check for that too rather than trusting the event alone. */
+  if(img.complete && img.naturalWidth === 0) passFailed(img);
+});
