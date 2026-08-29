@@ -13,16 +13,16 @@ camera position with its own start frame — the claimable unit. A **roll** is o
 generation attempt from a setup — the cost unit, and what the budget calculator
 multiplies. A **cut shot** is one appearance of a setup in the edit — the runtime
 unit. Coverage reuses setups, which is why the finished film has roughly twice as
-many cut shots as setups without costing twice as much. Section 15 derives all
+many cut shots as setups without costing twice as much. Section 16 derives all
 three and states its error bar; every number is provisional until chunks come back
 finished.
 
 The film is budgeted at **$5,000 of generation** — the gen-AI spend and nothing
 else. Hosting, key art, the trailer, festivals, press and any launch push sit
-outside it, costed separately in section 20 at roughly another $10,000. Divided
+outside it, costed separately in section 21 at roughly another $10,000. Divided
 by the provisional 695 rolls that $5,000 is $6.26 a roll, which is also the break-even: below it the film fits, above it something
 gives. Published rates put a roll at $0.80 to $3.20, so the target holds with
-roughly 2x headroom. Section 19 is built around the target rather than around a
+roughly 2x headroom. Section 20 is built around the target rather than around a
 rate, and its calculator ends with a fits/does-not-fit verdict.
 
 `sample.html` is the other half and stands on its own: the film as the viewer
@@ -88,7 +88,10 @@ are wired to attributes rather than to code, so keep them intact:
   `sample.html` deliberately has none of this — it is the film, not a gallery.
 - **Wardrobe** is section 10 and deliberately sits *before* Characters: every
   character prompt depends on it, so a face generated against the wrong suit has
-  to be generated again.
+  to be generated again. **The station** is section 12 for the same kind of
+  reason: its cutaway commits where the Ops Deck sits relative to the containment
+  chamber, and every interior shot inherits that. Neither belongs inside
+  Experiments, where nobody scrolls to find them.
 - **Lane cards** in section 03 carry `data-lane` and `data-task`. The compose
   box builds its picker from them, so adding a lane card is all it takes to add
   a lane — but the card's own `mailto:` is hardcoded in the markup on purpose,
