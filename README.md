@@ -79,6 +79,13 @@ are wired to attributes rather than to code, so keep them intact:
 - **Sidebar links** pair `href="#section-id"` with `data-nav="section-id"`.
   Both must match the `<section id>` or the scroll-spy highlight skips it.
 - **Copy buttons** carry their payload in `data-copy`.
+- **Every content image in `<main>` opens in a lightbox** rather than a new tab.
+  Nothing is needed on the markup: the handler is delegated, arrow keys move
+  within the nearest `.passes` / `.vgrid` / `.heroreel` row, and Escape closes.
+  The `.pass` images keep their wrapping `<a href>` to the full-size file, which
+  is both the source the lightbox prefers and the no-JS fallback. Images with no
+  link get `tabindex` and a button role at runtime so they are keyboard-reachable.
+  `sample.html` deliberately has none of this — it is the film, not a gallery.
 - **Wardrobe** is section 10 and deliberately sits *before* Characters: every
   character prompt depends on it, so a face generated against the wrong suit has
   to be generated again.

@@ -152,3 +152,130 @@ function passFailed(img){
      errored -- check for that too rather than trusting the event alone. */
   if(img.complete && img.naturalWidth === 0) passFailed(img);
 });
+
+/* Lightbox. Every content image on the page opens in place rather than in a new
+   tab. The .pass images are wrapped in a link to the full-size file and the
+   reference frames are not, so the source is taken from the link where one
+   exists (it is the higher-resolution original) and from the img otherwise.
+   The link stays in the markup: with JS off, clicking still opens the file. */
+var lb = null, lbGroup = [], lbAt = 0, lbReturn = null;
+
+function lbSrc(img){
+  var a = img.closest('a[href]');
+  return (a && /\.(png|jpe?g|webp|gif|avif)(\?|$)/i.test(a.getAttribute('href')))
+    ? a.getAttribute('href') : (img.currentSrc || img.src);
+}
+/* Captions differ by kind: a .pass figcaption is a bare label, a reference-wall
+   one is a <b> title plus a <span> of prose. Reading textContent off both runs
+   them together, so split the two parts and let the styling separate them. */
+function lbCaption(img){
+  var cap = img.closest('figure');
+  cap = cap && cap.querySelector('figcaption');
+  if(!cap) return {title: (img.alt || '').trim(), detail: ''};
+  var b = cap.querySelector('b'), sp = cap.querySelector('span');
+  if(b) return {title: b.textContent.trim(), detail: sp ? sp.textContent.trim() : ''};
+  return {title: cap.textContent.trim(), detail: ''};
+}
+/* Arrow keys move within the row you opened from -- a character's passes, one
+   reference grid -- rather than across the whole page, which would be useless. */
+function lbScope(img){
+  var box = img.closest('.passes, .vgrid, .heroreel, .grid2, .grid3') || img.closest('section');
+  return [].slice.call(box ? box.querySelectorAll('img') : [img]);
+}
+
+function lbBuild(){
+  lb = document.createElement('div');
+  lb.className = 'lb';
+  lb.setAttribute('role', 'dialog');
+  lb.setAttribute('aria-modal', 'true');
+  lb.innerHTML =
+    '<button class="lb-x" aria-label="Close">Close</button>'
+    + '<button class="lb-nav lb-prev" aria-label="Previous image">&#8249;</button>'
+    + '<figure class="lb-fig"><img alt="">'
+    + '<p class="lb-dead">This image could not be loaded.<br>'
+    + '<a class="lb-open" target="_blank" rel="noopener">Open the file directly</a></p>'
+    + '<figcaption><b></b><span></span></figcaption></figure>'
+    + '<button class="lb-nav lb-next" aria-label="Next image">&#8250;</button>';
+  document.body.appendChild(lb);
+  lb.addEventListener('click', function(e){
+    if(e.target.closest('.lb-x')) return lbClose();
+    if(e.target.closest('.lb-prev')) return lbGo(-1);
+    if(e.target.closest('.lb-next')) return lbGo(1);
+    if(!e.target.closest('.lb-fig')) lbClose();   /* backdrop */
+  });
+}
+function lbShow(){
+  var img = lbGroup[lbAt];
+  var full = lb.querySelector('img'), cap = lb.querySelector('figcaption');
+  var src = lbSrc(img);
+  lb.classList.remove('dead');
+  lb.querySelector('.lb-open').href = src;
+  full.onerror = function(){ lb.classList.add('dead'); };
+  full.src = src;
+  full.alt = img.alt || '';
+  var c = lbCaption(img);
+  cap.querySelector('b').textContent = c.title
+    + (lbGroup.length > 1 ? '  ·  ' + (lbAt + 1) + ' of ' + lbGroup.length : '');
+  var d = cap.querySelector('span');
+  d.textContent = c.detail;
+  d.hidden = !c.detail;
+  var many = lbGroup.length > 1;
+  lb.querySelector('.lb-prev').hidden = !many;
+  lb.querySelector('.lb-next').hidden = !many;
+}
+function lbGo(d){
+  lbAt = (lbAt + d + lbGroup.length) % lbGroup.length;
+  lbShow();
+}
+function lbOpen(img){
+  if(!lb) lbBuild();
+  lbGroup = lbScope(img);
+  lbAt = Math.max(0, lbGroup.indexOf(img));
+  lbReturn = document.activeElement;
+  lbShow();
+  document.body.classList.add('lb-on');
+  lb.classList.add('on');
+  lb.querySelector('.lb-x').focus();
+}
+function lbClose(){
+  if(!lb) return;
+  lb.classList.remove('on');
+  document.body.classList.remove('lb-on');
+  lb.querySelector('img').removeAttribute('src');   /* stop a large download mid-flight */
+  if(lbReturn && lbReturn.focus) lbReturn.focus();
+}
+
+document.addEventListener('click', function(e){
+  var img = e.target.closest('main img');
+  /* A pass whose image failed to load hides the img and shows a placeholder, so
+     the click lands on the wrapping link instead. Catch that too, or it would
+     open a tab -- the one behaviour this replaces. */
+  if(!img){
+    var a = e.target.closest('main a[href]');
+    if(a && /\.(png|jpe?g|webp|gif|avif)(\?|$)/i.test(a.getAttribute('href'))) img = a.querySelector('img');
+  }
+  if(!img) return;
+  e.preventDefault();
+  lbOpen(img);
+});
+document.addEventListener('keydown', function(e){
+  if(!lb || !lb.classList.contains('on')) return;
+  if(e.key === 'Escape') lbClose();
+  else if(e.key === 'ArrowLeft') lbGo(-1);
+  else if(e.key === 'ArrowRight') lbGo(1);
+  else if(e.key === 'Tab'){            /* keep focus inside the dialog */
+    var f = [].slice.call(lb.querySelectorAll('button')).filter(function(b){ return !b.hidden; });
+    var i = f.indexOf(document.activeElement);
+    e.preventDefault();
+    f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+  }
+});
+/* Images that are not inside a link have no keyboard affordance of their own. */
+[].slice.call(document.querySelectorAll('main img')).forEach(function(img){
+  if(img.closest('a[href]')) return;
+  img.tabIndex = 0;
+  img.setAttribute('role', 'button');
+  img.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); lbOpen(img); }
+  });
+});

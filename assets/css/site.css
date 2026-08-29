@@ -404,3 +404,36 @@ a.jb-send:hover{background:#a6dda7;border-color:#a6dda7;color:#0c1a0e}
 /* A strip whose question has been settled reads green, not amber. */
 .sheetstrip.picked{border-color:rgba(127,201,154,.45);background:rgba(127,201,154,.05)}
 .sheetstrip.picked .sslabel{color:var(--green)}
+
+/* ---- lightbox ---- */
+main img{cursor:zoom-in}
+body.lb-on{overflow:hidden}
+.lb{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
+  gap:6px;padding:26px;background:rgba(5,8,10,.94);backdrop-filter:blur(6px)}
+.lb.on{display:flex}
+.lb-fig{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px;
+  max-width:calc(100vw - 130px);max-height:100%}
+.lb-fig img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;cursor:default;
+  border:1px solid var(--line2);background:#000}
+.lb-fig figcaption{text-align:center;max-width:74ch}
+.lb-fig figcaption b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);font-weight:400}
+.lb-fig figcaption span{display:block;margin-top:7px;font-size:13.5px;line-height:1.55;
+  color:var(--ink2)}
+.lb-x{position:absolute;top:18px;right:20px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.14em;text-transform:uppercase;background:transparent;color:var(--muted);
+  border:1px solid var(--line2);padding:6px 12px;cursor:pointer}
+.lb-nav{flex:0 0 44px;height:64px;background:transparent;border:1px solid transparent;
+  color:var(--muted);font-size:30px;line-height:1;cursor:pointer}
+.lb-x:hover,.lb-nav:hover{color:var(--ink);border-color:var(--ink)}
+.lb-x:focus-visible,.lb-nav:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+main img:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+@media(max-width:700px){
+  .lb{padding:14px}
+  .lb-fig{max-width:calc(100vw - 28px)}
+  .lb-nav{position:absolute;bottom:16px;flex:0 0 auto;width:52px}
+  .lb-prev{left:16px} .lb-next{right:16px}
+}
+.lb-dead{display:none;font-size:13.5px;color:var(--muted);text-align:center;margin:0}
+.lb.dead .lb-dead{display:block}
+.lb.dead .lb-fig img{display:none}
