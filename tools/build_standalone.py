@@ -50,8 +50,21 @@ def inline(page):
     html = re.sub(r'(src|href)="(assets/[^"]+)"', lambda m: f'{m.group(1)}="{data_uri(m.group(2))}"', html)
     html = re.sub(r"url\((assets/[^)]+)\)", lambda m: f"url({data_uri(m.group(1))})", html)
 
-    if "assets/" in re.sub(r'content="[^"]*"', "", html):
-        raise SystemExit(f"build_standalone: an asset reference was left un-inlined in {page}")
+    # Only attribute-shaped references count. Prose is allowed to name a path --
+    # section 12 tells contributors where to drop files -- and a bare substring
+    # search flags that as a missed asset.
+    # A reference always sits right after ="  or  ( . Prose never does, and the
+    # page's copy does name a path -- section 12 tells contributors where to drop
+    # files. Matching the punctuation rather than the attribute name keeps this
+    # broader than the inliner above, so a shape it does not handle still trips.
+    # og:image stays a relative path on purpose -- crawlers want a URL, not a data
+    # URI -- so meta content is excluded, exactly as the original check did.
+    scanned = re.sub(r'content="[^"]*"', "", html)
+    missed = re.findall(r'(?:="|\()assets/[^"\')]+', scanned)
+    if missed:
+        raise SystemExit(
+            f"build_standalone: {len(missed)} asset reference(s) left un-inlined in {page}: "
+            + ", ".join(missed[:3]))
     return html
 
 
