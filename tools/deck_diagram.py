@@ -100,7 +100,7 @@ for name, ids, side, yy, hh, kind in rows:
     else:
         o.append(f'<text x="{lx}" y="{ty+13:.0f}" text-anchor="{anchor}" fill="#5f757d" '
                  f'font-family="ui-monospace,monospace" font-size="9.5" '
-                 f'letter-spacing="1">{NOTE[name]}</text>')
+                 f'letter-spacing="1">{NOTE.get(name, "no scenes")}</text>')
 
 # the central shaft, running the whole height -- the thing the column design buys
 o.append(f'<rect x="{CX-9}" y="{TOP}" width="18" height="{total*U}" fill="#0b1011" '
