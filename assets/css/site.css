@@ -401,3 +401,6 @@ a.jb-send:hover{background:#a6dda7;border-color:#a6dda7;color:#0c1a0e}
 .pass.missing a:after{content:"not reachable";display:flex;align-items:center;justify-content:center;
   aspect-ratio:16/9;border:1px dashed var(--line2);background:#0d1414;color:#5f757d;
   font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase}
+/* A strip whose question has been settled reads green, not amber. */
+.sheetstrip.picked{border-color:rgba(127,201,154,.45);background:rgba(127,201,154,.05)}
+.sheetstrip.picked .sslabel{color:var(--green)}
