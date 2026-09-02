@@ -49,9 +49,11 @@ python3 -m http.server 8000
 
 ```
 index.html              the hub — all copy and markup
-script.html             the production script as a page — GENERATED, do not edit
+script.html             the current script as a page — GENERATED, do not edit
 sample.html             the playable sample — 28 beats, no hub chrome
-script/                 the production script (.docx) and its JSON form
+script/versions.json    the version log: which script is current, what came before
+script/versions/        every version, dated, as the file it arrived as
+script/production-script.json  the current script as data — GENERATED
 assets/css/site.css     hub styling (dark theme, custom properties at the top)
 assets/css/script.css   screenplay layout and markers, on top of site.css
 assets/css/sample.css   sample styling — deliberately its own file, shares nothing
@@ -78,9 +80,10 @@ frame library without either page paying for it up front.
 
 ## The production script
 
-The script is `script/CYOA_The_Bioform_Production_Script.docx`, and it is the
-source of truth for the story. The document names its parts, and the rest of
-the site keys off those names:
+The script lives in `script/versions/`, one dated file per version, and
+`script/versions.json` is the log that says which one is current. The current
+document is the source of truth for the story. It names its parts, and the
+rest of the site keys off those names:
 
 | in the document | what it is | example |
 | --- | --- | --- |
@@ -106,6 +109,27 @@ python3 tools/build_script.py --check   # what CI runs: fails if either is stale
 Edit the document, then rebuild and commit all three. The page is generated,
 so a hand edit to `script.html` is lost on the next build and fails the CI
 check.
+
+### Versions
+
+Every version is kept, never overwritten. The page says at the top which
+version it is (the version date, not the build date) and lists every earlier
+version at the end, each as the file it arrived as, with a link to its Drive
+source. Today the log holds:
+
+| date | what | kept as |
+| --- | --- | --- |
+| 2026-09-02 | Production script, the current version | `.docx`, built into `script.html` |
+| 2026-04-06 | Shooting script (Google Doc, exported) | `.pdf` |
+| 2025-10-13 | Draft 3, the text the recording was performed from | `.pdf` |
+
+To add a version: drop the dated file in `script/versions/`
+(`YYYY-MM-DD_Name.ext`), add an entry at the top of `script/versions.json`
+with the date, title, file, format, source link and a note on what changed,
+then rebuild. The newest `.docx` becomes the current page; every earlier
+`.docx` gets its own archived page at `script/versions/<date>.html`, marked as
+superseded, so it can be read the same way. PDFs are linked as files.
+`check_links.py` fails if the log names a file that is not in the repo.
 
 Two things worth knowing when the document changes:
 

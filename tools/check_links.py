@@ -9,13 +9,16 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PAGES = ("index.html", "sample.html", "script.html")
+PAGES = ("index.html", "sample.html", "script.html") + tuple(
+    str(p.relative_to(ROOT)) for p in sorted((ROOT / "script" / "versions").glob("*.html")))
 
 refs = set()
 for page in PAGES:
     html = (ROOT / page).read_text(encoding="utf-8")
     for attr in ("src", "href"):
         refs |= set(re.findall(rf'{attr}="(assets/[^"]+)"', html))
+    # The script pages link to the dated versions and the JSON under script/.
+    refs |= set(re.findall(r'href="(?:\.\./\.\./)?(script/[^"#]+)"', html))
     refs |= set(re.findall(r"url\((assets/[^)]+)\)", html))
     # A page linking to a sibling page has to find it.
     for link in re.findall(r'href="([\w.-]+\.html)"', html):

@@ -1,5 +1,35 @@
 {
- "source": "script/CYOA_The_Bioform_Production_Script.docx",
+ "source": "script/versions/2026-09-02_CYOA_The_Bioform_Production_Script.docx",
+ "version": {
+  "date": "2026-09-02",
+  "title": "Production script"
+ },
+ "versions": [
+  {
+   "date": "2026-09-02",
+   "title": "Production script",
+   "file": "script/versions/2026-09-02_CYOA_The_Bioform_Production_Script.docx",
+   "format": "docx",
+   "source": "https://docs.google.com/document/d/1cypGpvAqb_GDDhMe6KJ7hiemx1UX2_fnQPHF9k9r8X8/edit",
+   "notes": "The current version. Adds bracketed branch codes, numbered scene slugs, and marked prompts, endings and fail loops, so a beat can be pointed at from the board. Exported from the Google Doc on 2 September 2026."
+  },
+  {
+   "date": "2026-04-06",
+   "title": "Shooting script",
+   "file": "script/versions/2026-04-06_CYOA_Bioform_Shooting_Script.pdf",
+   "format": "pdf",
+   "source": "https://docs.google.com/document/d/1xKndevAlKXz71qo43WioOdHRYgxC7w3e8puB5UgA-KA/edit",
+   "notes": "The shooting script as it stood in April, exported to PDF for the record. No branch codes or scene numbers yet."
+  },
+  {
+   "date": "2025-10-13",
+   "title": "Draft 3",
+   "file": "script/versions/2025-10-13_CYOA_The_Bioform_Draft-3.pdf",
+   "format": "pdf",
+   "source": "https://drive.google.com/file/d/1evtAvW8lz_BQ92-kKbPPQasA2DWxSRly/view",
+   "notes": "The draft the voice actors performed for the July recording. The recording in section 05 of the hub follows this text."
+  }
+ ],
  "generated_by": "tools/build_script.py",
  "codes": {
   "branch": "roman act . decision [-option[.sub]]  e.g. II.1-A.2",
