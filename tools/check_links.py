@@ -9,7 +9,7 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PAGES = ("index.html", "sample.html")
+PAGES = ("index.html", "sample.html", "script.html")
 
 refs = set()
 for page in PAGES:
@@ -43,6 +43,25 @@ for sid, shown in re.findall(r'<span data-sec="([\w-]+)">(\d\d)</span>', hub):
 
 missing = sorted(r for r in refs if not (ROOT / r).is_file())
 
+# The board and the pilot list point into the production script by scene
+# number, and the script page is generated -- so a renumbered scene in the
+# document silently orphans those links unless something checks. Every
+# data-scenes code and every script.html#anchor has to be an id on the page.
+script = (ROOT / "script.html").read_text(encoding="utf-8")
+anchors = set(re.findall(r'\sid="([^"]+)"', script))
+wanted = set()
+for page in PAGES:
+    html = (ROOT / page).read_text(encoding="utf-8")
+    wanted |= set(re.findall(r'href="script\.html#([^"]+)"', html))
+    for codes in re.findall(r'data-scenes="([^"]+)"', html):
+        wanted |= set(codes.split(","))
+broken = sorted(w for w in wanted if w not in anchors)
+if broken:
+    print("\nSCRIPT ANCHORS THAT DO NOT EXIST:", file=sys.stderr)
+    for b in broken:
+        print(f"  #{b}", file=sys.stderr)
+    sys.exit(1)
+
 # Images that exist but nothing references are dead weight in the repo.
 referenced_imgs = {r for r in refs if r.startswith("assets/img/")}
 on_disk = {
@@ -68,4 +87,5 @@ if missing:
     for m in missing:
         print(f"  {m}", file=sys.stderr)
     sys.exit(1)
-print(f"all references resolve, {len(re.findall(r'data-sec=', hub))} cross-references check out")
+print(f"all references resolve, {len(re.findall(r'data-sec=', hub))} cross-references check out, "
+      f"{len(wanted)} script anchors found")

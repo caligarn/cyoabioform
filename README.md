@@ -25,6 +25,10 @@ gives. Published rates put a roll at $0.80 to $3.20, so the target holds with
 roughly 2x headroom. Section 19 is built around the target rather than around a
 rate, and its calculator ends with a fits/does-not-fit verdict.
 
+`script.html` is the production script as a page. It is generated from the
+document in `script/`, and every branch, scene and viewer prompt in it has an
+anchor, so the scene board can point at the exact beat a chunk covers.
+
 `sample.html` is the other half and stands on its own: the film as the viewer
 would meet it. Every branch in the script is wired up, so a run through it is a
 real run through the graph the branch map draws — and it plays the actual
@@ -45,15 +49,21 @@ python3 -m http.server 8000
 
 ```
 index.html              the hub — all copy and markup
+script.html             the production script as a page — GENERATED, do not edit
 sample.html             the playable sample — 28 beats, no hub chrome
+script/                 the production script (.docx) and its JSON form
 assets/css/site.css     hub styling (dark theme, custom properties at the top)
+assets/css/script.css   screenplay layout and markers, on top of site.css
 assets/css/sample.css   sample styling — deliberately its own file, shares nothing
 assets/js/site.js       scene-board filter, budget calculator, scroll-spy nav
+assets/js/script.js     the script page's scroll-spy, nothing else
 assets/js/sample.js     the sample player
 assets/img/             15 reference frames (WebP) + favicon
 assets/img/scene/       149 frames generated from the script — the sample's library
 assets/img/scene/full/  the full-resolution originals of a handful of those
-tools/check_links.py    fails if a page points at a missing asset or sibling page
+tools/build_script.py   turns the .docx into script.html and the JSON
+tools/check_links.py    fails if a page points at a missing asset, sibling page
+                        or script anchor
 tools/build_standalone.py  folds each page into one portable HTML file
 ```
 
@@ -66,14 +76,64 @@ base64. Those images are now real files, which is what makes browser caching and
 `loading="lazy"` do something useful, and what lets the sample draw on a 30 MB
 frame library without either page paying for it up front.
 
+## The production script
+
+The script is `script/CYOA_The_Bioform_Production_Script.docx`, and it is the
+source of truth for the story. The document names its parts, and the rest of
+the site keys off those names:
+
+| in the document | what it is | example |
+| --- | --- | --- |
+| a bold bracketed heading | a **branch**: one path through the story. Act, decision, option taken. | `[II.2-A: Reason with The Bioform]` |
+| a number, a letter and a tab | a **scene**: one slug line. Sequence, then slug within it. | `2E	INT. OPS DECK – CONTINUOUS` |
+| a bold line starting DECISION, QUICK CHOICE, FINAL PROTOCOL | a **viewer prompt** | `DECISION II.2:` |
+| THE END | an ending | `THE END (of this branch)` |
+| TRY AGAIN? | a fail state that loops back | `ON SCREEN: TRY AGAIN?` |
+
+`tools/build_script.py` reads the document with nothing but the standard
+library and writes two files. `script.html` is the script as a page in the
+hub's own styling, with an anchor per branch (`#br-II.2-A`), per scene
+(`#2E`) and per prompt (`#d-3C`, named for the scene it appears in).
+`script/production-script.json` is the same content as data: branches, scenes,
+speeches grouped by character, and lists of every prompt, ending and fail
+state.
+
+```sh
+python3 tools/build_script.py           # rebuild both after editing the document
+python3 tools/build_script.py --check   # what CI runs: fails if either is stale
+```
+
+Edit the document, then rebuild and commit all three. The page is generated,
+so a hand edit to `script.html` is lost on the next build and fails the CI
+check.
+
+Two things worth knowing when the document changes:
+
+- **Scene numbers are addresses.** Each scene board row carries
+  `data-scenes="2F,2G"` and links its ID to the first of them; the pilot rows
+  link each shot to its scene. `check_links.py` fails if a code no longer
+  exists on the script page, so renumbering the document shows up as a red
+  check rather than a dead link.
+- **The document reuses one code.** Both *Free the Bioform* and *You are now
+  Priya* are headed `V.1`. The page keeps them apart as `#br-V.1` and
+  `#br-V.1-2` in document order, and the board already calls the Priya
+  transfer V.1 and the Kaz transfer V.2. Renaming the second one in the
+  document would remove the special case.
+
+The page shows shouted headings in sentence case and leaves the document's
+typos alone; the JSON keeps the document's own text.
+
 ## Editing
 
 Content lives in `index.html` as plain markup — edit it directly. A few things
 are wired to attributes rather than to code, so keep them intact:
 
-- **Scene board rows** need `data-act` (which act chip shows the row) and
-  `data-hay` (the lowercase text the search box matches against). A row missing
-  `data-hay` silently stops being searchable. The two numeric columns are Setups
+- **Scene board rows** need `data-act` (which act chip shows the row),
+  `data-hay` (the lowercase text the search box matches against) and
+  `data-scenes` (the production-script scenes the chunk covers, which the ID
+  cell also shows and links to). A row missing `data-hay` silently stops being
+  searchable; a `data-scenes` code that is not on the script page fails
+  `check_links.py`. The two numeric columns are Setups
   and Cut shots, in that order; `tools/coverage.py` regenerates both from the
   chunk descriptions and prints the totals the prose quotes.
 - **Sidebar links** pair `href="#section-id"` with `data-nav="section-id"`.
@@ -97,7 +157,9 @@ are wired to attributes rather than to code, so keep them intact:
   run of footage. Each holds a `.stage` with that run's frames **in shot
   order** — the player cross-fades them on a loop, so a beat with five frames
   plays five shots — and a `.choices` block whose optional `data-label` is the
-  on-screen prompt title (`Quick Choice A`, `Decision I.1`, an ending's name).
+  on-screen prompt title (`Quick Choice A`, `Decision II.1-A`, an ending's
+  name). Labels use the prompt names the production script uses, so a viewer
+  and a contributor are talking about the same thing.
   Frames come from `assets/img/scene/`; 84 of the 149 are in play and the rest
   are held for beats that do not exist yet. Only the first beat's frames load
   up front — the player warms the frames of every beat you could reach next, so
@@ -131,8 +193,11 @@ offline, or forward. `tools/build_standalone.py` inlines the CSS, the JS, and
 every image into one document:
 
 ```sh
-python3 tools/build_standalone.py   # -> dist/cyoa-hub.html (~1.2 MB)
+python3 tools/build_standalone.py   # -> dist/cyoa-hub.html (~1.2 MB) and dist/cyoa-script.html
 ```
+
+The script page bundles the same way. It has no images, so it stays small; the
+hub's links into it are relative and stay live, like the sample's.
 
 It works from `file://` with no network. Verified: every image renders, and the
 scene filter and budget calculator both work.
@@ -148,7 +213,8 @@ downloadable from the deployed site at `/dist/cyoa-hub.html`.
 ## Deploying
 
 `.github/workflows/deploy.yml` publishes to GitHub Pages on every push to
-`main`. It checks asset references and builds the standalone bundle first, so a
+`main`. It checks that the script page matches the document, checks asset
+references and builds the standalone bundle first, so a stale script page or a
 broken image reference fails the deploy instead of shipping.
 
 One-time setup: **Settings → Pages → Source → GitHub Actions**.

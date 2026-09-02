@@ -6,6 +6,10 @@ some want a file they can keep, open on a plane, or forward. This inlines the
 stylesheet, the script, and every image so `dist/cyoa-hub.html` works with no
 network.
 
+The production script page bundles the same way to `dist/cyoa-script.html`;
+it has no images, so it stays small. The hub's links into it are relative and
+stay live, like the sample's.
+
 The sample is deliberately not bundled. It draws on the scene library in
 assets/img/scene, and inlining those frames as base64 produced a 29 MB file --
 past the point where a single HTML document is a convenient thing to send
@@ -22,6 +26,7 @@ OUT = ROOT / "dist"
 
 PAGES = {
     "index.html": "cyoa-hub.html",
+    "script.html": "cyoa-script.html",
 }
 
 

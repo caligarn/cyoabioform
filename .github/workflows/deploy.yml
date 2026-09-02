@@ -21,6 +21,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check the script page matches the document
+        run: python3 tools/build_script.py --check
+
       - name: Check every asset reference resolves
         run: python3 tools/check_links.py
 
