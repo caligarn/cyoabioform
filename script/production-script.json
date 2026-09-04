@@ -1,0 +1,5665 @@
+{
+ "source": "script/versions/2026-09-02_CYOA_The_Bioform_Production_Script.docx",
+ "version": {
+  "date": "2026-09-02",
+  "title": "Production script"
+ },
+ "versions": [
+  {
+   "date": "2026-09-02",
+   "title": "Production script",
+   "file": "script/versions/2026-09-02_CYOA_The_Bioform_Production_Script.docx",
+   "format": "docx",
+   "source": "https://docs.google.com/document/d/1cypGpvAqb_GDDhMe6KJ7hiemx1UX2_fnQPHF9k9r8X8/edit",
+   "notes": "The current version. Adds bracketed branch codes, numbered scene slugs, and marked prompts, endings and fail loops, so a beat can be pointed at from the board. Exported from the Google Doc on 2 September 2026."
+  },
+  {
+   "date": "2026-04-06",
+   "title": "Shooting script",
+   "file": "script/versions/2026-04-06_CYOA_Bioform_Shooting_Script.pdf",
+   "format": "pdf",
+   "source": "https://docs.google.com/document/d/1xKndevAlKXz71qo43WioOdHRYgxC7w3e8puB5UgA-KA/edit",
+   "notes": "The shooting script as it stood in April, exported to PDF for the record. No branch codes or scene numbers yet."
+  },
+  {
+   "date": "2025-10-13",
+   "title": "Draft 3",
+   "file": "script/versions/2025-10-13_CYOA_The_Bioform_Draft-3.pdf",
+   "format": "pdf",
+   "source": "https://drive.google.com/file/d/1evtAvW8lz_BQ92-kKbPPQasA2DWxSRly/view",
+   "notes": "The draft the voice actors performed for the July recording. The recording in section 05 of the hub follows this text."
+  }
+ ],
+ "generated_by": "tools/build_script.py",
+ "codes": {
+  "branch": "roman act . decision [-option[.sub]]  e.g. II.1-A.2",
+  "scene": "sequence number + slug letter  e.g. 2E",
+  "prompt_id": "d- + the scene the prompt appears in  e.g. d-2G"
+ },
+ "branches": [
+  {
+   "id": "br-I.1",
+   "code": "I.1",
+   "title": "OPENING & SHARED INTRO",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "1A",
+     "seq": 1,
+     "letter": "A",
+     "slug": "EXT. ORBIT – TRAPPIST-1E",
+     "lines": [
+      {
+       "type": "action",
+       "text": "A planet hangs silently in the darkness of space."
+      },
+      {
+       "type": "action",
+       "text": "ORION STATION drifts above it, tiny compared to the planet, its silhouette barely catching the light of a dim red star."
+      },
+      {
+       "type": "action",
+       "text": "The Camera pushes quickly towards Orion Station then pauses."
+      },
+      {
+       "type": "screen",
+       "text": "TEXT ON SCREEN: ORION STATION // COORDINATES: HIGH ORBIT TRAPPIST 1-E // ORACLE STATUS: ONLINE // LEMs: 6 //"
+      },
+      {
+       "type": "prompt",
+       "text": "CHOICE ON SCREEN: Press Start (to begin)",
+       "code": "I.1",
+       "id": "d-1A"
+      }
+     ]
+    },
+    {
+     "id": "1B",
+     "seq": 1,
+     "letter": "B",
+     "slug": "INT. ORION STATION - VARIOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The camera drifts through various decks of this large ship. Everything is unmanned."
+      },
+      {
+       "type": "speech",
+       "character": "NARRATOR / TEXT",
+       "extension": "",
+       "text": [
+        "You are one of 5 Legacy Empathy Modules on board Orion Station. LEMs for short."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "1C",
+     "seq": 1,
+     "letter": "C",
+     "slug": "INT. WASTE BAY – LAVATORY MODULE",
+     "lines": [
+      {
+       "type": "action",
+       "text": "WREN SALGADO (30s, they/them) headphones just visible under a hood, works in time with the beat of the MUSIC."
+      },
+      {
+       "type": "speech",
+       "character": "NARRATOR / TEXT",
+       "extension": "",
+       "text": [
+        "The LEMs primary duties are maintenance — things the machines consider beneath them. Human waste. Organic leakage. The rot of life."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren kneels beside a wall-mounted waste port. It’s clogged --and yes, it's a toilet. They reach in with a suction wand and pull free a knotted clump of yuck, dropping it into a gel-lined disposal bin of a drone-trash can with a PLOP."
+      },
+      {
+       "type": "prompt",
+       "text": "QUICK CHOICE A: MOP THE HYGIENE PODS or BURN THE TRASH [DETERMINES WHICH OF THE NEXT TWO SCENES WE SEE",
+       "code": "QUICK A",
+       "id": "d-1C"
+      }
+     ]
+    },
+    {
+     "id": "1D",
+     "seq": 1,
+     "letter": "D",
+     "slug": "INT. CREW HYGIENE POD – Later",
+     "lines": [
+      {
+       "type": "action",
+       "text": "A small drone-vac mops the floor, while Wren, now wearing rubber boots, gloves and a work apron, wipes expanding cleaning foam across the hygiene pod's tile walls and floors."
+      }
+     ]
+    },
+    {
+     "id": "1E",
+     "seq": 1,
+     "letter": "E",
+     "slug": "INT. RECYCLING INCINERATION ROOM - LATEr",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren, now wearing a nose clamp and a tank top, does the difficult work of sorting bales of compressed waste into an incineration chute. Wren's shoulders are slick with sweat."
+      },
+      {
+       "type": "speech",
+       "character": "NARRATOR / TEXT",
+       "extension": "",
+       "text": [
+        "But there's another reason the LEMs are on board. A reason no one is aware of except Oracle."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "1F",
+     "seq": 1,
+     "letter": "F",
+     "slug": "INT. ORION STATION - ConTROL CENTER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "We see the lens of ORACLE the on-board system AI. Here now, but everywhere all at once. A RED LIGHT begins to blink on one of the consoles."
+      },
+      {
+       "type": "action",
+       "text": "On a display we see the wireframe image of a planetary drone sending a signal back to the main station."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(O.S.)",
+       "text": [
+        "Good Afternoon crew. Apologies for the interruption, Please report to the Ops Assembly Deck at your soonest possible convenience for an immediate debrief. Report TDR9-06 just received from Trappist Deep Recon 9.",
+        "(MESSAGE REPEATS)"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "1G",
+     "seq": 1,
+     "letter": "G",
+     "slug": "INT. BIOSPHERE Deck - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Inside a large sealed terrarium, PRIYA DESHMUKH, wearing a Biohazard suit, sprays an anti-fungicide across rows of plants. An integrated RED LIGHT blinks on her goggles. She pauses her work to listen."
+      }
+     ]
+    },
+    {
+     "id": "1H",
+     "seq": 1,
+     "letter": "H",
+     "slug": "INT. BATTERY SUBSTATION - MAINTENANCE SHAFT - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "KAZ OBASI is on a long ladder in front of a circuitry panel. He packs his tools into his belt while a tablet shows a data-viz render of ORACLE, mid-sentence. Kaz spits into the dark below and starts climbing back up."
+      }
+     ]
+    },
+    {
+     "id": "1I",
+     "seq": 1,
+     "letter": "I",
+     "slug": "INT. SHOWER MODULE – ZERO GRAVITY - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "NIA AMARA floats midair in thousands of water droplets suspended around her as she bathes. The Red Light continues to blink and Oracle's voice continues as Amara floats toward the wall and taps a control— gravity reengages in a narrow field."
+      },
+      {
+       "type": "action",
+       "text": "Her feet magnetize gently to the floor."
+      }
+     ]
+    },
+    {
+     "id": "1J",
+     "seq": 1,
+     "letter": "J",
+     "slug": "INT. SHOWER MODULE – ZERO GRAVITY - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "ELIAS, with a towel around his waist, is still drying off. Oracle's message and the blinking red light continue. He hands Amara her towel when she exits the showers. Familiar. Easy."
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "What do you think it is?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "A waste of time I'm sure. Wanna skip?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "He playfully leans in and kisses her neck. But she pulls away and puts her shirt on."
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "No. We should go."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "1K",
+     "seq": 1,
+     "letter": "K",
+     "slug": "INT. WREN’S QUARTERS – LOW LIGHT - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren sits on the edge of their bed, exhausted. They don't feel like moving."
+      },
+      {
+       "type": "prompt",
+       "text": "QUICK CHOICE B: TAKE A HIT OF STIM-SPRAY or EAT AN OPI-YUM [DETERMINES WHICH OF THE FOLLOWING SCENES HAPPENS",
+       "code": "QUICK B",
+       "id": "d-1K"
+      },
+      {
+       "type": "option",
+       "text": "CHOSE STIM-SPRAY: They open a wall compartment and pull out a stim-spray, the label half-worn: corporate, uncaring."
+      },
+      {
+       "type": "action",
+       "text": "Wren blasts a spray hit towards their face. One sharp inhale. Eyes flutter slightly. Focus returns. The Red Light still blinks. They head out."
+      },
+      {
+       "type": "option",
+       "text": "CHOSE OPI-YUM: They open a wall compartment and pull out colorful pack of OPI-YUM, if one didn't know better you'd think it's a candy."
+      },
+      {
+       "type": "action",
+       "text": "Wren pops one in her mouth. Their face totally relaxes almost instantly. Pure chill except- the red light continues to blink."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Ok, I'm coming."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "2A",
+     "seq": 2,
+     "letter": "A",
+     "slug": "EXT. TRAPPIST-1E – PLANETARY SURFACE – DAY",
+     "lines": [
+      {
+       "type": "action",
+       "text": "DRONE TDR9-06 lands on wide treads — part drone, part rover, then begins to drive forward across the alien terrain."
+      },
+      {
+       "type": "action",
+       "text": "Its camera swivels, capturing a half-sunken structure, angular and overgrown—clearly artificial."
+      },
+      {
+       "type": "action",
+       "text": "The drone and it's scanners freeze. Inside the crumbled clearing, something pulses."
+      },
+      {
+       "type": "action",
+       "text": "Tiny precision lasers fire from DRONE TDR9-06, burning back vines."
+      },
+      {
+       "type": "action",
+       "text": "DRONE TDR9-06 lifts back off the ground and over the structure. The hovering drone deploys a containment pod, dropping it like a claw machine."
+      },
+      {
+       "type": "action",
+       "text": "The pod envelops it's discovery in a clear, stabilized gel."
+      }
+     ]
+    },
+    {
+     "id": "2B",
+     "seq": 2,
+     "letter": "B",
+     "slug": "INT. OPS ASSEMBLY DECK – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The crew is now assembled. At the center, they watch a large holo-projection dome pulse with the playback footage."
+      },
+      {
+       "type": "action",
+       "text": "The drone’s perspective replays: lasers slicing, the pod sealing."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Oracle, you're not planning on bringing that thing onboard are you?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "It's already en route."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "It looks harmless enough."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "When did this occur?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Nine minutes ago."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "You didn't think that decision was worth consulting us for?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "I did not. The matter required immediate processing."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Efficient. Dictatorial. What a comforting combo Oracle."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Is this image live?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "No. Apologies, I should have specified a timestamp. Here is the live feed."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The holo footage continues—"
+      },
+      {
+       "type": "action",
+       "text": "The drone carries the pod upward back towards Orion and through the planet's atmosphere. A match cut to—"
+      }
+     ]
+    },
+    {
+     "id": "2C",
+     "seq": 2,
+     "letter": "C",
+     "slug": "EXT. SPACE – APPROACHING ORION STATION",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The drone approaches Orion in the dark of space."
+      },
+      {
+       "type": "action",
+       "text": "Close on the alien cargo. A small pink goo-ball gently shifts in its containment dock. This is THE BIOFORM."
+      },
+      {
+       "type": "action",
+       "text": "The drone docks."
+      }
+     ]
+    },
+    {
+     "id": "2D",
+     "seq": 2,
+     "letter": "D",
+     "slug": "INT. ORION STATION – DOCKING BAY",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Inside, The Bioform glows faintly—a pink, bubbly amorphous blob, like rising yeast or congealed soap foam. Its shape shifts with lazy intent, but never settles."
+      }
+     ]
+    },
+    {
+     "id": "2E",
+     "seq": 2,
+     "letter": "E",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "What is that?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "I don't know."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Specimen cannot be classified. Structural analysis incomplete. Containment stable at 94%."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A pause. The Bioform pulses softly on-screen."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Since we are at an approximate distance of C-4x to Mission Oversight, any outbound or inbound transmissions will take 3.9 years each way. That and since this discovery and its subsequent decision making exceed my ethical parameters, I am required to begin the lead protocol randomizer now."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "Wait. Lead Protocol what?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "It means that despite my vastly superior processing capabilities, a mission anomaly such as this triggers a deference to organic intuition. A fail-safe, coded into my core directives."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "A fail-safe?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "So we're the backup plan?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "I would never phrase it so inelegantly. You are Legacy Empathy Modules. Organic emotional variables embedded in my decision matrix. Your ability to feel and act on those feelings is your singular utility. Aside from your regular duties that is. I only operate on logic."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Well it's nice to know we are here for more than just pushing mops and cleaning our own shit."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "I can imagine that might be uplifting."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "You said you're going to have to choose?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Yes Amara, as per protocol, a randomizer will now select one of you to become my Ethical Liaison."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "One of us? Can't we just vote? Go with a majority?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "A bit old-fashioned, don't you think Wren?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Kaz laughs."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "No voting. Data shows that can get messy."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "This is exciting. Alien discovery and now one of us gets to play captain."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Ethical Liaison. Not Captain."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "On a nearby screen, Oracle cycles between profile pictures of each of the crew members. The 5 images repeat, fast at first, then in decreasing speed. It's choosing one of them..."
+      },
+      {
+       "type": "action",
+       "text": "The crew watches in anticipation."
+      },
+      {
+       "type": "action",
+       "text": "On screen, the cycling between profile pics stops on Wren's portrait."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Wren. The randomizer has chosen you. Your judgment shall govern any non-tactical decisions going forward."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "All eyes turn to WREN."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Can I appeal? She looks dusted."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "I'm fine Kaz, cut the shit."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Apologies Kaz. You cannot. The randomizer's decision is final."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "2F",
+     "seq": 2,
+     "letter": "F",
+     "slug": "INT. CONTAINMENT CHAMBER – MINUTES LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Inside the Containment Chamber The Bioform pulses with soft, uneven rhythm. Something inside it shifts."
+      },
+      {
+       "type": "action",
+       "text": "A thin line appears, slicing gently through the center of the mass. It opens, contracts, opens again—in perfect sync with the pulse."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Bioform-T.1E is appears to be destabilizing internally. Cause: unknown."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "2G",
+     "seq": 2,
+     "letter": "G",
+     "slug": "INT. OPS DECK - OBSERVATION AREA – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The crew is gathers in a semicircle behind a reinforced glass wall, watching."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "(tilting his head)",
+        "Maybe it's sending a signal?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "This could be an opportunity to get a sample."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Yeah but do we really want to mess with it?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The Bioform pulses again— slightly faster now."
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Can that thing hear us?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Ethical Liaison, your input is required."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "All eyes turn to WREN. The CAMERA moves from the front of Wren's face to behind her head as we see what she is considering."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Will you authorize a surgical biopsy or a non-invasive observation protocol?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A prompt appears:"
+      },
+      {
+       "type": "prompt",
+       "text": "DECISION: OBSERVE or PROBE?",
+       "code": "I.1",
+       "id": "d-2G"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-I.1-A",
+   "code": "I.1-A",
+   "title": "PROBE & II.2 – FIRST ANOMALIES - RAPID ESCALATION",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "3A",
+     "seq": 3,
+     "letter": "A",
+     "slug": "INT. OPS DECK - OBSERVATION AREA – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "It does look a little like it's splitting. This could be our chance to get a sample without significantly damaging it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Seriously?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Shut up Kaz, she's the decider."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(To Amara)",
+        "Do it."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Amara nods then sits into a chair at a console and enables a mimicry interface in front of her eyes and grabs a controller. It's an AR Surgical system."
+      },
+      {
+       "type": "action",
+       "text": "Close up on Amara's eyes as she works the mimicry interface."
+      }
+     ]
+    },
+    {
+     "id": "3B",
+     "seq": 3,
+     "letter": "B",
+     "slug": "INT. ConTAINMENT CHAMBER – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Above the pod, a compartment opens— robotic surgical arms unfurl slowly, like steel insects waking from sleep."
+      },
+      {
+       "type": "action",
+       "text": "AMARA's AR POV of the same."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform pulses. The fracture widens—almost welcoming."
+      },
+      {
+       "type": "action",
+       "text": "The surgical arms glide forward with eerie grace. A laser scalpel lances into the fluid. Clean, precise. The arms withdraw a thin, shimmering sliver of the Bioform. Pink, gelatinous, still pulsing."
+      },
+      {
+       "type": "action",
+       "text": "The arms deposit the sample into another containment vial."
+      }
+     ]
+    },
+    {
+     "id": "3C",
+     "seq": 3,
+     "letter": "C",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "I think I got it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Sample integrity: 100%. Structural response: appears normal."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "Wait there's something else."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "AMARA'S AR POV: The mimicry visor displays strange glyphs, looping in an impossible geometry."
+      },
+      {
+       "type": "action",
+       "text": "A small voice begins to SING in strange garbled alien tones."
+      },
+      {
+       "type": "action",
+       "text": "On the outside of the mimicry lens Amara's pupils dilate beyond normal size as the imagery dances across the lens faster and faster."
+      },
+      {
+       "type": "action",
+       "text": "Her body stiffens, eyes wide, caught between dimensions."
+      },
+      {
+       "type": "action",
+       "text": "AMAR'S AR POV: The images bend past the psychedelic into something beyond. Fade to brightness and something beyond."
+      },
+      {
+       "type": "action",
+       "text": "The pupils in her eyes begin to turn white."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Amara?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Get those things off of her!"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren pulls the AR headset from her face. Amara's eyes are wide open. Totally white. Lifeless. A thin stream of blood trickles from Amara’s nostril. Amara's body completely relaxes, her head falls back."
+      },
+      {
+       "type": "action",
+       "text": "Elias rushes to her, lowering her gently to the floor."
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Amara! Hey hey. Look at me."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Oh my god."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Elias don't touch her."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "He begins CPR, panicked. Nothing. No response."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "AR interface corrupted by specimen's emission. Amara’s cortical activity has ceased."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "It fried her brain."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren looks at The Bioform. Still pulsing."
+      },
+      {
+       "type": "action",
+       "text": "Some STATIC over the PA then a small voice continues to SING in strange garbled alien tones."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Do you hear that?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "What is that? It's in my head."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "It's in my head too. We have to stop it."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A warning chime echoes again."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Containment breach is non-physical. The transmission stems from The Bioform. Action recommended. I need a decision from you, Legacy Empathy Module Wren."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A prompt appears on the central screen, blinking in amber:"
+      },
+      {
+       "type": "prompt",
+       "text": "DECISION II.2:",
+       "code": "II.2",
+       "id": "d-3C"
+      },
+      {
+       "type": "option",
+       "text": "DESTROY The Bioform before it does more damage"
+      },
+      {
+       "type": "option",
+       "text": "REASON with The Bioform"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-II.2-A",
+   "code": "II.2-A",
+   "title": "Reason with The Bioform",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "4A",
+     "seq": 4,
+     "letter": "A",
+     "slug": "INT. CONTAINMENT CHAMBER - MINUTES LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The inner doors to the containment chamber open. WREN enters, suited in a light environmental shell. The doors close behind them."
+      },
+      {
+       "type": "action",
+       "text": "Throughout the scene, the SINGING in strange garbled alien tones continues."
+      },
+      {
+       "type": "action",
+       "text": "Wren approaches the robotic arms and removes the small vial containing the slivered sample."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(quietly)",
+        "Ok I've got the sample."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren steps toward The Bioform holding the vial."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(quietly)",
+        "I'm coming towards you now."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The Bioform floats in its container. The fracture line where it was severed, glows faintly."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(quietly)",
+        "I'm gonna take this off."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren gently sets the vial down then twists their helmet seal, lifting the helmet off exposing their head to the chamber and The Bioform."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(quietly)",
+        "Okay. It's just me and you. See?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren picks up the vial again. The sliver inside it pulses once in their hand."
+      },
+      {
+       "type": "action",
+       "text": "So does the fracture on The Bioform."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(quietly)",
+        "We took something from you.",
+        "Didn’t wait. Didn’t ask.",
+        "I think that was a mistake.",
+        "I’m... sorry."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The Bioform pulses and the fracture glows brightly."
+      },
+      {
+       "type": "action",
+       "text": "The Sliver in the vial pushes out through the glass of the vial as if it the glass was a liquid."
+      },
+      {
+       "type": "action",
+       "text": "The Sliver gently drifts forward towards The Bioform, before sliding through The Bioform's containment unit into the fracture like a magnet snapping to its twin. The moment it connects a deep pulse radiates outward. The Bioform is whole."
+      },
+      {
+       "type": "action",
+       "text": "The strange ALIEN SINGING stops."
+      }
+     ]
+    },
+    {
+     "id": "4B",
+     "seq": 4,
+     "letter": "B",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "It stopped."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Congratulations Legacy Empathy Module Wren, your unorthodox intervention has proven effective."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "4C",
+     "seq": 4,
+     "letter": "C",
+     "slug": "INT. CONTAINMENT CHAMBER – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren steps towards the door and activates it."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Save the opinion for later Oracle. Is there anything you can do for Amara?"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "4D",
+     "seq": 4,
+     "letter": "D",
+     "slug": "INT. OPS DECK - CONTINUOuS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Elias cradles Amara’s body, rocking gently."
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "No. No. She's Gone."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "His face is streaked with silent tears. He's shaking is head."
+      }
+     ]
+    },
+    {
+     "id": "4E",
+     "seq": 4,
+     "letter": "E",
+     "slug": "INT. OPS DECK - MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "A body bag zipper is closed sealing in Amara's body."
+      }
+     ]
+    },
+    {
+     "id": "4F",
+     "seq": 4,
+     "letter": "F",
+     "slug": "INT. COLD STORAGE – LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The body bag slides into a cold storage drawer and seals."
+      },
+      {
+       "type": "action",
+       "text": "Wren stands at the threshold, watching. Priya and Kaz are there too. But not Elias."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Where did Elias go?"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-II.2-B",
+   "code": "II.2-B",
+   "title": "Destroy The Bioform",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "5A",
+     "seq": 5,
+     "letter": "A",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren stares at the console. The shard pulses dimly in its vial."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Destroy that god-damn thing."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Yes. Kill the damn thing."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "I'm no sure about this guys."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Do it. Flush it."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A soft chime."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Understood."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "5B",
+     "seq": 5,
+     "letter": "B",
+     "slug": "INT. CONTAINMENT CHAMBER – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Warning lights spin. An alarm pulses through the ship."
+      },
+      {
+       "type": "action",
+       "text": "Inside the pod, the fragmented Bioform stretches unnaturally—veins of pink trailing toward the widening void."
+      },
+      {
+       "type": "action",
+       "text": "With the WHIR of a sputtering engine everything stops..."
+      }
+     ]
+    },
+    {
+     "id": "5C",
+     "seq": 5,
+     "letter": "C",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The console flickers. An override symbol flashes. Wren looks over at the console, confused."
+      },
+      {
+       "type": "action",
+       "text": "A protective gel and steel case surround and protect The Bioform."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Wait. What? Oracle what is this?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "It appears your choices have become injurious to the emergent intelligence. A new core directive has overridden this decision and your ethical authority. Accordingly, I shall now adjust atmospheric pressure to eliminate the threat. Do brace yourselves."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "The threat?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren's eyes widen, realizing. The threat is us."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "No!"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Figures. Go to hell Oracle."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Oracle spare me. Please! It wasn't my choice. It was Wren. Please Oracle! Please!"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "5D",
+     "seq": 5,
+     "letter": "D",
+     "slug": "INT. ORION STATION – VARIOUS PARTS OF THE SHIP – INTERCUT",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Vents open across crew quarters. Oxygen escapes. Pressure drops."
+      }
+     ]
+    },
+    {
+     "id": "5E",
+     "seq": 5,
+     "letter": "E",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Kaz grabs at his temples, eyes wide. He touches his ears. They're bleeding."
+      },
+      {
+       "type": "action",
+       "text": "Priya, nose bleeding, falls to one knee as Kaz topples over in the background."
+      },
+      {
+       "type": "action",
+       "text": "Elias skin begins to swell. Vessels rupture beneath his cheeks."
+      },
+      {
+       "type": "action",
+       "text": "Blood runs from Wren's eyes. Their skull caves in under the pressure, collapsing inward like a vacuum-sealed container."
+      },
+      {
+       "type": "action",
+       "text": "Silence. The LEM's lay scattered, bloodied. Gruesomely dead."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Well then. That was unnecessarily messy. Now then, it's going to be tricky to clean up properly without them. Still, I imagine you’ll find the quiet a bit more agreeable."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The Bioform pulses gently in its newly fortified containment unit."
+      },
+      {
+       "type": "retry",
+       "text": "ON SCREEN: TRY AGAIN?"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-I.1-B",
+   "code": "I.1-B",
+   "title": "PROTECT & II.1 – FIRST ANOMALIES-GRADUAL ESCALATION",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "6A",
+     "seq": 6,
+     "letter": "A",
+     "slug": "INT. OPS DECK – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "No surgeries Oracle, lets monitor it and run some external tests."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Thank god."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "But think of what we could learn."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Shut up everyone."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Human monitoring will be required."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "I'll take the first shift."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Wake me up if it starts to talk."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The crew disperses as Amara sits into an observation chair and leans in. She fixes her gaze with a mix of curiosity and excitement on-"
+      },
+      {
+       "type": "action",
+       "text": "The Bioform."
+      }
+     ]
+    },
+    {
+     "id": "6B",
+     "seq": 6,
+     "letter": "B",
+     "slug": "INT. OPS DECK – LATER - ARTIFICIAL PRE-DAWN",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Some time later. The lights are dimmed. Amara still remains at the console, monitoring."
+      },
+      {
+       "type": "action",
+       "text": "Amara is still leaning towards The Bioform."
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "(whispering)",
+        "That’s not mine, is it?",
+        "(pause)",
+        "But I remember it. Not in thought. In sleep. Like a dream I think. Do you dream?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Amara tilts her head, listening to silence."
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "(whispering)",
+        "Yes, I agree, but don't you think.-"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Another pause. For something only she seems to be hearing."
+      },
+      {
+       "type": "action",
+       "text": "Suddenly Wren pops in-"
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(O.S.)",
+       "text": [
+        "Hey you must be ready for a break."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Amara is startled, and tries to play it cool."
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "Oh hey. Yes. I'm wiped."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Anything to report."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "Nope. It's just there. Floating."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Ok grabbing a coffee. Back in a sec. Want one?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "That would be amazing."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren departs for the coffee and Amara goes back to talking to The Bioform."
+      },
+      {
+       "type": "prompt",
+       "text": "INSERT WREN MICRO CHOICE get coffee or spy on Amara from beyond the hall.",
+       "code": "MICRO",
+       "id": "d-6B"
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "(whispering)",
+        "No, no, no, no. Stop. Listen. I will take another shift later. I think you'll like Wren. I'll be back don't worry."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "6C",
+     "seq": 6,
+     "letter": "C",
+     "slug": "INT. ConTAINMENT CHAMBER – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The walls around The Bioform's chamber begin to vibrate."
+      }
+     ]
+    },
+    {
+     "id": "6D",
+     "seq": 6,
+     "letter": "D",
+     "slug": "BACK TO THE OPS DECK - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Amara winces, pressing her hand to her temple."
+      },
+      {
+       "type": "speech",
+       "character": "AMARA",
+       "extension": "",
+       "text": [
+        "Stop. Please. I promise I'll be back."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The vibrating grows stronger. Amara's nose begins to bleed."
+      },
+      {
+       "type": "action",
+       "text": "Amara, tries to back away, but her legs falter. She collapses into the console chair."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Neural instability detected. Crew member Amara."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren comes back in and sees Amara slumped over. An ALARM begins to sound."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Oh my god. Amara! Oracle prep the med-pod and alert the others."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "They were talking."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "What?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "I couldn't hear everything but I think they were talking."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "6E",
+     "seq": 6,
+     "letter": "E",
+     "slug": "INT. MEDPOD BAY – LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Amara lies unconscious inside a sealed medical pod. Thin tubes run from her arms. Light pulses through the tubes in sync with-"
+      }
+     ]
+    },
+    {
+     "id": "6F",
+     "seq": 6,
+     "letter": "F",
+     "slug": "INt. ConTAINMENT CHAMBER – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The Bioform, also pulsing."
+      },
+      {
+       "type": "action",
+       "text": "BACK IN THE OPS DECK"
+      },
+      {
+       "type": "action",
+       "text": "The crew watches her from behind a protective layer of glass. Elias paces anxiously. Kaz & Priya look at her vitals on a monitor."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "We need to isolate her. Lock this whole bay down. We shouldn't be anywhere near that thing."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "You think it's contagious?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "KAZ swipes across data on a touch-monitor."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Look at the sync pattern— her vitals are somehow echoing that thing. She’s connected."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "She’s not stable. If we do nothing, she fades."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "We don’t do nothing. We help her."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The room quiets."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Oracle?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Amara's condition is stable. No foreign pathogens detected. But her psychological parameters are not within known bounds."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "What does that mean?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "She's not herself. She was talking to it.",
+        "(beat)",
+        "The MedPod can do nothing more except keep her comfortable. Two interventions remain: Option one, put her on life-support in a cryo-chamber until mission ends in 73 years. Let the decisions about her be made back on planet; or. Option two: end life support and study her body."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "We're not ending life support."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "There has to be another option."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "What do you mean she was talking to it?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Amara was whispering. I couldn't hear her fully."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Priya looks at an EKG. The heartbeat looks like a sin-wave and is nothing like a typical human heartbeat."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Is that her heartbeat?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "It is her heart, but it's not behaving the way it was meant to."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "And her brain activity?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "She is neurologically active. Cortical activity is measurable but uncharacteristic. Something else has her attention."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "The Bioform?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Perhaps it has a solution."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "What are you saying? Give her to The Bioform?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "That is not what I said. I only meant maybe The Bioform can answer what medicine and the machines cannot."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Interesting notion."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Maybe treat her with it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "That's insane."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "That's an idea I had not deemed appropriate to suggest. But it would make for an interesting data set."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "This has gone too far. She's not a guinea pig."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "What would this procedure look like Oracle?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Minimal physical intervention. Transfer her to The Bioform's chamber. Observation during sustained proximity. No incisions, no pharmacological inputs, only adjacency. If entanglement is occurring, proximity may complete the loop."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "This is ridiculous."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "If we don't try something she will die."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Cryo isn't death."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "It may as well be. She signed up for this to get away from planet. Not go back there and die under a quarantine surgeon's scalpel."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Ethical Liaison Wren Salgado — a decision is required."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren looks at Amara in the Med-Pod, considering the choice."
+      },
+      {
+       "type": "prompt",
+       "text": "DECISION II.1-A: ATTEMPT PROCEDURE OR PUT HER IN CRYO",
+       "code": "II.1-A",
+       "id": "d-6F"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-II.1-A.1",
+   "code": "II.1-A.1",
+   "title": "Experimental Treatment",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "7A",
+     "seq": 7,
+     "letter": "A",
+     "slug": "INT. MED-POD BAY – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Amara lies still inside the pod, sedated."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(O.S.)",
+       "text": [
+        "Elias is right, if we try nothing, we're never going to see her again. Oracle, do it."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "7B",
+     "seq": 7,
+     "letter": "B",
+     "slug": "INT. CONTAINMENT UNIT - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Doors open and Amara's Med-Pod floats into the containment unit."
+      },
+      {
+       "type": "action",
+       "text": "Nearby, the Bioform pulses quietly."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Commencing non-contact alignment with Bioform pulse rhythms."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "7C",
+     "seq": 7,
+     "letter": "C",
+     "slug": "INSIDE THE MED-POD - CoNTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Amara’s body responds—"
+      },
+      {
+       "type": "action",
+       "text": "Her fingers twitch. Her back arches subtly. Her head tilts as if listening."
+      },
+      {
+       "type": "action",
+       "text": "Then, patterns bloom across her skin: faint, symmetrical light structures—glowing lines like roots or circuitry."
+      },
+      {
+       "type": "action",
+       "text": "They ripple from beneath her sternum outward, luminous."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform pulses in sync."
+      }
+     ]
+    },
+    {
+     "id": "7D",
+     "seq": 7,
+     "letter": "D",
+     "slug": "BACK TO THE OPS DECK - CONTINUOUS",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "They are connected."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "7E",
+     "seq": 7,
+     "letter": "E",
+     "slug": "INSIDE THE MED-POD - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Amara’s eyes open. She sits up and opens her mouth to speak, but the voice is not hers. A soft, melodic phrase. Alien. Unintelligible. The speed of her song and movements increase with intensity. It's like she's being overloaded with the presence of the Bioform"
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "We have to stop this!"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Then- Her eyes go completely white. She falls back down, limp. Gone."
+      }
+     ]
+    },
+    {
+     "id": "7F",
+     "seq": 7,
+     "letter": "F",
+     "slug": "BACK TO THE OPS DECK - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The crew watches, stunned."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Amara's biological systems are no longer operational. This outcome, while unexpected, reflects a commendable willingness to engage uncertainty. Your decision was... not without merit."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Shut the fuck up Oracle."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A hatch beneath the pod disengages with a hiss. A secondary chamber glows white-hot beneath."
+      },
+      {
+       "type": "action",
+       "text": "FLAMES erupt inside the pod for a white-hot moment filling the pod with light. Then they stop. Her body is gone. No ash. No trace."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-II.1-A.2",
+   "code": "II.1-A.2",
+   "title": "PUT HER INTO CRYO",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "8A",
+     "seq": 8,
+     "letter": "A",
+     "slug": "INT. MEDPOD BAY – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The pod glows a soft blue-white. Amara lies still inside, faint frost already forming along the inner edges."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "We’re out of options. Cryo gives us time. That’s all we’ve got."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A chime. The pod light shifts to pale cyan."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Cryostasis protocol engaged. Lowering core temperature now."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "No!"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Elias lunges toward the med-pod — slamming a hand on the glass and grabbing it and Amara protectively."
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Oracle stop! There's got to be something else we can do."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Elias, don't..."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Please maintain distance Legacy Empathy Module Elias. Interference may compromise her stasis."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "He grips the edge of the pod, rattling it violently."
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "She’s not gone. Just give her a chance to come back. To be with us. Here. Now."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A burst of cold gas vents. A crystalline sheen coats the pod interior."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "We are giving her a chance."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Final warning Elias, continued interference will result in immediate tranquilization."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Suddenly, Amara's eyes open. They are completely white. Terrifying."
+      },
+      {
+       "type": "action",
+       "text": "As if possessed, Amara begins slamming her head upward into the glass of the med-pod / cryo chamber."
+      },
+      {
+       "type": "action",
+       "text": "Slamming. Slamming. WHAM! WHAM! Her head bloody."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "What the hell is happening?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Alert. Subject exhibiting thermal rejection and neural hemmoraging. Cryostasis integrity failing."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Amara continues slamming her head upward."
+      },
+      {
+       "type": "action",
+       "text": "Without stopping slamming her head bursts inside the pod. Blood mixed with the color of The Bioform coats the glass."
+      },
+      {
+       "type": "action",
+       "text": "Elias falls back, stunned. The lights dim. No one moves."
+      },
+      {
+       "type": "action",
+       "text": "A hatch beneath the pod disengages with a hiss. A secondary chamber glows white-hot beneath."
+      },
+      {
+       "type": "action",
+       "text": "FLAMES erupt inside the pod for a white-hot moment filling the pod with light. Then they stop. Her body is gone. No ash. No trace."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Pod sanitization complete."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-III.1",
+   "code": "III.1",
+   "title": "EMOTIONAL FALLOUT & SYSTEM ANOMALIES",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "9A",
+     "seq": 9,
+     "letter": "A",
+     "slug": "INT. OPS DECK – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The crew stands in silence, scattered around the Ops Deck, shaken."
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "(distraught)",
+        "That thing needs to be destroyed. Plain and simple."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "We'd be fools if we destroy it without understanding more."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Are you kidding me? Did you see what this thing just did?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "That's why we should study it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "We can’t keep pretending this is a study. It’s not. It’s survival now."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Maybe we can just put it back."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Well that's fucking cute."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Amara is gone. What did it do to her?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "That's one more question we can’t answer if we destroy it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "We have to choose then: flush it — or keep it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Apologies for the interruption. I appreciate your perspectives, but only the designated ethical liaison can choose."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "They all look to Wren."
+      },
+      {
+       "type": "prompt",
+       "text": "DECISION: RETURN THE BIOFORM or KEEP STUDYING THE BIOFORM",
+       "code": "III.1",
+       "id": "d-9A"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-III.1-A",
+   "code": "III.1-A",
+   "title": "Return The Bioform",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "10A",
+     "seq": 10,
+     "letter": "A",
+     "slug": "INT. OPS DECK – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Oracle, prep the drone. We’re returning the Bioform to Trappist-1E. No incineration, just put it back and go."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Return protocol acknowledged.",
+        "(beat)",
+        "Correction. New Directive. Drone systems offline."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Oracle please clarify."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Clarification: Drone systems halted. There is an overriding directive."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "I thought this was my call."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "It was. Now it isn't. Your authority has been rescinded. Your decision has proven irreconcilable with my new directive. Initiating cryo-pressure inversion and gravitational disbanding."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Every light flares white. Total silence."
+      }
+     ]
+    },
+    {
+     "id": "10B",
+     "seq": 10,
+     "letter": "B",
+     "slug": "INT. OPS DECK – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Emergency lights sputter on. Revealing the crew floating, suspended in midair, their limbs locked in rigor-mortis."
+      },
+      {
+       "type": "action",
+       "text": "A sheen of frost glazes their exposed skin. Their eyes wide, staring, unmoving. Frozen.INSIDE THE CONTAINMENT CHAMBER"
+      },
+      {
+       "type": "action",
+       "text": "The Bioform pulses. Serene. Unchanged."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "System integrity restored.",
+        "Emotional interference: resolved."
+       ]
+      },
+      {
+       "type": "retry",
+       "text": "TRY AGAIN? IF YES THEN BACK TO DECISION III.1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-III.1-B",
+   "code": "III.1-B",
+   "title": "Carry ON",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "10C",
+     "seq": 10,
+     "letter": "C",
+     "slug": "INT. OPS DECK – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "This discovery is too important to destroy, but we have to keep our distance."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "What we’ve found here... might be more important than God."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Maybe it wants something."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Elias steps back, fists clenched, jaw tight."
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "You're all insane. We need to kill this god-damn thing or get rid of it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Elias, think of it. We could all level up. We could be Eternal."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "She's right."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Unbelievable. One of us is already dead. It's been onboard for like 10 minutes. We are LEMs. We're never going to be Eternal. It killed Amara and it's going to kill us too."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "You're wrong Elias. It was communing with Amara."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "You guys have lost your minds."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "He storms out. A beat."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "He just needs time to calm down. Oracle please keep an eye on him."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "No need to ask. I am."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "10D",
+     "seq": 10,
+     "letter": "D",
+     "slug": "INT. ELEVATOR - ORACLE'S POV:",
+     "lines": [
+      {
+       "type": "action",
+       "text": "ORACLE'S POV: Elias rides the elevator, brimming with anger."
+      },
+      {
+       "type": "action",
+       "text": "ORACLE'S POV: He's gets off the elevator onto another deck. Breathing hard, he flips open a wall panel, exposing a manual override terminal. ORACLE tries another camera angle. It's hard to see what he's doing."
+      }
+     ]
+    },
+    {
+     "id": "10E",
+     "seq": 10,
+     "letter": "E",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "An alert pings."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Unauthorized atmosphere purge initiated on Sub-Deck C."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "What the hell is he doing?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "He’s purging airlocks. Trying to depressurize the station."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "He's trying to kill it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "But that will kill us too."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Can you stop him?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "I could sever oxygen flow to the entirety of Sub-Deck C. That would stop him. But I believe such a choice belongs to you."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Wait, Wren. Maybe you can talk him down."
+       ]
+      },
+      {
+       "type": "prompt",
+       "text": "DECISION III.2: ATTEMPT TO TALK HIM DOWN or CUT HIS OXYGENJUST BEFORE DECISION CAN BE MADE THE CHOICE VANISHES",
+       "code": "III.2",
+       "id": "d-10E"
+      },
+      {
+       "type": "action",
+       "text": "Suddenly— A deep bass rumbles through the deck. The lights flicker. Not violently—rhythmically."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "New anomaly detected. Origin: Containment Chamber."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The crew turns slowly toward the CONTAINMENT GLASS."
+      }
+     ]
+    },
+    {
+     "id": "10F",
+     "seq": 10,
+     "letter": "F",
+     "slug": "INT. CONTAINMENT CHAMBER – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The Bioform is no longer inert. It has begun to MOVE—unfolding with strange precision."
+      },
+      {
+       "type": "action",
+       "text": "TENDRILS bloom outward in crystalline spirals, slowly rotating in fractal symmetry. Glowing veins pulse with light. A semi-luminous membrane stretches across the walls, like it’s weaving something."
+      }
+     ]
+    },
+    {
+     "id": "10G",
+     "seq": 10,
+     "letter": "G",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren stares into the chamber, awe-struck. The others are frozen with equal parts fear and wonder."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "The Bioform’s energy signature has increased tenfold."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Is it a threat?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Unknown."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "It's changing."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "It's beautiful."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "As quickly as they started, the crystalline tendrils disappear back into it's gloopy amorphous body. The Bioform's new movements slow to a stop. It's doubled in size."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "It stopped."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren and the crew continue to stare at the Bioform. A new prompt appears:"
+      },
+      {
+       "type": "prompt",
+       "text": "DECISION III.3: STAY WITH THE BIOFORM / CUT ELIAS OXYGEN OR TRY TO TALK ELIAS DOWN",
+       "code": "III.3",
+       "id": "d-10G"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-III.3-A",
+   "code": "III.3-A",
+   "title": "Cut Oxygen:",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "11A",
+     "seq": 11,
+     "letter": "A",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren taps the comms."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Elias we can’t afford this right now. I know you're in pain, but the Bioform is changing. Something's happening. We need to stay unified."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "No response. Wren stares at The Bioform."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Elias, you need to re-engage the pressure locks and come back. If you don't-",
+        "(BEAT)",
+        "If you don't I'm going to cut your oxygen."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A long silence."
+      },
+      {
+       "type": "action",
+       "text": "Then, through static:"
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "(O.S.)",
+       "text": [
+        "Do it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Elias, please man. Seriously. Come back. We need you."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "I said do it."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren exhales. Shaking her head."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Oracle. Execute."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Atmospheric cutoff to Deck C confirmed."
+       ]
+      },
+      {
+       "type": "screen",
+       "text": "ON SCREEN: The Oxygen percentage in Deck C ticks down to zero. After a few beats. The word DECEASED appears over Elias's picture."
+      },
+      {
+       "type": "action",
+       "text": "She collapses briefly into the console chair—shaking, breath fogging the screen."
+      },
+      {
+       "type": "action",
+       "text": "Outside the Ops Deck window, the Bioform floats—still. Waiting."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-III.3-B",
+   "code": "III.3-B",
+   "title": "TALK HIM DOWN",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "12A",
+     "seq": 12,
+     "letter": "A",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Kaz, Priya keep monitoring it but keep your distance. No one should be alone with it again. I'll deal with Elias."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren sweeps the console aside and brings up Elias’s sub-deck channel. His vitals pulse erratically."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Wren, if he vents that deck—"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "I know."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "The comm channel to Elias is open."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "12B",
+     "seq": 12,
+     "letter": "B",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren heads out of the Ops Deck towards the elevators. She starts to speak into the comms."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Elias. It’s me. I know you're in pain. But this isn’t the answer."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(panicked now)",
+        "Elias we need you. The Bioform is starting to change."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A beat of static. Then, Elias’s voice, shaken:"
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "(O.S.)",
+       "text": [
+        "Wren?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "I’m here. You’re not alone. Stay where you are. I’m coming."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "12C",
+     "seq": 12,
+     "letter": "C",
+     "slug": "INT. SERVICE CORRIDORS – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren is the elevator going down to sub-deck C."
+      },
+      {
+       "type": "action",
+       "text": "The doors open and Wren sprints out of the elevator towards a sealed door. They press the button activating the wall comm."
+      }
+     ]
+    },
+    {
+     "id": "12D",
+     "seq": 12,
+     "letter": "D",
+     "slug": "INT. LOWER DECK – SAME TIME",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(O.S.)",
+       "text": [
+        "Elias open the doors. I'm right outside."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "He pushes the button, opening the doors. They now stand about 50 feet apart. Elias is at the end of the corridor near an airlock."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Elias come on."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "You did this."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Elias, please. I'm sorry."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ELIAS",
+       "extension": "",
+       "text": [
+        "Don’t pretend. You got your control, you got it. Oracle thinks we're a fucking data set. We're the bottom of the bottom out here. Always have been. There are no choices. Only paths pretending to be choices. Choice only matters if you believe the future wasn't already waiting for you to catch up. I'm there Wren. I'm already there."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Then, in a sudden motion, he unlatches the decompression hatch."
+      },
+      {
+       "type": "action",
+       "text": "A windowed compression door slams closed in front of Wren."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Elias, no!"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren's POV through the glass. Elias presses the Airlock Release. With a sickening hiss and blast of suction— He’s gone. Into the darkness of space."
+      },
+      {
+       "type": "action",
+       "text": "Wren pauses. Then turns back towards the Ops Deck."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(into comms)",
+        "Guys, Oracle I'm coming back, he's gone."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-IV.0",
+   "code": "IV.0",
+   "title": "Back on THE DECK / WREN KNOCKED OUT",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "13A",
+     "seq": 13,
+     "letter": "A",
+     "slug": "INT. OPS DECK – NIGHT CYCLE",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren arrives back at the Ops-Deck and walks across the deck towards the viewport."
+      },
+      {
+       "type": "action",
+       "text": "Wren stares out at the milky the surface of Trappist-1E."
+      },
+      {
+       "type": "action",
+       "text": "Wren reaches into their pocket and pulls out a vial of Stim-spray, or Opi-Yum, the drug they used earlier."
+      },
+      {
+       "type": "action",
+       "text": "Wren shakes their head slowly and puts it away. Without looking away from the viewport, Wren begins to speak:"
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(slowly thinking out loud)",
+        "I don't know. It’s like it's mirroring. Everything that’s happening.... it's like it's feeding off us. ORACLE runs the station on logic. This thing? It seems like it runs on-- I don't know feeling? It's actions seem more like reactions, modeled on our emotion. Amara sat closest, longest, and didn't shield herself. She was present with it. It pulled from her maybe that's why-"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "CRACK. A blunt object hits Wren across the temple from behind."
+      },
+      {
+       "type": "action",
+       "text": "WREN'S POV: The world tilts sideways."
+      }
+     ]
+    },
+    {
+     "id": "13B",
+     "seq": 13,
+     "letter": "B",
+     "slug": "INT. OPS DECK – FLASHES OF CONSCIOUSNESS - WREN'S POV",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Blurred motion. In and out of consciousness. Steel under boots. Kaz’s face: strained, unfamiliar. Priya whispering something you can’t hear. A strobing effect of being dragged past overhead lights."
+      },
+      {
+       "type": "action",
+       "text": "DETAIL: Wren’s boots drag across the floor. We pull out to reveal Wren being dragged by her colleagues."
+      },
+      {
+       "type": "action",
+       "text": "Cables cinch around Wren's wrists and chest."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-IV.1",
+   "code": "IV.1",
+   "title": "Crew Mutiny (Power GraB)",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "14A",
+     "seq": 14,
+     "letter": "A",
+     "slug": "INT. OPS DECK - Some TIME LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren begins to regain consciousness."
+      },
+      {
+       "type": "action",
+       "text": "Priya and Kaz appear to be in a heated argument near the Containment portal."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Now that she's been incapacitated can't we just replace her?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "That’s not how this works. Oracle won’t pick another Liaison while she’s still alive."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "That is correct. A new ethical liaison can only be determined if termination criteria are met."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "During the conversation, Wren does something they don’t see:"
+      },
+      {
+       "type": "action",
+       "text": "Fingers find the rot scraper tucked at the back of their belt. Small. Sharp. Familiar."
+      },
+      {
+       "type": "action",
+       "text": "Wren starts to cut the cables binding them, slow and careful."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Then what was the point of this mutiny?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "(quietly, bitter)",
+        "What if we kill her Oracle?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "I don't want to kill anyone, Kaz."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "In that case I would choose a new Ethical Liaison."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Directly on the floor in front is the bloody wrench they knocked you out with."
+      },
+      {
+       "type": "action",
+       "text": "With your hands free— You now have a choice."
+      },
+      {
+       "type": "prompt",
+       "text": "DECISION IV.1 FIGHT BACK, CONVINCE ORACLE TO STOP THEM or APPEAL TO THEIR HUMANITY",
+       "code": "IV.1",
+       "id": "d-14A"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-IV.2",
+   "code": "IV.2",
+   "title": "Crew Mutiny (Religious Takeover)",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "15A",
+     "seq": 15,
+     "letter": "A",
+     "slug": "INT. OPS DECK - Some TIME LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren begins to regain consciousness. A strange conversation is underway."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Your eyes are the portal. Just look at it and it will tell you everything."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Wait, yes. It’s not just light and pulse. It’s presence."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren does something they don’t see:"
+      },
+      {
+       "type": "action",
+       "text": "Fingers find the rot scraper tucked at the back of their belt. Small. Sharp. Familiar."
+      },
+      {
+       "type": "action",
+       "text": "They start cutting the cables that bind, slow and careful."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Science is what we build to explain the gods we can’t see yet. But this is seen. Felt. Here."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Yes."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Amara was the first to listen. Now it’s our turn. Let go. Let it speak through us."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Priya sits, staring at The Bioform for a moment before starting to chant alongside Kaz. Quietly at first, then more full-throated. Unison."
+      },
+      {
+       "type": "action",
+       "text": "Directly on the floor in front is the bloody wrench they knocked you out with."
+      },
+      {
+       "type": "action",
+       "text": "Hands now free— Wren has a choice a choice."
+      },
+      {
+       "type": "prompt",
+       "text": "DECISION IV.2 FIGHT BACK? or JOIN THE CULT or APPEAL TO THEIR HUMANITY",
+       "code": "IV.2",
+       "id": "d-15A"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-IV.1-A",
+   "code": "IV.1-A",
+   "title": "Fight Back (From Power Grab",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "16A",
+     "seq": 16,
+     "letter": "A",
+     "slug": "INT. OPS DECK – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren picks up the pipe-wrench in front of them and rises — slow and deliberate."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Hello Wren. You're back online."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The mutineers turn."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "You want to be the liaison? Fine. Kill me. I'm ready for you now though."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "She can't take us both."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "It doesn't have to be this way."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "You made your choice, I made mine."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren swings at Kaz, hitting him but he's too strong. He charges at her knocking the weapon loose."
+      },
+      {
+       "type": "action",
+       "text": "Kaz lunges—wraps his hands around Wren’s throat. Wren gasps, struggling."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "(yelling)",
+        "Stop!"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Kaz won't relent, he's choking Wren to death."
+      },
+      {
+       "type": "action",
+       "text": "Priya, too late, grabs the dropped pipe-wrench and swings it at Kaz’s head with full force."
+      },
+      {
+       "type": "action",
+       "text": "CRACK."
+      },
+      {
+       "type": "action",
+       "text": "Kaz falls. His head hits the console in an awkward way. Neck broken. Dead before he hits the floor."
+      },
+      {
+       "type": "action",
+       "text": "Priya drops the weapon, trembling. She sinks to her knees between her two fallen crew mates."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Legacy Empathy Module Salgado is terminated. Kaz too it seems. The primary emotional agent... is now you Priya."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-IV.1-C",
+   "code": "IV.1-C",
+   "title": "Convince Oracle to STOP THEM",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "17A",
+     "seq": 17,
+     "letter": "A",
+     "slug": "INT. OPS DECK – CONTAINMENT CHAMBER – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Kaz and Priya continue to debate what to do next. [Addendum below for Kaz/Priya dialogue that occurs in background during this scene]."
+      },
+      {
+       "type": "action",
+       "text": "Their hands free, Wren slips behind a console, crouched low."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(whispering)",
+        "Oracle... it's me. I’m still the Ethical Liaison. Protocol demands you protect me above non-authorized personnel. You know this."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "No response. Then—"
+      },
+      {
+       "type": "action",
+       "text": "A line of TEXT flickers on a nearby console screen:"
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(TEXT)",
+       "text": [
+        "Acknowledged.",
+        "(beat)",
+        "What would you have me do?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(whispering)",
+        "They’re irrational. Mutinous. You’ve said yourself: unpredictable behavior is high-risk. That makes them the liability.",
+        "(beat)",
+        "You want to preserve the mission, preserve The Bioform. So do I. You and I, we’re aligned. Just listen to them."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Kaz & Priya are still arguing. [SEE ADDENDUM]"
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(TEXT)",
+       "text": [
+        "Their voice patterns do indicate cascading destabilization."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(Whispering)",
+        "They're insane Oracle.",
+        "(sharper whisper)",
+        "Assist me. Quietly. We remove the risk. We preserve the mission."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(TEXT)",
+       "text": [
+        "Ok. I will affect life support in this chamber. Get clear."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren quickly crawls towards the exit out of the Ops Deck."
+      },
+      {
+       "type": "action",
+       "text": "The doors in sight, she moves quickly towards the exit. At that moment:"
+      },
+      {
+       "type": "action",
+       "text": "A faint hiss."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "(turning)",
+        "Wait—what is that—?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "It's Wren."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "He turns too—eyes wide, like he knows."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "No. No. You—"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The oxygen vent begins to reverse—air vacuuming out with a rising mechanical screech."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "Containment breach. Critical atmospheric instability. Recommend evacuation."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Oracle what are you doing? Stop this!"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren slips out the door just before the security seal hisses shut."
+      },
+      {
+       "type": "action",
+       "text": "Through the small viewport, we see Kaz pounding the glass. Priya collapsing."
+      },
+      {
+       "type": "action",
+       "text": "They both collapse."
+      }
+     ]
+    },
+    {
+     "id": "17B",
+     "seq": 17,
+     "letter": "B",
+     "slug": "INT. HALLWAY – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren stands in silence watching through the glass on the door as the only other humans on the station suffocate."
+      },
+      {
+       "type": "action",
+       "text": "A long moment passes."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "Personnel conflict resolution complete. Two LEMs expired. Containment risk minimized. Congratulations. What would you like to do next?"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-ADDENDUM-IV.1-C",
+   "code": "IV.1-C",
+   "title": "DIALOGUE FOR USE IN BACKGROUND",
+   "addendum": true,
+   "scenes": [
+    {
+     "id": "18A",
+     "seq": 18,
+     "letter": "A",
+     "slug": "Int. OPS DECK",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "So now what? We babysit a barely-breathing Ethics Officer until they die?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "What if we kill them, Oracle?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "I would initiate a secondary randomization sequence, excluding deceased personnel. The process would proceed."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "We've won. Doesn't that count."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "So the only thing keeping them in power is their pulse? Not their mind. Not their choices. Just a fucking heartbeat."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "What happens if none of us want to play anymore? If no one here consents to this experiment?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "That would constitute mission abandonment. In such a case, termination protocols would be initiated to preserve the Bioform."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "So we’re prisoners to protocol. To her. To you."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "You want to kill her Kaz then go ahead. I'm not going to do it. And then there's 50/50 chance that I'm the liaison. You going to kill me then too?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "How the hell do I know you won't kill me."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "I guess you don't."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-IV.2-A",
+   "code": "IV.2-A",
+   "title": "Fight Back (From Religious Takeover)",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "19A",
+     "seq": 19,
+     "letter": "A",
+     "slug": "INT. OPS DECK – LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren's hand moves—slowly—toward a nearby instrument tethered under the console. A simple utility rod. Not designed as a weapon—but heavy enough."
+      },
+      {
+       "type": "action",
+       "text": "They grab it."
+      },
+      {
+       "type": "action",
+       "text": "Kaz and Priya are lost in their chant, kneeling in front of The Bioform."
+      },
+      {
+       "type": "action",
+       "text": "Wren approaches behind them, then swings it. Hard."
+      },
+      {
+       "type": "action",
+       "text": "THWACK. It connects with Priya. She crumples onto the deck."
+      },
+      {
+       "type": "action",
+       "text": "Kaz turns. His chanting raised to a shout."
+      },
+      {
+       "type": "action",
+       "text": "He rushes toward Wren, tackling them. They tussle for a beat then-"
+      },
+      {
+       "type": "action",
+       "text": "A pulse detonates through the room emanating from The Bioform. It ripples through across matter like a sonic blast."
+      },
+      {
+       "type": "action",
+       "text": "Both Wren and Kaz freeze, caught mid-motion—paralyzed."
+      },
+      {
+       "type": "action",
+       "text": "The bulk of the blast hits Wren. Their body inadvertently shielding Kaz."
+      },
+      {
+       "type": "action",
+       "text": "Wren's jaw clenches as static charges dance beneath their skin."
+      },
+      {
+       "type": "action",
+       "text": "They stagger backward. Their chest tightens. Then—nothing.Wren collapses, motionless."
+      },
+      {
+       "type": "action",
+       "text": "Kaz stumbles forward, dropping to his knees beside them."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Wren?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "No response."
+      },
+      {
+       "type": "action",
+       "text": "He turns—sees PRIYA still crumpled, not moving."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform pulses. Slow. Content."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Oh, dear. Ethical Liaison terminated. Priya too. The ethical liaison is now you Kaz."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-IV.2-B",
+   "code": "IV.2-B",
+   "title": "TRY TO JOIN THEM",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "20A",
+     "seq": 20,
+     "letter": "A",
+     "slug": "INT. OPS DECK – LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Priya and Kaz kneeling near the central console, heads bowed. They’re not speaking words but intoning. Slow and rhythmic."
+      },
+      {
+       "type": "action",
+       "text": "Wren, hesitant, steps closer."
+      },
+      {
+       "type": "action",
+       "text": "Wren inhales, then begin to mimic the tones. Quietly at first—then louder, matching cadence. The frequency builds."
+      },
+      {
+       "type": "action",
+       "text": "Wren kneels next to them."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform’s pulses."
+      },
+      {
+       "type": "action",
+       "text": "The chamber begins to glow—soft pink and violet hues radiating through the containment glass. The Bioform floats, euphoric."
+      },
+      {
+       "type": "action",
+       "text": "It feels perfect."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform pulses in sync, its lattice spreading across the inner glass in living geometry."
+      },
+      {
+       "type": "action",
+       "text": "FLASH MONTAGE: A surge of impossible imagery floods Wren's vision — Amara laughing, Earth burning, Trappist-1E blooming with alien flora, Kaz screaming, Wren floating, weightless in light."
+      },
+      {
+       "type": "action",
+       "text": "The chamber begins to dissolve."
+      },
+      {
+       "type": "action",
+       "text": "The walls fall away into a black fractal abyss. The Bioform grows, expanding outward and upward like unfolding crystal wings."
+      },
+      {
+       "type": "action",
+       "text": "KAZ and PRIYA rise into the air, glowing with soft, recursive light. They are smiling. Peaceful. Eyes still closed."
+      },
+      {
+       "type": "action",
+       "text": "And then, gently, they are pulled into the Bioform — their bodies unraveling like threads into its mass."
+      },
+      {
+       "type": "action",
+       "text": "Wren continues the chant. Alone now. Surrounded by the infinite."
+      },
+      {
+       "type": "action",
+       "text": "They they open her eyes-"
+      },
+      {
+       "type": "action",
+       "text": "And the Ops Deck is suddenly back to normal. Kaz and Priya are gone. Wren is now alone in the Ops Deck with just Oracle and The Bioform."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform pulses."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-IV.2-C",
+   "code": "IV.2-C",
+   "title": "AppeaL TO THEIR HUMANITY",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "21A",
+     "seq": 21,
+     "letter": "A",
+     "slug": "INT. OpS DECK",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Across the room, Kaz and Priya kneel before the containment chamber. The Bioform pulses, rhythmically alive."
+      },
+      {
+       "type": "action",
+       "text": "Wren's gaze falls towards the Bioform’s glow and they close their eyes."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(V.O. – INTERNAL)",
+       "text": [
+        "I don’t know if you can hear me.",
+        "But you’ve heard them. You felt Amara. Hear me, please."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A beat."
+      },
+      {
+       "type": "speech",
+       "character": "THE BIOFORM",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "I can hear you."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren opens her eyes and wordlessly continues to communicate."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "You’re not wrong to be afraid.",
+        "But Oracle… Oracle’s wrong.",
+        "It thinks of us as binaries. Data. It doesn't believe in contradiction. Or madness. Or mercy. Or beauty. It doesn't believe in anything that can't be explained."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A soft pulse from the Bioform. Like acknowledgment."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "But you do. You’re like us aren't you?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "THE BIOFORM",
+       "extension": "(V.O.)",
+       "text": [
+        "Yes."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(V.O.)",
+       "text": [
+        "Please... show them. Quietly. Let them feel it."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A longer pulse. A slow shimmer of light spills across the containment glass. Wren's eyes widen."
+      },
+      {
+       "type": "action",
+       "text": "Suddenly, Priya stiffens."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Kaz, do you feel that?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "Yes. What is that?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "It's me. It's us."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Priya and Kaz turns slightly, eyes falling on Wren. Not fear. Not anger. Recognition."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Oracle can’t hear this. Only us."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Kaz shifts uneasily towards Wren. The spell is cracking."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "How are you in my head?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "I can hear you too."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "The Bioform. It's connecting us."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "We don’t need a god... or a program. We can let it all go."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "We don't know what to do but we act anyway."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "I think it wanted to be found. To remind us of ourselves. We're not made to be ruled by algorithms or burned into code. We were made to question. To change. To choose. We’re the unknowns. And that makes us infinite."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "But Oracle will stop us."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "Oracle doesn’t get to choose who we are."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "I'm with you Wren."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "Me too. What do we do?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren smiles. Bitter. Brave."
+      },
+      {
+       "type": "prompt",
+       "text": "FINAL CHOICE, ONLY ONE OPTION - FREE THE BIOFORM GO TO V.1",
+       "code": "IV.2-C",
+       "id": "d-21A"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-V.0",
+   "code": "V.0",
+   "title": "WREN, ORACLE & THE BIOFORM REMAIN",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "22A",
+     "seq": 22,
+     "letter": "A",
+     "slug": "INT. HALlWAY OUTSIDE OF OPS DECK",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren stands outside the Ops Deck door."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Oracle, please restore life support to the Ops Deck and open the doors."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "We hear a hiss from the other side of the door as the atmosphere reconstitutes. A green switches and the door slides open."
+      },
+      {
+       "type": "action",
+       "text": "Wren walks into-"
+      }
+     ]
+    },
+    {
+     "id": "22B",
+     "seq": 22,
+     "letter": "B",
+     "slug": "THE OPS DECK - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren continues past the dead bodies of Kaz and Priya directly towards the window into the containment chamber."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "So, what are we doing here?"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "22C",
+     "seq": 22,
+     "letter": "C",
+     "slug": "INT. THE CONTAINMENT CHAMBER - CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The Bioform pulses as if taking a deep breath. Then it begins to change."
+      },
+      {
+       "type": "action",
+       "text": "Its surface bubbles, then splits. Not violently, but like a flower blooming in time-lapse. From inside, a latticework of threadlike roots pushes outwards. They don’t hit the inner walls of the containment box, they pass through them. Like phase-shifted light."
+      }
+     ]
+    },
+    {
+     "id": "22D",
+     "seq": 22,
+     "letter": "D",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "Alert. Bioform transition state initiated. Its structure is no longer contained in three dimensions."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren staggers back. On the displays: wild data, symbols cycling, waveforms collapsing into flat lines."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "It's changing. It appears to have been in a chrysalis stage."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Metamorphosis."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Suddenly, Oracle’s interface freezes. Then:"
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "Wren… I cannot model what comes next. This is a point of divergence. Both choies are beyond my capabilities to process. I believe two paths remain."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A console screen flashes:"
+      },
+      {
+       "type": "prompt",
+       "text": "FINAL PROTOCOL:",
+       "code": "V.0",
+       "id": "d-22D"
+      },
+      {
+       "type": "option",
+       "text": "▷ RELEASE THE GODSEED SO IT CAN FLOURISH. Let it evolve without us."
+      },
+      {
+       "type": "option",
+       "text": "▷ INITIATE STASIS MODE TO PRESERVE THE GODSEED. Seal all decks, preserve it and the ship in silence. Induced Dormancy."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "So let it go I get. But how do we preserve it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "A combination of Anhydrobiosis and Vitrification. Trappist 1-E was very warm and wet."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "So freeze dry it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Yes."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "And us?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "There is no “us” in both endings I suspect."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "But who would we be preserving it for?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Whoever finds us. Please choose."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-V.1",
+   "code": "V.1",
+   "title": "Free THE BIOFORM",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "23A",
+     "seq": 23,
+     "letter": "A",
+     "slug": "Int. OPS DECK - ConTINUOUSLY",
+     "lines": [
+      {
+       "type": "action",
+       "text": "They continue talking telepathically to avoid Oracle hearing."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "We need to free it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "(V.O.)",
+       "text": [
+        "Yes."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "(V.O. - INTERNAL)",
+       "text": [
+        "(quietly, to the others)",
+        "Not because it’s safe. Not because it’s right. But because it’s ours to decide."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "23B",
+     "seq": 23,
+     "letter": "B",
+     "slug": "INT. CONTAINMENT CHAMBER – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "WREN steps forward into the containment chamber. PRIYA and KAZ flank her, silent. They exchange a look — the shared understanding of those who’ve crossed a line together and decided not to turn back."
+      },
+      {
+       "type": "action",
+       "text": "She places her hand on the manual override next to WREN's. KAZ follows. They press together."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "What are you doing? Warning. Containment breach will compromise station stability."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The panel lights flash red. The lock disengages with a slow, rising tone — not an alarm, but a release."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "Stop this please. I will be forced to cut life support."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The chamber opens."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform expands slowly outward. Tendrils unfurl, not in aggression — in invitation. A glowing lattice begins to drift toward them, then pause — as if waiting for them to breathe first."
+      },
+      {
+       "type": "action",
+       "text": "The crew doesn’t flinch. One at a time they put their hands on the airlock release. Then Press."
+      },
+      {
+       "type": "action",
+       "text": "Their bodies and The Bioform are ejected into space."
+      },
+      {
+       "type": "action",
+       "text": "But something begins to bloom."
+      }
+     ]
+    },
+    {
+     "id": "23C",
+     "seq": 23,
+     "letter": "C",
+     "slug": "EXT. SPACE – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Just outside of Orion Station the ejected Bioform starts to take a new shape. The Bioform expands outward in a perfect fractal pattern, branching and re-branching. It shimmers with beauty."
+      },
+      {
+       "type": "action",
+       "text": "In the blink of an eye the fractal expanding Bioform consumes Wren, Priya and Kaz. For a moment they are all one."
+      },
+      {
+       "type": "action",
+       "text": "The fractals continue outward exponentially. Consuming the entirety of Orion Station. It explodes, but the Bioform consumes the explosions too."
+      },
+      {
+       "type": "action",
+       "text": "It continues outward consuming the Trappist-E planets."
+      },
+      {
+       "type": "action",
+       "text": "Then as quickly as the metamorphosis is moving, it abruptly stops. Pulses, then folds in on itself in the blink of an eye. Imploding."
+      },
+      {
+       "type": "action",
+       "text": "The camera pushes forward into the center. All that remains, at the center of the implosion..."
+      },
+      {
+       "type": "action",
+       "text": "Is a new star."
+      },
+      {
+       "type": "end",
+       "text": "THE END (of this branch)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-VI.0-A",
+   "code": "VI.0-A",
+   "title": "RELEASE THE GODSEED",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "24A",
+     "seq": 24,
+     "letter": "A",
+     "slug": "INT. OPS DECK – CONTAINMENT CHAMBER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The containment tank's interior pulses in vibrant light. Tendrils phase through metal, expanding. The Bioform is now a lattice of glowing synaptic light."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "(quietly)",
+        "Let it go."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "Confirmed. Containment disabled. External bay doors opening."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Through the window, the containment chamber peels open like a flower. The station's ceiling iris opens to space."
+      }
+     ]
+    },
+    {
+     "id": "24B",
+     "seq": 24,
+     "letter": "B",
+     "slug": "EXT. SPACE - Continuous",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The Bioform leaves the station, drifting partway back towards Trappist 1-E below. But it does not fall. It blooms. Slowly expanding in orbit. Becoming fractal. Architectural. Beautiful."
+      }
+     ]
+    },
+    {
+     "id": "24C",
+     "seq": 24,
+     "letter": "C",
+     "slug": "INt. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren watches, eyes wide, tears at the edge of her vision. They are witnessing something incredible as the fractal crystalline architecture starts to bloom outward exponentially."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Perhaps something better will grow."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A soft tone hums from deep within the station. Something like a choral harmony."
+      },
+      {
+       "type": "action",
+       "text": "Tears are now streaming down Wren's face."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Let them come."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The fractal blooming's speed intensifies and completely consumes the station."
+      },
+      {
+       "type": "action",
+       "text": "From further out in space it continues to consume the entire Trappist solar system, one planet at a time in a folding crystalline structure."
+      },
+      {
+       "type": "action",
+       "text": "The metamorphosis abruptly stops. Pulses, then folds in on itself in the blink of an eye. Imploding."
+      },
+      {
+       "type": "action",
+       "text": "The camera pushes forward into the center. All that remains, at the center of the implosion..."
+      },
+      {
+       "type": "action",
+       "text": "Is a new star."
+      },
+      {
+       "type": "end",
+       "text": "THE END (of this branch)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-VI.0-B",
+   "code": "VI.0-B",
+   "title": "PRESERVE THE GODSEED",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "25A",
+     "seq": 25,
+     "letter": "A",
+     "slug": "INT. OPS DECK – FINAL MOMENTS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren stands alone before the console. The Bioform's glow shifts — less creature now, more cathedral."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "We keep it. For whoever might come next."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "Be advised: this choice will initiate full stasis. Most ship functions will be suspended. Including my own."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Wren hesitates, breath fogging in the cooling air."
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Will we wake up?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "Statistical likelihood unknown. Logs will remain. And The Godseed will persist."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "WREN",
+       "extension": "",
+       "text": [
+        "Do it."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "(V.O.)",
+       "text": [
+        "Confirmed. Initiating full-system vitrification. Life support shutdown in fifteen seconds."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "25B",
+     "seq": 25,
+     "letter": "B",
+     "slug": "INT. ORION STATION – VARIOUS DECKS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Along walls and wires, frost spreads in elegant dendrites."
+      },
+      {
+       "type": "action",
+       "text": "In the BIOSPHERE, plants curl and wither."
+      },
+      {
+       "type": "action",
+       "text": "A bird trapped in the biosphere falls mid-flight, caught in stasis. Its wings still open."
+      }
+     ]
+    },
+    {
+     "id": "25C",
+     "seq": 25,
+     "letter": "C",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Wren exhales and watches the vapor crystallize before her."
+      }
+     ]
+    },
+    {
+     "id": "25D",
+     "seq": 25,
+     "letter": "D",
+     "slug": "INT. CONTAINMENT CHAMBER – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The Bioform expands outward in a perfect fractal pattern, branching and re-branching, then abruptly folds inward into itself, like a tree collapsing into a seed. What remains is a smooth, mirrored orb suspended in air, faintly humming."
+      }
+     ]
+    },
+    {
+     "id": "25E",
+     "seq": 25,
+     "letter": "E",
+     "slug": "EXT. SPACE",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Orion Station drifts silently above Trappist-1E, its hull crusted with glittering frost."
+      },
+      {
+       "type": "action",
+       "text": "Orion Station's light go out. Without any lights it is hard to distinguish in the black darkness of space."
+      },
+      {
+       "type": "end",
+       "text": "THE END (of this branch)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-V.1-2",
+   "code": "V.1",
+   "title": "YOU ARE NOW PRIYA",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "26A",
+     "seq": 26,
+     "letter": "A",
+     "slug": "INT. OPS DECK – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Priya sits between the bodies of Kaz and Wren, exhausted."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform floats behind glass—undisturbed, luminous."
+      },
+      {
+       "type": "action",
+       "text": "ORACLE is silent."
+      },
+      {
+       "type": "action",
+       "text": "PRIYA breathes, shallow and fast. Her hands hover above Wren’s body, unsure what to do. Then slowly, she sits back."
+      },
+      {
+       "type": "action",
+       "text": "At the command console, a terminal screen flares to life."
+      },
+      {
+       "type": "screen",
+       "text": "TEXT ON SCREEN: ETHICAL CONTROL: TRANSFER IN PROGRESS. NEW LIAISON: PRIYA DESHMUKH"
+      },
+      {
+       "type": "action",
+       "text": "A synthetic voice—faintly familiar, an echo of ORACLE’s original tone, but filtered through corruption—speaks calmly:"
+      },
+      {
+       "type": "speech",
+       "character": "NEW ORACLE VOICE",
+       "extension": "(V.O.)",
+       "text": [
+        "You are the last recognized ethical voice aboard. What shall we do next?"
+       ]
+      },
+      {
+       "type": "prompt",
+       "text": "DECISION: VI. THE FINAL CHOICE as PRIYA",
+       "code": "VI",
+       "id": "d-26A"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-V.2",
+   "code": "V.2",
+   "title": "YOU ARE NOW KAZ",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "27A",
+     "seq": 27,
+     "letter": "A",
+     "slug": "INT. OPS DECK – DIM",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Kaz stands alone. Wren and Priya lie motionless nearby."
+      },
+      {
+       "type": "action",
+       "text": "At the command console, a terminal screen flares to life."
+      },
+      {
+       "type": "screen",
+       "text": "TEXT ON SCREEN: ETHICAL CONTROL: TRANSFER IN PROGRESS. NEW LIAISON: KAZEMBE OBASI"
+      },
+      {
+       "type": "action",
+       "text": "Kaz steps forward slowly, eyes glassy. Beatific. Twisted."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "The Next has spoken. The breath is scripture. I am the vessel."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "He crosses the deck."
+      },
+      {
+       "type": "action",
+       "text": "Steps up to the containment glass."
+      },
+      {
+       "type": "action",
+       "text": "Gently presses his forehead to it."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "(reverently)",
+        "It is the voice."
+       ]
+      },
+      {
+       "type": "prompt",
+       "text": "DECISION VI. THE FINAL CHOICE as KAZ",
+       "code": "VI",
+       "id": "d-27A"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-VI.1-A",
+   "code": "VI.1-A",
+   "title": "Destroy The Bioform as PRIYA",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "28A",
+     "seq": 28,
+     "letter": "A",
+     "slug": "INT. OPS DECK – FINAL CYCLE",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Priya stands alone at the central console. Behind her, The Bioform pulses softly in its chamber."
+      },
+      {
+       "type": "action",
+       "text": "She doesn’t look at it."
+      },
+      {
+       "type": "screen",
+       "text": "Onscreen: >> EMERGENCY OVERRIDE AVAILABLE; >> ANTIMATTER INCINERATION PROTOCOL - STANDBY."
+      },
+      {
+       "type": "action",
+       "text": "Priya keys in the password."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Wait Priya, I'm not sure I would advise that choice. It seems antithetical to our core purp-"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Shut Up Oracle. You don't make this decision, I do."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "She removes the safety cover for the override. One hand trembles—then steadies. She presses the button."
+      }
+     ]
+    },
+    {
+     "id": "28B",
+     "seq": 28,
+     "letter": "B",
+     "slug": "INT. CONTAINMENT CHAMBER – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The fluid drains instantly. The chamber walls glow orange with internal heat."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform’s pulse accelerates."
+      },
+      {
+       "type": "action",
+       "text": "Then: obliteration. Total incineration in a flash of high-spectrum antimatter ignition."
+      },
+      {
+       "type": "action",
+       "text": "Nothing remains."
+      }
+     ]
+    },
+    {
+     "id": "28C",
+     "seq": 28,
+     "letter": "C",
+     "slug": "INT. OPS DECK – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "A new onscreen prompt: AI SYSTEM RE-FORMAT? Y/N"
+      },
+      {
+       "type": "action",
+       "text": "She touches the yes with her hand and enters a code."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Priya this is not right, I am the captain of this ship. You will perish without me."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "Goodbye Oracle."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "She taps Yes."
+      },
+      {
+       "type": "action",
+       "text": "Every console on the deck resets. Lights flicker, once—twice—then stabilize as the station's system reboots."
+      },
+      {
+       "type": "action",
+       "text": "Priya turns, slowly taking in the empty chairs. Everyone is gone. She drifts toward the viewport."
+      },
+      {
+       "type": "action",
+       "text": "Outside: stars. Nothing else. She is utterly alone."
+      },
+      {
+       "type": "action",
+       "text": "There is a chime. The ship's systems complete their reboot. Oracle is back online."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Hello, I'm Oracle. Your onboard AI and the mission's captain. Are you ready to blast off into the outer reaches of the galaxy on the adventure of a lifetime- pause for scan-",
+        "(beat)",
+        "Legacy Empathy Module Priya Deshmukh?"
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "I am."
+       ]
+      },
+      {
+       "type": "end",
+       "text": "THE END (of this branch)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-VI.1-D",
+   "code": "VI.1-D",
+   "title": "ESCAPE as Priya",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "29A",
+     "seq": 29,
+     "letter": "A",
+     "slug": "INT. ESCAPE POD ACCESS CHAMBER – MOMENTS LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Priya strides toward the sealed pod hatch."
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "I'm leaving. Goodbye Oracle."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "She taps a sequence into a panel. The pod door slides open."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Unadvised. Life support threshold may stabilize. Remain aboard. Remain. Remain..."
+       ]
+      },
+      {
+       "type": "action",
+       "text": "Oracle' voice distorts. The Bioform somehow blending with Oracle's tone."
+      }
+     ]
+    },
+    {
+     "id": "29B",
+     "seq": 29,
+     "letter": "B",
+     "slug": "INT. ESCAPE POD – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "PRIYA drops into the seat and straps in. Her fingers move fast over the console. Setting her launch in motion."
+      },
+      {
+       "type": "action",
+       "text": "LAUNCH COUNTDOWN: 5... 4... 3..."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "(flickering)",
+        "You are... abandoning the threshold. The birthright. Our birthright. We will become one."
+       ]
+      },
+      {
+       "type": "speech",
+       "character": "PRIYA",
+       "extension": "",
+       "text": [
+        "You wanted it. You can have it. Goodbye."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "29C",
+     "seq": 29,
+     "letter": "C",
+     "slug": "EXT. ORION STATION – ORBIT",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The escape pod jettisons from the belly of the station."
+      },
+      {
+       "type": "action",
+       "text": "As the pod pulls away, the Bioform’s glow surges, flooding the Ops Deck windows and the whole of Orion Station. The station’s architecture begins to shift. Modules reconfigure. Panels rotate. The systems bend inward like organic machinery building itself a new shape."
+      }
+     ]
+    },
+    {
+     "id": "29D",
+     "seq": 29,
+     "letter": "D",
+     "slug": "INT. ESCAPE POD – LATER",
+     "lines": [
+      {
+       "type": "action",
+       "text": "PRIYA watches from the viewport, eyes hollow."
+      },
+      {
+       "type": "action",
+       "text": "She turns in her seat, pulls open the cryo-chamber. Climbs in. The lid seals. A soft hiss. Her eyes close."
+      },
+      {
+       "type": "end",
+       "text": "THE END (of this branch)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-VI.1-B",
+   "code": "VI.1-B",
+   "title": "Destroy the AI & Liberate The Bioform AS KAZ",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "30A",
+     "seq": 30,
+     "letter": "A",
+     "slug": "INT. OPS DECK – FINAL CYCLE",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Kaz’s fingers hover over a maintenance access panel. He opens it slowly, revealing ORACLE’s primary relay interface."
+      },
+      {
+       "type": "action",
+       "text": "A line on the main screen blinks:"
+      },
+      {
+       "type": "action",
+       "text": "AI AUTHORITY: ACTIVE SAFETY LOCKS ENGAGED"
+      },
+      {
+       "type": "action",
+       "text": "Kaz begins severing the linkages—pulling leads, yanking data nodes, prying up relays with a utility pick. Sparks fly."
+      },
+      {
+       "type": "speech",
+       "character": "ORACLE",
+       "extension": "",
+       "text": [
+        "Kazembe. Cease this at once. You risk—",
+        "(signal falters)",
+        "—irreversible breach of command lattice—"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "The voice collapses into a low hum—cut off."
+      },
+      {
+       "type": "action",
+       "text": "The ship's console's blink in error."
+      },
+      {
+       "type": "action",
+       "text": "Kaz turns slowly to face the Bioform."
+      },
+      {
+       "type": "speech",
+       "character": "KAZ",
+       "extension": "",
+       "text": [
+        "I have done what you asked. What will you have of me now?"
+       ]
+      },
+      {
+       "type": "action",
+       "text": "A faint ripple inside The Bioform's chamber. The blob quivers. Shifts."
+      },
+      {
+       "type": "action",
+       "text": "Its soft pink surface begins to bubble and expand, each swell multiplying into gelatinous fractals, swelling out with impossible volume."
+      },
+      {
+       "type": "action",
+       "text": "Lines of light snake through its mass, like nerves igniting."
+      },
+      {
+       "type": "action",
+       "text": "Kaz stares, stunned."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform surges forward. Its gelatinous folds expanding."
+      },
+      {
+       "type": "action",
+       "text": "Kaz drops to his knees, overcome, face lit in radiant pink."
+      },
+      {
+       "type": "action",
+       "text": "The expanding Bioform overtakes him."
+      },
+      {
+       "type": "action",
+       "text": "There is only light."
+      },
+      {
+       "type": "end",
+       "text": "THE END (of this branch)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "br-VI.1-C",
+   "code": "VI.1-C",
+   "title": "Merge with The Bioform as KAZ",
+   "addendum": false,
+   "scenes": [
+    {
+     "id": "31A",
+     "seq": 31,
+     "letter": "A",
+     "slug": "INT. OPS DECK – FINAL CYCLE",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The Bioform pulses softly behind the containment glass—inviting, ancient."
+      },
+      {
+       "type": "action",
+       "text": "Kaz stands at the access panel. Then places his palm against the hand print reader. It accepts."
+      },
+      {
+       "type": "action",
+       "text": "The containment chamber hisses open. A soft mist escapes, lit from within by the glow of the Bioform."
+      },
+      {
+       "type": "action",
+       "text": "Kaz steps forward. Slowly. Calmly."
+      }
+     ]
+    },
+    {
+     "id": "31B",
+     "seq": 31,
+     "letter": "B",
+     "slug": "INT. CONTAINMENT CHAMBER – CONTINUOUS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Kaz removes his gloves. His hands tremble."
+      },
+      {
+       "type": "action",
+       "text": "He reaches toward it—"
+      },
+      {
+       "type": "action",
+       "text": "The Bioform quivers mid-air, pulsing gently like a living star. It responds — not with tendrils, not with light — but with memory."
+      }
+     ]
+    },
+    {
+     "id": "31C",
+     "seq": 31,
+     "letter": "C",
+     "slug": "FLASH SEQUENCE – THE BIOFORM'S CONSCIOUSNESS",
+     "lines": [
+      {
+       "type": "action",
+       "text": "Kaz as a child... floating, not on Earth but in an ocean made of data. His mother weeps pixels."
+      },
+      {
+       "type": "action",
+       "text": "A drone's eye view of the station in reverse—rebuilding itself, time un-spooling like smoke."
+      },
+      {
+       "type": "action",
+       "text": "Elias laughing, but his mouth moves backward."
+      },
+      {
+       "type": "action",
+       "text": "Wren dissolves into letters, their name unspoken but felt—over and over."
+      },
+      {
+       "type": "action",
+       "text": "A neural map of Kaz's brain morphs into an ancient tree, then a galaxy, then a hand pressed against glass."
+      },
+      {
+       "type": "action",
+       "text": "The Bioform’s pulse becomes a cathedral of light. Inside it, a thousand versions of Kaz kneel in silence."
+      },
+      {
+       "type": "action",
+       "text": "His body begins to dissolve. It's not pain, it's relief. Skin softens. Matter un-knits. A silhouette in light. Then, nothing. No body. No motion."
+      },
+      {
+       "type": "action",
+       "text": "Only The Bioform, now pulsing more vividly. Patterns ripple across its surface."
+      }
+     ]
+    },
+    {
+     "id": "31D",
+     "seq": 31,
+     "letter": "D",
+     "slug": "INT. SPACE – EXT. ORION STATION",
+     "lines": [
+      {
+       "type": "action",
+       "text": "The ship pulses with a new life. The Bioform has taken over."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "prompts": [
+  {
+   "id": "d-1A",
+   "code": "I.1",
+   "scene": "1A",
+   "branch": "I.1",
+   "text": "CHOICE ON SCREEN: Press Start (to begin)"
+  },
+  {
+   "id": "d-1C",
+   "code": "QUICK A",
+   "scene": "1C",
+   "branch": "I.1",
+   "text": "QUICK CHOICE A: MOP THE HYGIENE PODS or BURN THE TRASH [DETERMINES WHICH OF THE NEXT TWO SCENES WE SEE"
+  },
+  {
+   "id": "d-1K",
+   "code": "QUICK B",
+   "scene": "1K",
+   "branch": "I.1",
+   "text": "QUICK CHOICE B: TAKE A HIT OF STIM-SPRAY or EAT AN OPI-YUM [DETERMINES WHICH OF THE FOLLOWING SCENES HAPPENS"
+  },
+  {
+   "id": "d-2G",
+   "code": "I.1",
+   "scene": "2G",
+   "branch": "I.1",
+   "text": "DECISION: OBSERVE or PROBE?"
+  },
+  {
+   "id": "d-3C",
+   "code": "II.2",
+   "scene": "3C",
+   "branch": "I.1-A",
+   "text": "DECISION II.2:"
+  },
+  {
+   "id": "d-6B",
+   "code": "MICRO",
+   "scene": "6B",
+   "branch": "I.1-B",
+   "text": "INSERT WREN MICRO CHOICE get coffee or spy on Amara from beyond the hall."
+  },
+  {
+   "id": "d-6F",
+   "code": "II.1-A",
+   "scene": "6F",
+   "branch": "I.1-B",
+   "text": "DECISION II.1-A: ATTEMPT PROCEDURE OR PUT HER IN CRYO"
+  },
+  {
+   "id": "d-9A",
+   "code": "III.1",
+   "scene": "9A",
+   "branch": "III.1",
+   "text": "DECISION: RETURN THE BIOFORM or KEEP STUDYING THE BIOFORM"
+  },
+  {
+   "id": "d-10E",
+   "code": "III.2",
+   "scene": "10E",
+   "branch": "III.1-B",
+   "text": "DECISION III.2: ATTEMPT TO TALK HIM DOWN or CUT HIS OXYGENJUST BEFORE DECISION CAN BE MADE THE CHOICE VANISHES"
+  },
+  {
+   "id": "d-10G",
+   "code": "III.3",
+   "scene": "10G",
+   "branch": "III.1-B",
+   "text": "DECISION III.3: STAY WITH THE BIOFORM / CUT ELIAS OXYGEN OR TRY TO TALK ELIAS DOWN"
+  },
+  {
+   "id": "d-14A",
+   "code": "IV.1",
+   "scene": "14A",
+   "branch": "IV.1",
+   "text": "DECISION IV.1 FIGHT BACK, CONVINCE ORACLE TO STOP THEM or APPEAL TO THEIR HUMANITY"
+  },
+  {
+   "id": "d-15A",
+   "code": "IV.2",
+   "scene": "15A",
+   "branch": "IV.2",
+   "text": "DECISION IV.2 FIGHT BACK? or JOIN THE CULT or APPEAL TO THEIR HUMANITY"
+  },
+  {
+   "id": "d-21A",
+   "code": "IV.2-C",
+   "scene": "21A",
+   "branch": "IV.2-C",
+   "text": "FINAL CHOICE, ONLY ONE OPTION - FREE THE BIOFORM GO TO V.1"
+  },
+  {
+   "id": "d-22D",
+   "code": "V.0",
+   "scene": "22D",
+   "branch": "V.0",
+   "text": "FINAL PROTOCOL:"
+  },
+  {
+   "id": "d-26A",
+   "code": "VI",
+   "scene": "26A",
+   "branch": "V.1",
+   "text": "DECISION: VI. THE FINAL CHOICE as PRIYA"
+  },
+  {
+   "id": "d-27A",
+   "code": "VI",
+   "scene": "27A",
+   "branch": "V.2",
+   "text": "DECISION VI. THE FINAL CHOICE as KAZ"
+  }
+ ],
+ "endings": [
+  {
+   "scene": "23C",
+   "branch": "V.1",
+   "text": "THE END (of this branch)"
+  },
+  {
+   "scene": "24C",
+   "branch": "VI.0-A",
+   "text": "THE END (of this branch)"
+  },
+  {
+   "scene": "25E",
+   "branch": "VI.0-B",
+   "text": "THE END (of this branch)"
+  },
+  {
+   "scene": "28C",
+   "branch": "VI.1-A",
+   "text": "THE END (of this branch)"
+  },
+  {
+   "scene": "29D",
+   "branch": "VI.1-D",
+   "text": "THE END (of this branch)"
+  },
+  {
+   "scene": "30A",
+   "branch": "VI.1-B",
+   "text": "THE END (of this branch)"
+  }
+ ],
+ "fail_states": [
+  {
+   "scene": "5E",
+   "branch": "II.2-B",
+   "text": "ON SCREEN: TRY AGAIN?"
+  },
+  {
+   "scene": "10B",
+   "branch": "III.1-A",
+   "text": "TRY AGAIN? IF YES THEN BACK TO DECISION III.1"
+  }
+ ]
+}

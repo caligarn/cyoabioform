@@ -97,10 +97,13 @@ def derive(sid, beat, loc, chars, beats):
 def rows_from(hub):
     body = hub.split('<table id="board-t">')[1].split("</table>")[0]
     for _, row in re.findall(
-            r'<tr data-act="([^"]*)" data-hay="[^"]*">(.*?)</tr>', body, re.S):
+            r'<tr data-act="([^"]*)" data-hay="[^"]*"[^>]*>(.*?)</tr>', body, re.S):
         tds = [strip(t) for t in re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)]
         # tds: id, beat, location, characters, setups, cut shots, status
-        yield tds[0], tds[1], tds[2], tds[3], int(tds[4]), int(tds[5])
+        # The id cell also carries the script scenes the chunk covers (S07 1G–1J);
+        # the chunk id is the S-number at the front of it.
+        sid = re.match(r"S\d\d", tds[0]).group(0)
+        yield sid, tds[1], tds[2], tds[3], int(tds[4]), int(tds[5])
 
 
 def main():
@@ -144,13 +147,13 @@ def main():
 
         def fix(m):
             row = m.group(0)
-            sid = re.search(r'<td class="id">(S\d\d)</td>', row).group(1)
+            sid = re.search(r'<td class="id">(?:<a[^>]*>)?(S\d\d)', row).group(1)
             c = out[sid]
             return re.sub(r'<td class="num">\d+</td><td class="num">\d+</td>',
                           f'<td class="num">{c["setups"]}</td>'
                           f'<td class="num">{c["cuts"]}</td>', row, count=1)
 
-        tbl = re.sub(r'<tr data-act="[^"]*" data-hay="[^"]*">.*?</tr>',
+        tbl = re.sub(r'<tr data-act="[^"]*" data-hay="[^"]*"[^>]*>.*?</tr>',
                      fix, tbl, flags=re.S)
         tbl = re.sub(
             r"<tfoot>.*?</tfoot>",
