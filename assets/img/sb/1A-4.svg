@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img">
+<defs>
+<pattern id="sl" width="1" height="3" patternUnits="userSpaceOnUse">
+<rect width="1" height="1" fill="#ffffff" opacity="0.028"/></pattern>
+<radialGradient id="vig" cx="50%" cy="46%" r="72%">
+<stop offset="60%" stop-color="#000" stop-opacity="0"/>
+<stop offset="100%" stop-color="#000" stop-opacity="0.55"/></radialGradient>
+</defs>
+<rect width="640" height="360" fill="#0d1417"/>
+<rect width="640" height="360" fill="url(#sl)"/>
+<rect x="56" y="104" width="528" height="1" fill="#2c4041"/>
+<text x="56" y="92" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="22" fill="#ececeb" text-anchor="start" letter-spacing="4.4" font-weight="500" opacity="1">ORION STATION</text>
+<text x="56" y="142" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#8ba3a5" text-anchor="start" letter-spacing="2.6" font-weight="400" opacity="1">COORDINATES</text>
+<text x="584" y="142" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="13" fill="#7ea4ab" text-anchor="end" letter-spacing="2.2" font-weight="400" opacity="1">HIGH ORBIT TRAPPIST 1-E</text>
+<rect x="56" y="155" width="528" height="1" fill="#2c4041" opacity="0.6"/>
+<text x="56" y="186" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#8ba3a5" text-anchor="start" letter-spacing="2.6" font-weight="400" opacity="1">ORACLE STATUS</text>
+<text x="584" y="186" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="13" fill="#f0a63c" text-anchor="end" letter-spacing="2.2" font-weight="400" opacity="1">ONLINE</text>
+<rect x="56" y="199" width="528" height="1" fill="#2c4041" opacity="0.6"/>
+<text x="56" y="230" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#8ba3a5" text-anchor="start" letter-spacing="2.6" font-weight="400" opacity="1">LEMs</text>
+<text x="584" y="230" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="13" fill="#7ea4ab" text-anchor="end" letter-spacing="2.2" font-weight="400" opacity="1">6</text>
+<rect x="56" y="243" width="528" height="1" fill="#2c4041" opacity="0.6"/>
+<rect x="56" y="264" width="9" height="13" fill="#f0a63c" opacity="0.85"/>
+<rect width="640" height="360" fill="url(#vig)"/>
+<rect x="0.5" y="0.5" width="639" height="359" fill="none" stroke="#2c4041"/>
+</svg>
