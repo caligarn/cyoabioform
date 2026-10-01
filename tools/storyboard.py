@@ -304,6 +304,11 @@ def section_html(board, num):
     shots = panels - cards
     per_scene = [len(ps) for _, _, ps in board]
     least, most = min(per_scene), max(per_scene)
+    # Scenes boarded end to end, so the lede can claim a complete stretch
+    # rather than "some panels are filled".
+    whole = [s["id"] for _, s, ps in board
+             if ps and all(p["id"] in FRAMES for p in ps)]
+    done = sum(len(ps) for _, s, ps in board if s["id"] in whole)
 
     out = [OPEN,
            f'<section id="storyboard"><div class="eyebrow">{num} · Storyboard</div>'
@@ -311,11 +316,13 @@ def section_html(board, num):
            '<p class="lede">The whole production script boarded out: '
            f'{panels} panels across 98 scenes, every one of them claimable. '
            'Most are still empty on purpose — an empty box with the description '
-           'under it <em>is</em> the brief. Scenes 1A to 1J are filled in, so you '
-           'can see what a finished panel looks like before you take one. These '
-           'are shot as photographic key frames rather than sketches, because a '
-           'panel that works also works as the start frame the shot gets '
-           'generated from.</p>',
+           'under it <em>is</em> the brief. '
+           f'<b style="color:var(--green);font-weight:500">Scenes 1A to 1J are '
+           f'complete — all {done} panels</b>, so you can see a whole stretch '
+           'boarded end to end before you take anything. They are shot as '
+           'photographic key frames rather than sketches, because a panel that '
+           'works also works as the start frame the shot gets generated '
+           'from.</p>',
            f'<div class="toolbar"><span class="pill go">{filled} filled</span>'
            f'<span class="pill">{panels} panels</span>'
            f'<span class="pill">{shots} photographed</span>'

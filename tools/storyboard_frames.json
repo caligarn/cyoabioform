@@ -1,4 +1,10 @@
 {
+  "1A-1": {
+    "basename": "sb-1A-system.png",
+    "shot": "system wide",
+    "beat": "Establishing \u00b7 EXT. ORBIT \u2013 TRAPPIST-1E",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_9cf25583-97cf-42a3-983a-ba6becb16d93.png"
+  },
   "1A-2": {
     "basename": "sb-1A-planet.png",
     "shot": "locked wide",
@@ -29,17 +35,47 @@
     "beat": "CHOICE ON SCREEN: Press Start (to begin)",
     "url": "assets/img/sb/press-start.svg"
   },
+  "1B-1": {
+    "basename": "sb-1B-shaft.png",
+    "shot": "up the shaft",
+    "beat": "Establishing \u00b7 INT. ORION STATION - VARIOUS",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_8b0cd150-6f2f-439c-99c8-f7ca08047bc2.png"
+  },
   "1B-2": {
     "basename": "sb-1B-empty-corridor.png",
     "shot": "drifting wide",
     "beat": "The camera drifts through various decks of thi",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_ef332654-5ea2-4767-a367-090065a36835.png"
   },
+  "1B-3": {
+    "basename": "sb-1B-deck-wide.png",
+    "shot": "deck wide",
+    "beat": "Alt framing \u00b7 wide on: INT. ORION STATION - VA",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_1d815afa-e7b1-47b4-954e-68a8e6305515.png"
+  },
+  "1C-1": {
+    "basename": "sb-1C-bay-wide.png",
+    "shot": "room wide",
+    "beat": "Establishing \u00b7 INT. WASTE BAY \u2013 LAVATORY MODUL",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_c54a04b6-16f8-4c3a-bee3-a335c1c52d70.png"
+  },
   "1C-2": {
     "basename": "sb-1C-wren-hood.png",
     "shot": "medium",
     "beat": "WREN SALGADO (30s, they/them) headphones just ",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_bf9f45d3-57da-4726-b526-03e3f5659eb2.png"
+  },
+  "1C-3": {
+    "basename": "sb-1C-kneels.png",
+    "shot": "medium",
+    "beat": "Wren kneels beside a wall-mounted waste port.",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_bec1042a-98ae-4d7c-aab0-37d3b8c6655b.png"
+  },
+  "1C-4": {
+    "basename": "sb-1C-clogged-port.png",
+    "shot": "tight insert",
+    "beat": "It\u2019s clogged --and yes, it's a toilet.",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_8b8bab6a-ffd0-48b5-b803-9b4d45b3548c.png"
   },
   "1C-5": {
     "basename": "sb-1C-waste-port.png",
@@ -53,11 +89,29 @@
     "beat": "QUICK CHOICE A: MOP THE HYGIENE PODS or BURN T",
     "url": "assets/img/sb/quick-choice-a.svg"
   },
+  "1D-1": {
+    "basename": "sb-1D-pod-wide.png",
+    "shot": "room wide",
+    "beat": "Establishing \u00b7 INT. CREW HYGIENE POD \u2013 Later",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_e337dfa7-1db5-44bb-b2db-270bcf11bd73.png"
+  },
   "1D-2": {
     "basename": "sb-1D-hygiene-foam.png",
     "shot": "wide",
     "beat": "A small drone-vac mops the floor, while Wren, ",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_5fe7937b-6073-4a35-b405-fd774c5d9e62.png"
+  },
+  "1D-3": {
+    "basename": "sb-1D-drone-vac-low.png",
+    "shot": "floor level",
+    "beat": "Alt framing \u00b7 wide on: INT. CREW HYGIENE POD \u2013",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_de5822d3-1abd-4f42-b014-7830f8cf3c2a.png"
+  },
+  "1E-1": {
+    "basename": "sb-1E-bales-wide.png",
+    "shot": "room wide",
+    "beat": "Establishing \u00b7 INT. RECYCLING INCINERATION ROO",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_0173dda4-7171-4cd5-a023-cb654c1e7b72.png"
   },
   "1E-2": {
     "basename": "sb-1E-incinerator.png",
@@ -65,11 +119,35 @@
     "beat": "Wren, now wearing a nose clamp and a tank top,",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_80435614-b0f0-4381-8329-3082b8a7805d.png"
   },
+  "1E-3": {
+    "basename": "sb-1E-sweat.png",
+    "shot": "tight detail",
+    "beat": "Wren's shoulders are slick with sweat.",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_37f78f34-5673-4490-b490-8c99b088d1b3.png"
+  },
+  "1F-1": {
+    "basename": "sb-1F-control-wide.png",
+    "shot": "room wide",
+    "beat": "Establishing \u00b7 INT. ORION STATION - ConTROL CE",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_52c1f554-9537-4ee6-ba5d-9d472b1afd7c.png"
+  },
   "1F-2": {
     "basename": "sb-1F-oracle-lens.png",
     "shot": "medium close",
     "beat": "We see the lens of ORACLE the on-board system ",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_01022947-de54-4a13-ae1b-edbf66b999c7.png"
+  },
+  "1F-3": {
+    "basename": "sb-1F-everywhere.png",
+    "shot": "reflections",
+    "beat": "Here now, but everywhere all at once.",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062129_194e63b6-fab1-4fd3-a27e-360c4b9d66cc.png"
+  },
+  "1F-4": {
+    "basename": "sb-1F-red-light.png",
+    "shot": "tight insert",
+    "beat": "A RED LIGHT begins to blink on one of the cons",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_440f4fd4-e65e-41d6-9feb-9d67f90c69b5.png"
   },
   "1F-5": {
     "basename": "sb-1F-drone-wireframe.png",
@@ -89,11 +167,35 @@
     "beat": "Inside a large sealed terrarium, PRIYA DESHMUK",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_c4d03aef-ce21-475a-921a-22c37e0be674.png"
   },
+  "1G-2": {
+    "basename": "sb-1G-goggle-light.png",
+    "shot": "tight insert",
+    "beat": "An integrated RED LIGHT blinks on her goggles.",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_5bf0dae1-ce28-4540-8b00-1be6d9f33d9f.png"
+  },
+  "1G-3": {
+    "basename": "sb-1G-pauses.png",
+    "shot": "medium",
+    "beat": "She pauses her work to listen.",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_e7738230-95d1-4125-a624-228d349b1ab4.png"
+  },
   "1H-1": {
     "basename": "sb-1H-kaz-ladder.png",
     "shot": "wide, looking up",
     "beat": "KAZ OBASI is on a long ladder in front of a ci",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005404_26aff962-8419-475b-83fc-2d640c6d499f.png"
+  },
+  "1H-2": {
+    "basename": "sb-1H-packs-tools.png",
+    "shot": "medium",
+    "beat": "He packs his tools into his belt while a table",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_1341ed1b-b8f5-47d4-b4f7-779fd322e548.png"
+  },
+  "1H-3": {
+    "basename": "sb-1H-spits-down.png",
+    "shot": "high angle",
+    "beat": "Kaz spits into the dark below and starts climb",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_284d1393-66fd-40db-b297-22cc9ca5a5c9.png"
   },
   "1I-1": {
     "basename": "sb-1I-amara-zero-g.png",
@@ -101,11 +203,29 @@
     "beat": "NIA AMARA floats midair in thousands of water ",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005551_bff1a082-5a84-45fc-a653-fa09e4222b25.png"
   },
+  "1I-2": {
+    "basename": "sb-1I-taps-control.png",
+    "shot": "medium",
+    "beat": "The Red Light continues to blink and Oracle's ",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_c9e73f9e-21eb-4e4c-9dde-781cd88da213.png"
+  },
   "1I-3": {
     "basename": "sb-1I-feet-magnetize.png",
     "shot": "tight insert",
     "beat": "Her feet magnetize gently to the floor.",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005404_793eaa3b-9b37-48a6-a58d-bc6e1bce5e34.png"
+  },
+  "1J-1": {
+    "basename": "sb-1J-elias-drying.png",
+    "shot": "clean single",
+    "beat": "ELIAS, with a towel around his waist, is still",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_981be872-2b41-4ca6-be97-fb0d39ec877e.png"
+  },
+  "1J-2": {
+    "basename": "sb-1J-red-light.png",
+    "shot": "tight insert",
+    "beat": "Oracle's message and the blinking red light co",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_85204653-8c81-4180-bfb6-886273ce6c46.png"
   },
   "1J-3": {
     "basename": "sb-1J-towel-handoff.png",
@@ -113,11 +233,35 @@
     "beat": "He hands Amara her towel when she exits the sh",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005404_6aeb2ce5-e5d4-46f5-a81a-1ef91123a882.png"
   },
+  "1J-4": {
+    "basename": "sb-1J-master.png",
+    "shot": "wide two-shot",
+    "beat": "Master \u00b7 Amara, Elias \u2014 the geography of the e",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_943a5d14-a77b-4115-89a5-69538f59a55c.png"
+  },
   "1J-5": {
     "basename": "sb-1J-amara-single.png",
     "shot": "A-side single",
     "beat": "Single \u00b7 Amara \u2014 \u201cWhat do you think it is?\u201d",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005404_cd727418-e2db-44b8-8631-5f3cbebe05a8.png"
+  },
+  "1J-6": {
+    "basename": "sb-1J-elias-single.png",
+    "shot": "reverse single",
+    "beat": "Single \u00b7 Elias \u2014 \u201cA waste of time I'm sure. Wa",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_4619b233-cabc-406d-b670-39c3f763c2ca.png"
+  },
+  "1J-7": {
+    "basename": "sb-1J-amara-reaction.png",
+    "shot": "clean single",
+    "beat": "Reaction \u00b7 Amara \u2014 on \u201cA waste of time I'm sur",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_eb52283f-8915-41ee-980f-5282a4bd0525.png"
+  },
+  "1J-8": {
+    "basename": "sb-1J-kiss.png",
+    "shot": "tight two-shot",
+    "beat": "He playfully leans in and kisses her neck.",
+    "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_062229_692c662d-0752-46c4-a2ac-c66ae71cf0ea.png"
   },
   "1J-9": {
     "basename": "sb-1J-pulls-away.png",
