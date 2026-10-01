@@ -494,3 +494,20 @@ main img:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
   .sbgrid{grid-template-columns:repeat(auto-fill,minmax(148px,1fr))}
   .sbn{margin-left:0;width:100%}
 }
+
+/* The boarding rule emits several kinds of panel; the empty box should say
+   which without being read. Plain action beats stay unmarked -- they are the
+   default and the majority. */
+.sbp.k-establishing .sbbox{border-color:var(--steel);
+  background:repeating-linear-gradient(135deg,transparent 0 7px,
+    rgba(95,130,159,.07) 7px 14px)}
+.sbp.k-establishing .sbk{color:var(--steel)}
+.sbp.k-master .sbbox{border-color:var(--teal)}
+.sbp.k-master .sbk{color:var(--teal)}
+.sbp.k-single .sbbox,.sbp.k-reaction .sbbox{border-style:dotted}
+.sbp.k-alt .sbbox{border-color:var(--olive);
+  background:repeating-linear-gradient(45deg,transparent 0 7px,
+    rgba(255,255,255,.012) 7px 14px)}
+.sbp.k-alt .sbd{color:var(--muted)}
+.sbp.k-option .sbbox{border-color:var(--pink)}
+.sbp.k-option .sbk{color:var(--pink)}

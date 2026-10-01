@@ -5,25 +5,36 @@ The board is derived, not drawn by hand. One rule turns the script's own lines
 into panels, so a new script draft redraws the whole board instead of leaving
 98 scenes to be re-slotted by hand:
 
-    action line                 -> one panel. The visual it describes.
-    option line                 -> one panel. A branch's alternative visual.
+    a new location              -> one ESTABLISHING panel, unless the scene is
+                                   CONTINUOUS from the same place as the last.
+    action / option line        -> one panel PER BEAT. Sentences split; a short
+                                   trailing fragment ("Familiar." "Easy.") is a
+                                   note on the beat before it, not its own shot.
     screen / prompt / retry /
       end line                  -> one CARD panel. Lettering, so it is drawn,
                                    never generated -- generators cannot letter.
-    a run of speech lines       -> ONE panel standing for the coverage, labelled
-                                   with the speakers in it.
+    a run of speech lines       -> the coverage, boarded out: one speaker gets a
+                                   single; two or more get a master, a single
+                                   each, and a reaction.
     a run of NARRATOR / TEXT    -> no panel. It is voice-over; it rides the
                                    panel next to it and is printed under it.
+    a scene under MIN_PANELS    -> topped up with alternate framings of its own
+                                   first beat (wide / tighter / detail), so no
+                                   scene offers nothing to pick from.
 
-The speech rule is the one worth arguing about, and it is the same call the
-pilot shot list already makes: P-08, P-14 and P-18 each write four people's
-framings as one row. A panel here is a SETUP, not a cut shot. Boarding every
-reverse would triple the panel count without planning anything new, because
-coverage reuses the setup it came from.
+The first version of this collapsed a whole run of dialogue into one panel
+labelled Coverage. That was honest about SETUPS -- coverage reuses the setup it
+came from, so it costs rolls and not new positions -- but it was useless as a
+thing to claim, because the panel a contributor wants to take is one framing,
+not "the exchange". So the board now boards coverage and over-provisions on
+purpose: it offers more panels than the finished film will use. You pick from
+them and the rest get cut. That makes the panel count a MENU, not an estimate,
+and it is emphatically not a budget: see the note the section prints about what
+this board does and does not say about cost.
 
-So the panel count is the setup count, and it is provisional in the same way
-the scene board is: the rule is right about the shape and wrong about any one
-scene. A scene gets its panels replaced the moment a real board comes back.
+It stays provisional in the same way the scene board is: the rule is right about
+the shape and wrong about any one scene. A scene gets its panels replaced the
+moment a real board comes back.
 
     python3 tools/storyboard.py            # print the derivation
     python3 tools/storyboard.py --write    # also write the section into index.html
@@ -48,11 +59,34 @@ NARRATOR = {"NARRATOR / TEXT", "NARRATOR", "TEXT", "NARRATOR/TEXT"}
 CARD = {"screen": "On screen", "prompt": "Choice card",
         "retry": "Fail card", "end": "End card"}
 
+# A trailing sentence shorter than this is read as a note on the beat before it
+# rather than a shot of its own. Tuned against the script: it catches
+# "Familiar.", "Easy.", "One sharp inhale.", "Focus returns." and leaves every
+# sentence that actually describes a new action standing on its own.
+FRAGMENT = 30
+
+# No scene offers fewer than this many panels, so there is always a choice.
+MIN_PANELS = 3
+ALTS = ("wide", "tighter", "detail")
+
+# What a panel's chip says. A plain action beat gets none -- it is the default,
+# and tagging every box would make the tags worthless.
+TAG = {"establishing": "Establishing", "master": "Master", "single": "Single",
+       "reaction": "Reaction", "alt": "Alt framing", "option": "Branch option"}
+
 # Art that exists. Keyed by panel id. The CDN these land on is blocked from the
 # build container by network policy, so the page hotlinks them and carries the
 # basename it would have had -- see `data-local` on every generated image in
 # this repo. `shot` is the framing actually generated, which is not always the
 # framing the rule guessed; where they differ the panel prints the real one.
+#
+# `beat` is the start of the panel's description as it read when the art was
+# matched to it, and it is the important field. A panel id is an ORDINAL, so
+# changing the boarding rule slides every id in a scene -- which once silently
+# moved all 22 frames onto neighbouring panels while every key stayed valid, so
+# nothing complained and the page quietly lied. Checking `beat` turns that into
+# a build failure. When a rule change moves a frame, re-point it and re-record
+# the beat; do not just delete the field.
 FRAMES = {}
 
 ART = ROOT / "tools" / "storyboard_frames.json"
@@ -72,9 +106,69 @@ def clip(text, n=150):
     return text if len(text) <= n else text[: n - 1].rsplit(" ", 1)[0] + "…"
 
 
-def panels_for(scene):
-    """Apply the rule to one scene's lines. Returns a list of panel dicts."""
+def beats(text):
+    """Split an action line into the visual beats inside it.
+
+    A line often carries several shots: "He hands Amara her towel when she exits
+    the showers. Familiar. Easy." is one beat with two notes on it, while "Wren
+    kneels beside a waste port. They reach in with a suction wand." is two. The
+    split is on sentences, and a short trailing sentence is read as a note on the
+    beat before it rather than a shot of its own -- which is what "Familiar.",
+    "Easy.", "One sharp inhale." and "Focus returns." actually are.
+    """
     out = []
+    for part in re.split(r"(?<=[.!?])\s+", text):
+        part = part.strip()
+        if not part:
+            continue
+        if out and len(part) < FRAGMENT:
+            out[-1] += " " + part
+        else:
+            out.append(part)
+    return out or [text.strip()]
+
+
+def location(slug):
+    """The place part of a slug, for deciding whether the camera has moved."""
+    return re.split(r"\s+[-–—]\s+", slug.upper())[0].strip()
+
+
+def panel(kind, desc, **kw):
+    p = {"kind": kind, "desc": desc, "vo": [], "who": [], "lines": []}
+    p.update(kw)
+    return p
+
+
+def panels_for(scene, fresh_location):
+    """Apply the rule to one scene. Returns a list of panel dicts."""
+    out = []
+    if fresh_location:
+        out.append(panel("establishing", scene["slug"]))
+
+    run = []   # (speaker, line) pairs, in order, for the dialogue run in hand
+
+    def flush():
+        """Board the run of dialogue in hand as separate framings."""
+        if not run:
+            return
+        who = []
+        for speaker, _ in run:
+            if speaker not in who:
+                who.append(speaker)
+        first = run[0][1]
+        if len(who) == 1:
+            # Nobody to cut against, so the exchange is one framing.
+            out.append(panel("single", first, who=who))
+        else:
+            out.append(panel("master", first, who=who))
+            for name in who:
+                said = next(t for s, t in run if s == name)
+                out.append(panel("single", said, who=[name]))
+            # Whoever is not speaking last is who the camera turns to.
+            listeners = [n for n in who if n != run[-1][0]] or who[:1]
+            out.append(panel("reaction", run[-1][1], who=listeners))
+        run.clear()
+
     for line in scene["lines"]:
         kind = line["type"]
         text = line["text"]
@@ -90,58 +184,71 @@ def panels_for(scene):
                 if out:
                     out[-1]["vo"].append(text)
                 else:
-                    out.append({"kind": "pending-vo", "vo": [text], "who": [],
-                                "desc": ""})
+                    out.append(panel("pending-vo", "", vo=[text]))
                 continue
-            if out and out[-1]["kind"] == "coverage":
-                if who not in out[-1]["who"]:
-                    out[-1]["who"].append(who)
-                out[-1]["lines"].append(text)
-            else:
-                out.append({"kind": "coverage", "who": [who], "lines": [text],
-                            "vo": [], "desc": ""})
+            run.append((who, text))
             continue
 
-        panel = {"vo": [], "who": [], "lines": [], "desc": text}
+        flush()
         if kind in CARD:
-            panel["kind"] = "card"
-            panel["card"] = CARD[kind]
-        elif kind == "option":
-            panel["kind"] = "option"
+            made = [panel("card", text, card=CARD[kind])]
         else:
-            panel["kind"] = "shot"
+            made = [panel("option" if kind == "option" else "shot", b)
+                    for b in beats(text)]
 
         # A scene that opened on voice-over hands it to the first real panel.
-        if out and out[0]["kind"] == "pending-vo" and len(out) == 1:
-            panel["vo"] = out[0]["vo"] + panel["vo"]
+        if len(out) == 1 and out[0]["kind"] == "pending-vo":
+            made[0]["vo"] = out[0]["vo"] + made[0]["vo"]
             out = []
-        out.append(panel)
+        out.extend(made)
+    flush()
 
     # A scene that is nothing but voice-over still needs one panel to hold it.
     for p in out:
         if p["kind"] == "pending-vo":
             p["kind"] = "shot"
             p["desc"] = "Voice-over only — no action written. Needs a framing."
+
+    # A one-line scene would otherwise offer a contributor a single box and no
+    # choice. Top it up with alternate framings of its own first beat. Prefer a
+    # beat of action to frame against; a scene that is nothing but one line of
+    # dialogue (7D is the only one) has to fall back on its own slug.
+    source = next((p for p in out if p["kind"] in ("shot", "option",
+                                                   "establishing")), None)
+    against = source["desc"] if source else scene["slug"]
+    alt = 0
+    while len(out) < MIN_PANELS:
+        out.append(panel("alt", against, alt=ALTS[alt % len(ALTS)]))
+        alt += 1
     return out
 
 
 def describe(p):
     """The short line printed under the panel."""
-    if p["kind"] == "coverage":
-        who = ", ".join(n.title() for n in p["who"])
-        label = "Single" if len(p["who"]) == 1 else "Singles"
-        cue = clip(p["lines"][0], 90)
-        return f"{label} · {who} — “{cue}”"
+    who = ", ".join(n.title() for n in p["who"])
+    if p["kind"] == "establishing":
+        return f"Establishing · {clip(p['desc'], 120)}"
+    if p["kind"] == "master":
+        return f"Master · {who} — the geography of the exchange"
+    if p["kind"] == "single":
+        return f"Single · {who} — “{clip(p['desc'], 90)}”"
+    if p["kind"] == "reaction":
+        return f"Reaction · {who} — on “{clip(p['desc'], 70)}”"
+    if p["kind"] == "alt":
+        return f"Alt framing · {p['alt']} on: {clip(p['desc'], 100)}"
     return clip(p["desc"])
 
 
 def build():
     board = []
+    previous = None
     for branch, scene in scenes():
-        ps = panels_for(scene)
+        here = location(scene["slug"])
+        fresh = "CONTINUOUS" not in scene["slug"].upper() and here != previous
+        previous = here
+        ps = panels_for(scene, fresh)
         for i, p in enumerate(ps, 1):
-            pid = f"{scene['id']}-{i}"
-            p["id"] = pid
+            p["id"] = f"{scene['id']}-{i}"
             p["scene"] = scene["id"]
             p["slug"] = scene["slug"]
             p["branch"] = branch["code"]
@@ -156,7 +263,7 @@ def esc(s):
 
 def panel_html(p):
     art = FRAMES.get(p["id"])
-    cls = "sbp"
+    cls = f'sbp k-{p["kind"]}'
     if p["kind"] == "card":
         cls += " card"
     if art:
@@ -177,12 +284,9 @@ def panel_html(p):
 
     bits = [f'<div class="{cls}" id="sb-{esc(p["id"])}">{box}',
             f'<div class="sbid">{esc(p["id"])}']
-    if p["kind"] == "card":
-        bits.append(f'<span class="sbtag">{esc(p["card"])}</span>')
-    elif p["kind"] == "option":
-        bits.append('<span class="sbtag">Branch option</span>')
-    elif p["kind"] == "coverage":
-        bits.append('<span class="sbtag">Coverage</span>')
+    tag = (p["card"] if p["kind"] == "card" else TAG.get(p["kind"]))
+    if tag:
+        bits.append(f'<span class="sbtag">{esc(tag)}</span>')
     if art and art.get("shot"):
         bits.append(f'<span class="sbtag go">{esc(art["shot"])}</span>')
     bits.append("</div>")
@@ -198,6 +302,13 @@ def section_html(board, num):
     panels = sum(len(ps) for _, _, ps in board)
     cards = sum(1 for _, _, ps in board for p in ps if p["kind"] == "card")
     shots = panels - cards
+    per_scene = [len(ps) for _, _, ps in board]
+    least, most = min(per_scene), max(per_scene)
+    # Scenes boarded end to end, so the lede can claim a complete stretch
+    # rather than "some panels are filled".
+    whole = [s["id"] for _, s, ps in board
+             if ps and all(p["id"] in FRAMES for p in ps)]
+    done = sum(len(ps) for _, s, ps in board if s["id"] in whole)
 
     out = [OPEN,
            f'<section id="storyboard"><div class="eyebrow">{num} · Storyboard</div>'
@@ -205,26 +316,44 @@ def section_html(board, num):
            '<p class="lede">The whole production script boarded out: '
            f'{panels} panels across 98 scenes, every one of them claimable. '
            'Most are still empty on purpose — an empty box with the description '
-           'under it <em>is</em> the brief. Scenes 1A to 1J are filled in, so you '
-           'can see what a finished panel looks like before you take one. These '
-           'are shot as photographic key frames rather than sketches, because a '
-           'panel that works also works as the start frame the shot gets '
-           'generated from.</p>',
+           'under it <em>is</em> the brief. '
+           f'<b style="color:var(--green);font-weight:500">Scenes 1A to 1J are '
+           f'complete — all {done} panels</b>, so you can see a whole stretch '
+           'boarded end to end before you take anything. They are shot as '
+           'photographic key frames rather than sketches, because a panel that '
+           'works also works as the start frame the shot gets generated '
+           'from.</p>',
            f'<div class="toolbar"><span class="pill go">{filled} filled</span>'
            f'<span class="pill">{panels} panels</span>'
            f'<span class="pill">{shots} photographed</span>'
            f'<span class="pill">{cards} lettered cards</span>'
+           f'<span class="pill">{least}–{most} per scene</span>'
            '<span class="pill hot">98 scenes</span></div>',
-           '<div class="note" style="margin:0 0 16px"><b>A panel is a setup, '
-           'not a cut shot.</b> A run of dialogue is one panel labelled '
-           '<em>Coverage</em>, the same call the pilot shot list makes when '
-           'P-08 writes four people\'s framings as one row — boarding every '
-           'reverse would triple the count without planning anything new. '
+           '<div class="note" style="margin:0 0 16px"><b>More panels than the '
+           'film will use, on purpose.</b> This board used to fold a whole run '
+           'of dialogue into one box labelled <em>Coverage</em>. That was honest '
+           'about camera positions and useless to work from, because the thing '
+           'you want to claim is one framing, not “the exchange”. So the '
+           'coverage is boarded out now: one speaker gets a '
+           '<b style="color:var(--ink);font-weight:500">single</b>, two or more '
+           'get a <b style="color:var(--ink);font-weight:500">master</b>, a '
+           'single each and a <b style="color:var(--ink);font-weight:500">'
+           'reaction</b>. Action lines split into one panel per beat. A new '
+           'location opens on an <b style="color:var(--ink);font-weight:500">'
+           'establishing</b> plate unless the scene is continuous from the last '
+           'one. Any scene thin enough to offer no choice is topped up with '
+           '<b style="color:var(--ink);font-weight:500">alt framings</b> of its '
+           'own first beat, or of its location when it has no action written. '
+           f'No scene offers fewer than {least} boxes and the biggest offers '
+           f'{most}. None of it is a quota — take the ones that carry the scene '
+           'and let the rest go.</div>',
+           '<div class="note" style="margin:0 0 16px">'
            'Narration never gets a box: it is voice-over, printed under the '
            'panel it plays over. Cards (text on screen, choice prompts, fail '
            'and end cards) are <b style="color:var(--ink);font-weight:500">drawn, '
            'never generated</b> — the generators cannot letter, so anything '
-           'with words on it is authored by hand.</div>',
+           'with words on it is authored by hand '
+           '(<code>tools/storyboard_cards.py</code>).</div>',
            '<div class="note" style="margin:0 0 16px"><b style="color:var(--amber)">'
            'Provisional, like the scene board.</b> The panels come from a rule '
            'applied to the script\'s own lines (<code>tools/storyboard.py</code>), '
@@ -232,19 +361,19 @@ def section_html(board, num):
            'the shape and wrong about any given scene. Claim a scene, board it '
            'properly, and your panels replace the derived ones.</div>',
            '<div class="note" style="margin:0 0 20px">'
-           '<b style="color:var(--rust)">This board disagrees with the scene '
-           f'board, and that is worth knowing.</b> It counts {shots} '
-           'photographed setups for the film. The scene board\'s rule '
-           '(<code>tools/coverage.py</code>) counts 188, because it reads one '
-           'sentence per chunk where this reads every action line in the script '
-           '— so it under-counts by construction. This one over-counts too: '
-           '<em>“Her feet magnetize gently to the floor”</em> is a continuation '
-           'of the shot before it, not a new camera position. The real number is '
-           'somewhere between 188 and ' f'{shots}' ', nobody has it yet, and '
-           '<b style="color:var(--ink);font-weight:500">the budget in section '
-           '<span data-sec="budget">21</span> is still built on 188.</b> '
-           'Boarding scenes for real is what settles it; until then treat the '
-           'budget as a floor, not an estimate.</div>']
+           '<b style="color:var(--rust)">What this board does not say.</b> '
+           f'It is not a shot count and not a bill. {shots} photographed boxes '
+           'is a menu — deliberately more options than the cut needs. The '
+           'scene board in section <span data-sec="board">16</span> runs a '
+           'different rule (<code>tools/coverage.py</code>) and counts 188 '
+           'camera setups and 361 cut shots for the same film. Those two rules read different '
+           'things: one summarises a chunk in a sentence, this one reads every '
+           'beat and then offers alternates on top. Neither is the film\'s shot '
+           'list. <b style="color:var(--ink);font-weight:500">Claiming a panel '
+           'is not a budget commitment</b> — the budget in section '
+           '<span data-sec="budget">21</span> still rests on 188 setups and '
+           'about 695 rolls, so check there before generating a scene\'s worth '
+           'of options.</div>']
 
     # Group by branch so the page is navigable; Act I opens, the rest fold.
     groups = []
@@ -295,12 +424,28 @@ def main():
           + ", ".join(f"{v} {k}" for k, v in sorted(kinds.items())))
     print(f"art on file for {len(FRAMES)} panel(s)")
 
-    ids = {p["id"] for _, _, ps in board for p in ps}
+    panel_by_id = {p["id"]: p for _, _, ps in board for p in ps}
     # Art keyed to a panel the rule no longer produces is a silent orphan: the
     # image stops appearing and nothing says so.
-    orphan = sorted(set(FRAMES) - ids)
+    orphan = sorted(set(FRAMES) - set(panel_by_id))
     if orphan:
         sys.exit(f"storyboard: {len(orphan)} frame(s) key no panel: {orphan}")
+
+    # The worse failure is art whose key is still a real panel but a DIFFERENT
+    # one, because a rule change slid the ordinals under it. Every frame records
+    # the beat it was matched to; if the panel no longer says that, the frame is
+    # on the wrong box and the page is lying about what the image shows.
+    moved = []
+    for pid, art in sorted(FRAMES.items()):
+        beat = art.get("beat")
+        if beat is None:
+            moved.append(f"  {pid}: no beat recorded, so nothing can check it")
+        elif not describe(panel_by_id[pid]).startswith(beat):
+            moved.append(f"  {pid} now reads  {describe(panel_by_id[pid])[:58]!r}\n"
+                         f"  {'':{len(pid)}}  art was matched to  {beat!r}")
+    if moved:
+        sys.exit("storyboard: {} frame(s) no longer match their panel:\n{}".format(
+            len(moved), "\n".join(moved)))
 
     # Every scene in the script has to reach the board, or a scene silently
     # vanishes from the only page that claims to list all of them.
