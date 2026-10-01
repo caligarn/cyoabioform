@@ -7,8 +7,11 @@ tools cannot letter: ask one for a console readout and it returns convincing
 glyphs that spell nothing. Anything a contributor is expected to READ has to be
 drawn, which is the same call `tools/deck_diagram.py` makes about the station.
 
-Each card is written to assets/img/sb/<panel-id>.svg, so they live in the repo
-rather than on a blocked CDN and `check_links.py` can see them.
+Each card is written to assets/img/sb/<name>.svg, so they live in the repo
+rather than on a blocked CDN and `check_links.py` can see them. They are named
+for what they SHOW, not for the panel they fill -- panel ids move whenever the
+boarding rule changes, and a file named after a slot then lies about itself.
+tools/storyboard_frames.json is what maps a panel to its card.
 
     python3 tools/storyboard_cards.py
 """
@@ -115,19 +118,25 @@ def card_1C3():
     return frame("\n".join(body))
 
 
-CARDS = {"1A-4": card_1A4, "1A-5": card_1A5, "1C-3": card_1C3}
+CARDS = {"status-readout": card_1A4,
+         "press-start": card_1A5,
+         "quick-choice-a": card_1C3}
 
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    for pid, fn in CARDS.items():
+    for name, fn in CARDS.items():
         svg = fn()
         # A card that renders no glyphs is the one failure mode that matters:
         # the whole reason these are authored is that they must be readable.
         if "<text" not in svg:
-            raise SystemExit(f"storyboard_cards: {pid} drew no text")
-        (OUT / f"{pid}.svg").write_text(svg)
-        print(f"wrote assets/img/sb/{pid}.svg ({len(svg)} bytes)")
+            raise SystemExit(f"storyboard_cards: {name} drew no text")
+        (OUT / f"{name}.svg").write_text(svg)
+        print(f"wrote assets/img/sb/{name}.svg ({len(svg)} bytes)")
+    for stale in sorted(OUT.glob("*.svg")):
+        if stale.stem not in CARDS:
+            stale.unlink()
+            print(f"removed stale assets/img/sb/{stale.name}")
 
 
 if __name__ == "__main__":

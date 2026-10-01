@@ -1,112 +1,134 @@
 {
-  "1A-1": {
-    "basename": "sb-1A-1-planet.png",
+  "1A-2": {
+    "basename": "sb-1A-planet.png",
     "shot": "locked wide",
+    "beat": "A planet hangs silently in the darkness of spa",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005326_da47ab17-aeb3-4b91-b735-b28871aeeba9.png"
   },
-  "1A-2": {
-    "basename": "sb-1A-2-station-tiny.png",
+  "1A-3": {
+    "basename": "sb-1A-station-tiny.png",
     "shot": "extreme wide",
+    "beat": "ORION STATION drifts above it, tiny compared t",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005327_75faadad-2ebe-4ea3-b1e8-1a9bb24eef64.png"
   },
-  "1A-3": {
-    "basename": "sb-1A-3-push-in.png",
+  "1A-4": {
+    "basename": "sb-1A-push-in.png",
     "shot": "end of push",
+    "beat": "The Camera pushes quickly towards Orion Statio",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005327_1fba6c3d-6eaf-4da2-9b1d-c721e676a7cc.png"
   },
-  "1A-4": {
-    "basename": "sb/1A-4.svg",
-    "shot": "drawn card",
-    "url": "assets/img/sb/1A-4.svg"
-  },
   "1A-5": {
-    "basename": "sb/1A-5.svg",
+    "basename": "sb/status-readout.svg",
     "shot": "drawn card",
-    "url": "assets/img/sb/1A-5.svg"
+    "beat": "TEXT ON SCREEN: ORION STATION // COORDINATES: ",
+    "url": "assets/img/sb/status-readout.svg"
   },
-  "1B-1": {
-    "basename": "sb-1B-1-empty-corridor.png",
+  "1A-6": {
+    "basename": "sb/press-start.svg",
+    "shot": "drawn card",
+    "beat": "CHOICE ON SCREEN: Press Start (to begin)",
+    "url": "assets/img/sb/press-start.svg"
+  },
+  "1B-2": {
+    "basename": "sb-1B-empty-corridor.png",
     "shot": "drifting wide",
+    "beat": "The camera drifts through various decks of thi",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_ef332654-5ea2-4767-a367-090065a36835.png"
   },
-  "1C-1": {
-    "basename": "sb-1C-1-wren-hood.png",
+  "1C-2": {
+    "basename": "sb-1C-wren-hood.png",
     "shot": "medium",
+    "beat": "WREN SALGADO (30s, they/them) headphones just ",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_bf9f45d3-57da-4726-b526-03e3f5659eb2.png"
   },
-  "1C-2": {
-    "basename": "sb-1C-2-waste-port.png",
+  "1C-5": {
+    "basename": "sb-1C-waste-port.png",
     "shot": "low medium",
+    "beat": "They reach in with a suction wand and pull fre",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_1abb930e-49ac-4a58-b639-668a31ae85c0.png"
   },
-  "1C-3": {
-    "basename": "sb/1C-3.svg",
+  "1C-6": {
+    "basename": "sb/quick-choice-a.svg",
     "shot": "drawn card",
-    "url": "assets/img/sb/1C-3.svg"
+    "beat": "QUICK CHOICE A: MOP THE HYGIENE PODS or BURN T",
+    "url": "assets/img/sb/quick-choice-a.svg"
   },
-  "1D-1": {
-    "basename": "sb-1D-1-hygiene-foam.png",
+  "1D-2": {
+    "basename": "sb-1D-hygiene-foam.png",
     "shot": "wide",
+    "beat": "A small drone-vac mops the floor, while Wren, ",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_5fe7937b-6073-4a35-b405-fd774c5d9e62.png"
   },
-  "1E-1": {
-    "basename": "sb-1E-1-incinerator.png",
+  "1E-2": {
+    "basename": "sb-1E-incinerator.png",
     "shot": "medium",
+    "beat": "Wren, now wearing a nose clamp and a tank top,",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_80435614-b0f0-4381-8329-3082b8a7805d.png"
   },
-  "1F-1": {
-    "basename": "sb-1F-1-oracle-lens.png",
+  "1F-2": {
+    "basename": "sb-1F-oracle-lens.png",
     "shot": "medium close",
+    "beat": "We see the lens of ORACLE the on-board system ",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_01022947-de54-4a13-ae1b-edbf66b999c7.png"
   },
-  "1F-2": {
-    "basename": "sb-1F-2-drone-wireframe.png",
+  "1F-5": {
+    "basename": "sb-1F-drone-wireframe.png",
     "shot": "insert",
+    "beat": "On a display we see the wireframe image of a p",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_518d9703-0028-4809-a915-a3bfc1eca066.png"
   },
-  "1F-3": {
-    "basename": "sb-1F-3-oracle-speaking.png",
+  "1F-6": {
+    "basename": "sb-1F-oracle-speaking.png",
     "shot": "close single",
+    "beat": "Single \u00b7 Oracle \u2014 \u201cGood Afternoon crew. Apolog",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005326_08232465-0ef1-4960-9966-2427f3d64a42.png"
   },
   "1G-1": {
-    "basename": "sb-1G-1-priya-terrarium.png",
+    "basename": "sb-1G-priya-terrarium.png",
     "shot": "medium wide",
+    "beat": "Inside a large sealed terrarium, PRIYA DESHMUK",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005325_c4d03aef-ce21-475a-921a-22c37e0be674.png"
   },
   "1H-1": {
-    "basename": "sb-1H-1-kaz-ladder.png",
+    "basename": "sb-1H-kaz-ladder.png",
     "shot": "wide, looking up",
+    "beat": "KAZ OBASI is on a long ladder in front of a ci",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005404_26aff962-8419-475b-83fc-2d640c6d499f.png"
   },
   "1I-1": {
-    "basename": "sb-1I-1-amara-zero-g.png",
+    "basename": "sb-1I-amara-zero-g.png",
     "shot": "medium wide",
+    "beat": "NIA AMARA floats midair in thousands of water ",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005551_bff1a082-5a84-45fc-a653-fa09e4222b25.png"
   },
-  "1I-2": {
-    "basename": "sb-1I-2-feet-magnetize.png",
+  "1I-3": {
+    "basename": "sb-1I-feet-magnetize.png",
     "shot": "tight insert",
+    "beat": "Her feet magnetize gently to the floor.",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005404_793eaa3b-9b37-48a6-a58d-bc6e1bce5e34.png"
   },
-  "1J-1": {
-    "basename": "sb-1J-1-towel-handoff.png",
+  "1J-3": {
+    "basename": "sb-1J-towel-handoff.png",
     "shot": "two-shot",
+    "beat": "He hands Amara her towel when she exits the sh",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005404_6aeb2ce5-e5d4-46f5-a81a-1ef91123a882.png"
   },
-  "1J-2": {
-    "basename": "sb-1J-2-amara-single.png",
+  "1J-5": {
+    "basename": "sb-1J-amara-single.png",
     "shot": "A-side single",
+    "beat": "Single \u00b7 Amara \u2014 \u201cWhat do you think it is?\u201d",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005404_cd727418-e2db-44b8-8631-5f3cbebe05a8.png"
   },
-  "1J-3": {
-    "basename": "sb-1J-3-pulls-away.png",
+  "1J-9": {
+    "basename": "sb-1J-pulls-away.png",
     "shot": "tight two-shot",
+    "beat": "But she pulls away and puts her shirt on.",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005404_7e7e4f99-a68a-4f53-9bf1-b4d986b0d0e8.png"
   },
-  "1J-4": {
-    "basename": "sb-1J-4-we-should-go.png",
+  "1J-10": {
+    "basename": "sb-1J-we-should-go.png",
     "shot": "clean single",
+    "beat": "Single \u00b7 Amara \u2014 \u201cNo. We should go.\u201d",
     "url": "https://d8j0ntlcm91z4.cloudfront.net/user_2v65vC2NmNYKZ2bzVenjFAME0Do/hf_20261001_005404_d3e3a9db-20b4-4013-bb7c-c47270d85f41.png"
   }
 }
