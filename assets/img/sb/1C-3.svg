@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img">
+<defs>
+<pattern id="sl" width="1" height="3" patternUnits="userSpaceOnUse">
+<rect width="1" height="1" fill="#ffffff" opacity="0.028"/></pattern>
+<radialGradient id="vig" cx="50%" cy="46%" r="72%">
+<stop offset="60%" stop-color="#000" stop-opacity="0"/>
+<stop offset="100%" stop-color="#000" stop-opacity="0.55"/></radialGradient>
+</defs>
+<rect width="640" height="360" fill="#0d1417"/>
+<rect width="640" height="360" fill="url(#sl)"/>
+<text x="56" y="86" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="11" fill="#f0a63c" text-anchor="start" letter-spacing="3.4" font-weight="400" opacity="1">QUICK CHOICE A</text>
+<rect x="56" y="98" width="528" height="1" fill="#2c4041"/>
+<rect x="56" y="120" width="528" height="62" fill="none" stroke="#2c4041"/>
+<text x="76" y="146" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="16" fill="#ececeb" text-anchor="start" letter-spacing="2.4" font-weight="400" opacity="1">MOP THE HYGIENE PODS</text>
+<text x="76" y="168" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10" fill="#8ba3a5" text-anchor="start" letter-spacing="2.6" font-weight="400" opacity="1">scene 1D</text>
+<rect x="558" y="137" width="7" height="14" fill="#7ea4ab" opacity="0.8"/>
+<rect x="56" y="212" width="528" height="62" fill="none" stroke="#2c4041"/>
+<text x="76" y="238" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="16" fill="#ececeb" text-anchor="start" letter-spacing="2.4" font-weight="400" opacity="1">BURN THE TRASH</text>
+<text x="76" y="260" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="10" fill="#8ba3a5" text-anchor="start" letter-spacing="2.6" font-weight="400" opacity="1">scene 1E</text>
+<rect x="558" y="229" width="7" height="14" fill="#7ea4ab" opacity="0.3"/>
+<text x="320" y="330" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="9.5" fill="#8ba3a5" text-anchor="middle" letter-spacing="3" font-weight="400" opacity="1">DETERMINES WHICH SCENE PLAYS NEXT</text>
+<rect width="640" height="360" fill="url(#vig)"/>
+<rect x="0.5" y="0.5" width="639" height="359" fill="none" stroke="#2c4041"/>
+</svg>
